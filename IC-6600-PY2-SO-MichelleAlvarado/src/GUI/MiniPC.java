@@ -32,84 +32,116 @@ public class MiniPC extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        rSPanelsSlider1 = new rojerusan.RSPanelsSlider();
-        kGradientPanel1 = new keeptoo.KGradientPanel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
-        jPanel1 = new javax.swing.JPanel();
+        rSPanelsSliderContainer = new rojerusan.RSPanelsSlider();
+        miniCPUContainer = new keeptoo.KGradientPanel();
+        processesScrollPane = new javax.swing.JScrollPane();
+        processesTable = new javax.swing.JTable();
+        headerContainer = new javax.swing.JPanel();
         openFilesButton = new javax.swing.JButton();
-        openFilesButton1 = new javax.swing.JButton();
-        openFilesButton2 = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        jTable6 = new javax.swing.JTable();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel8 = new javax.swing.JPanel();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
-        jPanel9 = new javax.swing.JPanel();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        jTable5 = new javax.swing.JTable();
-        jPanel12 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        jScrollPane7 = new javax.swing.JScrollPane();
-        jTable7 = new javax.swing.JTable();
-        jPanel13 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        kGradientPanel2 = new keeptoo.KGradientPanel();
+        startButton = new javax.swing.JButton();
+        configButton = new javax.swing.JButton();
+        cpuTimeTitle = new javax.swing.JLabel();
+        cpuTimeValue = new javax.swing.JLabel();
+        memoryTagContainer = new javax.swing.JPanel();
+        memoryTag = new javax.swing.JLabel();
+        processesTagContainer = new javax.swing.JPanel();
+        processesTag = new javax.swing.JLabel();
+        executionTagContainer = new javax.swing.JPanel();
+        executionTag = new javax.swing.JLabel();
+        coresScrollPane = new javax.swing.JScrollPane();
+        coresTable = new javax.swing.JTable();
+        IRScrollPane = new javax.swing.JScrollPane();
+        IRTable = new javax.swing.JTable();
+        executionScrollPane = new javax.swing.JScrollPane();
+        executionTable = new javax.swing.JTable();
+        memoriesTabbedPane = new javax.swing.JTabbedPane();
+        mainMemoryPanelContainer = new javax.swing.JPanel();
+        mainMemoryScrollPane = new javax.swing.JScrollPane();
+        mainMemoryTable = new javax.swing.JTable();
+        secondaryMemoryPanelContainer = new javax.swing.JPanel();
+        secondaryMemoryScrollPane = new javax.swing.JScrollPane();
+        secondaryMemoryTable = new javax.swing.JTable();
+        statisticsTagContainer = new javax.swing.JPanel();
+        statisticsTag = new javax.swing.JLabel();
+        displayScrollPane = new javax.swing.JScrollPane();
+        displayTable = new javax.swing.JTable();
+        statisticsScrollPane = new javax.swing.JScrollPane();
+        statisticsTable = new javax.swing.JTable();
+        displayTagContainer = new javax.swing.JPanel();
+        displayTag = new javax.swing.JLabel();
+        trAveragePanel = new javax.swing.JPanel();
+        trAverageTitle = new javax.swing.JLabel();
+        trAverageValue = new javax.swing.JLabel();
+        trTsAveragePanel = new javax.swing.JPanel();
+        trTsAverageTitle = new javax.swing.JLabel();
+        trTsAverageValue = new javax.swing.JLabel();
+        configContainer = new keeptoo.KGradientPanel();
+        backToCPUButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("MiniPC SO");
-        setPreferredSize(new java.awt.Dimension(1360, 730));
 
-        kGradientPanel1.setkEndColor(new java.awt.Color(108, 194, 189));
-        kGradientPanel1.setkGradientFocus(2000);
-        kGradientPanel1.setkStartColor(new java.awt.Color(255, 193, 167));
+        rSPanelsSliderContainer.setPreferredSize(new java.awt.Dimension(1360, 730));
 
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        miniCPUContainer.setkEndColor(new java.awt.Color(108, 194, 189));
+        miniCPUContainer.setkGradientFocus(2000);
+        miniCPUContainer.setkStartColor(new java.awt.Color(255, 193, 167));
+        miniCPUContainer.setPreferredSize(new java.awt.Dimension(1360, 730));
+
+        processesTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Color", "ID", "Llegada", "Estado", "PC", "AC", "AX", "BX", "CX", "DX", "Inicio pila"
             }
-        ));
-        jTable3.setFocusable(false);
-        jTable3.setGridColor(new java.awt.Color(255, 255, 255));
-        jTable3.setRowHeight(17);
-        jTable3.setRowSelectionAllowed(false);
-        jTable3.setSelectionBackground(new java.awt.Color(255, 255, 255));
-        jScrollPane3.setViewportView(jTable3);
-        jTable3.getTableHeader().setFont(new Font("Bodoni MT", Font.BOLD, 15));
-        ((DefaultTableCellRenderer)jTable3.getTableHeader().getDefaultRenderer())
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        processesTable.setFocusable(false);
+        processesTable.setGridColor(new java.awt.Color(255, 255, 255));
+        processesTable.setRowHeight(17);
+        processesTable.setRowSelectionAllowed(false);
+        processesTable.setSelectionBackground(new java.awt.Color(255, 255, 255));
+        processesScrollPane.setViewportView(processesTable);
+        processesTable.getTableHeader().setFont(new Font("Bodoni MT", Font.BOLD, 14));
+        ((DefaultTableCellRenderer)processesTable.getTableHeader().getDefaultRenderer())
         .setHorizontalAlignment(JLabel.CENTER);
 
-        DefaultTableCellRenderer centerRenderer5 = new DefaultTableCellRenderer();
-        centerRenderer5.setHorizontalAlignment(JLabel.CENTER);
+        DefaultTableCellRenderer processesTableCenterRenderer = new DefaultTableCellRenderer();
+        processesTableCenterRenderer.setHorizontalAlignment(JLabel.CENTER);
 
-        //jTable1.getColumnModel().getColumn(0).setCellRenderer(centerRenderer);
-        //jTable1.getColumnModel().getColumn(1).setCellRenderer(centerRenderer);
+        for(int i = 0; i < processesTable.getColumnCount(); i++){
+            processesTable.getColumnModel().getColumn(i).setCellRenderer(processesTableCenterRenderer);
+        }
 
-        jPanel1.setBackground(new java.awt.Color(100, 176, 170));
-        jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jPanel1.setPreferredSize(new java.awt.Dimension(100, 60));
+        processesTable.getColumnModel().getColumn(0).setPreferredWidth(1);
+        processesTable.getColumnModel().getColumn(1).setPreferredWidth(5);
+        processesTable.getColumnModel().getColumn(3).setPreferredWidth(50);
+        processesTable.getColumnModel().getColumn(3).setPreferredWidth(150);
+        processesTable.getColumnModel().getColumn(4).setPreferredWidth(50);
+        processesTable.getColumnModel().getColumn(5).setPreferredWidth(50);
+        processesTable.getColumnModel().getColumn(6).setPreferredWidth(50);
+        processesTable.getColumnModel().getColumn(7).setPreferredWidth(50);
+        processesTable.getColumnModel().getColumn(8).setPreferredWidth(50);
+        processesTable.getColumnModel().getColumn(9).setPreferredWidth(50);
+        processesTable.getColumnModel().getColumn(10).setPreferredWidth(100);
+
+        headerContainer.setBackground(new java.awt.Color(100, 176, 170));
+        headerContainer.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        headerContainer.setPreferredSize(new java.awt.Dimension(100, 60));
 
         openFilesButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         openFilesButton.setForeground(new java.awt.Color(255, 255, 255));
@@ -123,132 +155,132 @@ public class MiniPC extends javax.swing.JFrame {
         openFilesButton.setFocusable(false);
         openFilesButton.setName("openFilesButton"); // NOI18N
 
-        openFilesButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        openFilesButton1.setForeground(new java.awt.Color(255, 255, 255));
-        openFilesButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/start.png"))); // NOI18N
-        openFilesButton1.setText("Iniciar ejecución");
-        openFilesButton1.setActionCommand("openFiles");
-        openFilesButton1.setBorderPainted(false);
-        openFilesButton1.setContentAreaFilled(false);
-        openFilesButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        openFilesButton1.setFocusPainted(false);
-        openFilesButton1.setFocusable(false);
-        openFilesButton1.setName("openFilesButton"); // NOI18N
+        startButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        startButton.setForeground(new java.awt.Color(255, 255, 255));
+        startButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/start.png"))); // NOI18N
+        startButton.setText("Iniciar ejecución");
+        startButton.setActionCommand("openFiles");
+        startButton.setBorderPainted(false);
+        startButton.setContentAreaFilled(false);
+        startButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        startButton.setFocusPainted(false);
+        startButton.setFocusable(false);
+        startButton.setName("openFilesButton"); // NOI18N
 
-        openFilesButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        openFilesButton2.setForeground(new java.awt.Color(255, 255, 255));
-        openFilesButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/settings.png"))); // NOI18N
-        openFilesButton2.setText("Configuraciones");
-        openFilesButton2.setActionCommand("openFiles");
-        openFilesButton2.setBorderPainted(false);
-        openFilesButton2.setContentAreaFilled(false);
-        openFilesButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        openFilesButton2.setFocusPainted(false);
-        openFilesButton2.setFocusable(false);
-        openFilesButton2.setName("openFilesButton"); // NOI18N
+        configButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        configButton.setForeground(new java.awt.Color(255, 255, 255));
+        configButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/settings.png"))); // NOI18N
+        configButton.setText("Configuraciones");
+        configButton.setActionCommand("openFiles");
+        configButton.setBorderPainted(false);
+        configButton.setContentAreaFilled(false);
+        configButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        configButton.setFocusPainted(false);
+        configButton.setFocusable(false);
+        configButton.setName("openFilesButton"); // NOI18N
 
-        jLabel4.setBackground(new java.awt.Color(176, 195, 191));
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/time.png"))); // NOI18N
-        jLabel4.setText("Tiempo de la CPU:");
+        cpuTimeTitle.setBackground(new java.awt.Color(176, 195, 191));
+        cpuTimeTitle.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        cpuTimeTitle.setForeground(new java.awt.Color(255, 255, 255));
+        cpuTimeTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/time.png"))); // NOI18N
+        cpuTimeTitle.setText("Tiempo de la CPU:");
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("0");
+        cpuTimeValue.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        cpuTimeValue.setForeground(new java.awt.Color(255, 255, 255));
+        cpuTimeValue.setText("0");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout headerContainerLayout = new javax.swing.GroupLayout(headerContainer);
+        headerContainer.setLayout(headerContainerLayout);
+        headerContainerLayout.setHorizontalGroup(
+            headerContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(headerContainerLayout.createSequentialGroup()
                 .addComponent(openFilesButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(openFilesButton1)
+                .addComponent(startButton)
                 .addGap(186, 186, 186)
-                .addComponent(jLabel4)
+                .addComponent(cpuTimeTitle)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cpuTimeValue, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(openFilesButton2))
+                .addComponent(configButton))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+        headerContainerLayout.setVerticalGroup(
+            headerContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(headerContainerLayout.createSequentialGroup()
+                .addGroup(headerContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(openFilesButton)
-                    .addComponent(openFilesButton1)
-                    .addComponent(openFilesButton2)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(startButton)
+                    .addComponent(configButton)
+                    .addComponent(cpuTimeTitle)
+                    .addComponent(cpuTimeValue, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jPanel3.setBackground(new java.awt.Color(173, 56, 82));
-        jPanel3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        memoryTagContainer.setBackground(new java.awt.Color(173, 56, 82));
+        memoryTagContainer.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabel1.setFont(new java.awt.Font("Bodoni MT", 1, 17)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Memoria");
+        memoryTag.setFont(new java.awt.Font("Bodoni MT", 1, 17)); // NOI18N
+        memoryTag.setForeground(new java.awt.Color(255, 255, 255));
+        memoryTag.setText("Memoria");
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout memoryTagContainerLayout = new javax.swing.GroupLayout(memoryTagContainer);
+        memoryTagContainer.setLayout(memoryTagContainerLayout);
+        memoryTagContainerLayout.setHorizontalGroup(
+            memoryTagContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(memoryTagContainerLayout.createSequentialGroup()
                 .addGap(118, 118, 118)
-                .addComponent(jLabel1)
+                .addComponent(memoryTag)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        memoryTagContainerLayout.setVerticalGroup(
+            memoryTagContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(memoryTag, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jPanel4.setBackground(new java.awt.Color(90, 129, 158));
-        jPanel4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        processesTagContainer.setBackground(new java.awt.Color(90, 129, 158));
+        processesTagContainer.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabel2.setFont(new java.awt.Font("Bodoni MT", 1, 17)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Procesos");
+        processesTag.setFont(new java.awt.Font("Bodoni MT", 1, 17)); // NOI18N
+        processesTag.setForeground(new java.awt.Color(255, 255, 255));
+        processesTag.setText("Procesos");
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+        javax.swing.GroupLayout processesTagContainerLayout = new javax.swing.GroupLayout(processesTagContainer);
+        processesTagContainer.setLayout(processesTagContainerLayout);
+        processesTagContainerLayout.setHorizontalGroup(
+            processesTagContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, processesTagContainerLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
+                .addComponent(processesTag)
                 .addGap(458, 458, 458))
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        processesTagContainerLayout.setVerticalGroup(
+            processesTagContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(processesTag, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jPanel6.setBackground(new java.awt.Color(173, 56, 82));
-        jPanel6.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        executionTagContainer.setBackground(new java.awt.Color(173, 56, 82));
+        executionTagContainer.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabel3.setFont(new java.awt.Font("Bodoni MT", 1, 17)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Ejecución");
+        executionTag.setFont(new java.awt.Font("Bodoni MT", 1, 17)); // NOI18N
+        executionTag.setForeground(new java.awt.Color(255, 255, 255));
+        executionTag.setText("Ejecución");
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+        javax.swing.GroupLayout executionTagContainerLayout = new javax.swing.GroupLayout(executionTagContainer);
+        executionTagContainer.setLayout(executionTagContainerLayout);
+        executionTagContainerLayout.setHorizontalGroup(
+            executionTagContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, executionTagContainerLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3)
+                .addComponent(executionTag)
                 .addGap(458, 458, 458))
         );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        executionTagContainerLayout.setVerticalGroup(
+            executionTagContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(executionTag, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jTable1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        coresTable.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        coresTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Núcleo 1", null},
                 {"Núcleo 2", null},
@@ -268,25 +300,25 @@ public class MiniPC extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.setFocusable(false);
-        jTable1.setRowHeight(25);
-        jTable1.setRowSelectionAllowed(false);
-        jTable1.setSelectionBackground(new java.awt.Color(255, 255, 255));
-        jScrollPane1.setViewportView(jTable1);
-        jTable1.getTableHeader().setFont(new Font("Bodoni MT", Font.BOLD, 14));
-        ((DefaultTableCellRenderer)jTable1.getTableHeader().getDefaultRenderer())
+        coresTable.setFocusable(false);
+        coresTable.setRowHeight(25);
+        coresTable.setRowSelectionAllowed(false);
+        coresTable.setSelectionBackground(new java.awt.Color(255, 255, 255));
+        coresScrollPane.setViewportView(coresTable);
+        coresTable.getTableHeader().setFont(new Font("Bodoni MT", Font.BOLD, 14));
+        ((DefaultTableCellRenderer)coresTable.getTableHeader().getDefaultRenderer())
         .setHorizontalAlignment(JLabel.CENTER);
 
-        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
-        centerRenderer.setHorizontalAlignment(JLabel.CENTER);
+        DefaultTableCellRenderer coresTableCenterRenderer = new DefaultTableCellRenderer();
+        coresTableCenterRenderer.setHorizontalAlignment(JLabel.CENTER);
 
-        jTable1.getColumnModel().getColumn(0).setCellRenderer(centerRenderer);
-        jTable1.getColumnModel().getColumn(1).setCellRenderer(centerRenderer);
+        coresTable.getColumnModel().getColumn(0).setCellRenderer(coresTableCenterRenderer);
+        coresTable.getColumnModel().getColumn(1).setCellRenderer(coresTableCenterRenderer);
 
-        jTable1.getTableHeader().setPreferredSize(new Dimension(10, 25));
+        coresTable.getTableHeader().setPreferredSize(new Dimension(10, 25));
 
-        jTable2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        IRTable.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        IRTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"IR Núcleo 1", null},
                 {"IR Núcleo 2", null},
@@ -306,30 +338,30 @@ public class MiniPC extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTable2.setFocusable(false);
-        jTable2.setRowHeight(25);
-        jTable2.setRowSelectionAllowed(false);
-        jTable2.setSelectionBackground(new java.awt.Color(255, 255, 255));
-        jScrollPane2.setViewportView(jTable2);
-        jTable2.getTableHeader().setFont(new Font("Bodoni MT", Font.BOLD, 14));
-        ((DefaultTableCellRenderer)jTable2.getTableHeader().getDefaultRenderer())
+        IRTable.setFocusable(false);
+        IRTable.setRowHeight(25);
+        IRTable.setRowSelectionAllowed(false);
+        IRTable.setSelectionBackground(new java.awt.Color(255, 255, 255));
+        IRScrollPane.setViewportView(IRTable);
+        IRTable.getTableHeader().setFont(new Font("Bodoni MT", Font.BOLD, 14));
+        ((DefaultTableCellRenderer)IRTable.getTableHeader().getDefaultRenderer())
         .setHorizontalAlignment(JLabel.CENTER);
 
         DefaultTableCellRenderer centerRenderer1 = new DefaultTableCellRenderer();
         centerRenderer1.setHorizontalAlignment(JLabel.CENTER);
 
-        jTable2.getColumnModel().getColumn(0).setCellRenderer(centerRenderer1);
-        jTable2.getColumnModel().getColumn(1).setCellRenderer(centerRenderer1);
+        IRTable.getColumnModel().getColumn(0).setCellRenderer(centerRenderer1);
+        IRTable.getColumnModel().getColumn(1).setCellRenderer(centerRenderer1);
 
-        jTable2.getColumnModel().getColumn(0).setPreferredWidth(1);
-        jTable2.getColumnModel().getColumn(1).setPreferredWidth(130);
+        IRTable.getColumnModel().getColumn(0).setPreferredWidth(1);
+        IRTable.getColumnModel().getColumn(1).setPreferredWidth(130);
 
-        jTable2.getTableHeader().setPreferredSize(new Dimension(10, 25));
+        IRTable.getTableHeader().setPreferredSize(new Dimension(10, 25));
 
-        jScrollPane4.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
-        jScrollPane4.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+        executionScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+        executionScrollPane.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        jTable6.setModel(new javax.swing.table.DefaultTableModel(
+        executionTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
@@ -341,29 +373,117 @@ public class MiniPC extends javax.swing.JFrame {
             new String [] {
                 "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8", "Title 9", "Title 10", "Title 11", "Title 12", "Title 13", "Title 14", "Title 15", "Title 16", "Title 17", "Title 18", "Title 19", "Title 20", "Title 21", "Title 22", "Title 23", "Title 24", "Title 25", "Title 26", "Title 27", "Title 28", "Title 29", "Title 30", "Title 31", "Title 32", "Title 33", "Title 34", "Title 35"
             }
-        ));
-        jTable6.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
-        jTable6.setFocusable(false);
-        jTable6.setRowHeight(25);
-        jTable6.setRowSelectionAllowed(false);
-        jTable6.setSelectionBackground(new java.awt.Color(255, 255, 255));
-        jScrollPane4.setViewportView(jTable6);
-        jTable6.setTableHeader(null);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false
+            };
 
-        for(int i = 0; i < jTable6.getColumnCount(); i++){
-            jTable6.getColumnModel().getColumn(i).setPreferredWidth(50);
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        executionTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
+        executionTable.setFocusable(false);
+        executionTable.setRowHeight(25);
+        executionTable.setRowSelectionAllowed(false);
+        executionTable.setSelectionBackground(new java.awt.Color(255, 255, 255));
+        executionScrollPane.setViewportView(executionTable);
+        executionTable.setTableHeader(null);
+
+        for(int i = 0; i < executionTable.getColumnCount(); i++){
+            executionTable.getColumnModel().getColumn(i).setPreferredWidth(50);
         }
 
-        jTabbedPane1.setBackground(new java.awt.Color(255, 255, 255));
-        jTabbedPane1.setFocusable(false);
-        jTabbedPane1.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        memoriesTabbedPane.setBackground(new java.awt.Color(255, 255, 255));
+        memoriesTabbedPane.setFocusable(false);
+        memoriesTabbedPane.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
 
-        jPanel8.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel8.setAutoscrolls(true);
+        mainMemoryPanelContainer.setBackground(new java.awt.Color(255, 255, 255));
+        mainMemoryPanelContainer.setAutoscrolls(true);
 
-        jScrollPane5.setBackground(new java.awt.Color(255, 255, 255));
+        mainMemoryScrollPane.setBackground(new java.awt.Color(255, 255, 255));
 
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+        mainMemoryTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Posición", "Valor"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        mainMemoryTable.setFocusable(false);
+        mainMemoryTable.setGridColor(new java.awt.Color(255, 255, 255));
+        mainMemoryTable.setRowSelectionAllowed(false);
+        mainMemoryTable.setSelectionBackground(new java.awt.Color(255, 255, 255));
+        mainMemoryScrollPane.setViewportView(mainMemoryTable);
+        mainMemoryTable.getTableHeader().setFont(new Font("Bodoni MT", Font.PLAIN, 14));
+        ((DefaultTableCellRenderer)coresTable.getTableHeader().getDefaultRenderer())
+        .setHorizontalAlignment(JLabel.CENTER);
+
+        DefaultTableCellRenderer mainMemoryTableCenterRenderer = new DefaultTableCellRenderer();
+        mainMemoryTableCenterRenderer.setHorizontalAlignment(JLabel.CENTER);
+
+        mainMemoryTable.getColumnModel().getColumn(0).setCellRenderer(mainMemoryTableCenterRenderer);
+        mainMemoryTable.getColumnModel().getColumn(1).setCellRenderer(mainMemoryTableCenterRenderer);
+
+        javax.swing.GroupLayout mainMemoryPanelContainerLayout = new javax.swing.GroupLayout(mainMemoryPanelContainer);
+        mainMemoryPanelContainer.setLayout(mainMemoryPanelContainerLayout);
+        mainMemoryPanelContainerLayout.setHorizontalGroup(
+            mainMemoryPanelContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(mainMemoryScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 332, Short.MAX_VALUE)
+        );
+        mainMemoryPanelContainerLayout.setVerticalGroup(
+            mainMemoryPanelContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(mainMemoryScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 579, Short.MAX_VALUE)
+        );
+
+        memoriesTabbedPane.addTab("Principal", mainMemoryPanelContainer);
+
+        secondaryMemoryPanelContainer.setBackground(new java.awt.Color(255, 255, 255));
+        secondaryMemoryPanelContainer.setAutoscrolls(true);
+
+        secondaryMemoryTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -411,138 +531,60 @@ public class MiniPC extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTable4.setFocusable(false);
-        jTable4.setGridColor(new java.awt.Color(255, 255, 255));
-        jTable4.setRowSelectionAllowed(false);
-        jTable4.setSelectionBackground(new java.awt.Color(255, 255, 255));
-        jScrollPane5.setViewportView(jTable4);
-        jTable4.getTableHeader().setFont(new Font("Bodoni MT", Font.PLAIN, 14));
-        ((DefaultTableCellRenderer)jTable1.getTableHeader().getDefaultRenderer())
+        secondaryMemoryTable.setFocusable(false);
+        secondaryMemoryTable.setGridColor(new java.awt.Color(255, 255, 255));
+        secondaryMemoryTable.setRowSelectionAllowed(false);
+        secondaryMemoryTable.setSelectionBackground(new java.awt.Color(255, 255, 255));
+        secondaryMemoryScrollPane.setViewportView(secondaryMemoryTable);
+        secondaryMemoryTable.getTableHeader().setFont(new Font("Bodoni MT", Font.PLAIN, 14));
+        ((DefaultTableCellRenderer)coresTable.getTableHeader().getDefaultRenderer())
         .setHorizontalAlignment(JLabel.CENTER);
 
-        DefaultTableCellRenderer centerRenderer3 = new DefaultTableCellRenderer();
-        centerRenderer3.setHorizontalAlignment(JLabel.CENTER);
+        DefaultTableCellRenderer secondaryMemoryTableCenterRenderer = new DefaultTableCellRenderer();
+        secondaryMemoryTableCenterRenderer.setHorizontalAlignment(JLabel.CENTER);
 
-        jTable4.getColumnModel().getColumn(0).setCellRenderer(centerRenderer3);
-        jTable4.getColumnModel().getColumn(1).setCellRenderer(centerRenderer3);
+        secondaryMemoryTable.getColumnModel().getColumn(0).setCellRenderer(secondaryMemoryTableCenterRenderer);
+        secondaryMemoryTable.getColumnModel().getColumn(1).setCellRenderer(secondaryMemoryTableCenterRenderer);
 
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 332, Short.MAX_VALUE)
+        javax.swing.GroupLayout secondaryMemoryPanelContainerLayout = new javax.swing.GroupLayout(secondaryMemoryPanelContainer);
+        secondaryMemoryPanelContainer.setLayout(secondaryMemoryPanelContainerLayout);
+        secondaryMemoryPanelContainerLayout.setHorizontalGroup(
+            secondaryMemoryPanelContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(secondaryMemoryScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 332, Short.MAX_VALUE)
         );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 584, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("Principal", jPanel8);
-
-        jPanel9.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel9.setAutoscrolls(true);
-
-        jTable5.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
-            },
-            new String [] {
-                "Posición", "Valor"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jTable5.setFocusable(false);
-        jTable5.setGridColor(new java.awt.Color(255, 255, 255));
-        jTable5.setRowSelectionAllowed(false);
-        jTable5.setSelectionBackground(new java.awt.Color(255, 255, 255));
-        jScrollPane6.setViewportView(jTable5);
-        jTable5.getTableHeader().setFont(new Font("Bodoni MT", Font.PLAIN, 14));
-        ((DefaultTableCellRenderer)jTable1.getTableHeader().getDefaultRenderer())
-        .setHorizontalAlignment(JLabel.CENTER);
-
-        DefaultTableCellRenderer centerRenderer4 = new DefaultTableCellRenderer();
-        centerRenderer4.setHorizontalAlignment(JLabel.CENTER);
-
-        jTable5.getColumnModel().getColumn(0).setCellRenderer(centerRenderer4);
-        jTable5.getColumnModel().getColumn(1).setCellRenderer(centerRenderer4);
-
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 332, Short.MAX_VALUE)
-        );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 584, Short.MAX_VALUE)
+        secondaryMemoryPanelContainerLayout.setVerticalGroup(
+            secondaryMemoryPanelContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(secondaryMemoryScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 579, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("Secundaria", jPanel9);
+        memoriesTabbedPane.addTab("Secundaria", secondaryMemoryPanelContainer);
 
-        jPanel12.setBackground(new java.awt.Color(173, 56, 82));
-        jPanel12.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        statisticsTagContainer.setBackground(new java.awt.Color(173, 56, 82));
+        statisticsTagContainer.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabel7.setFont(new java.awt.Font("Bodoni MT", 1, 17)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Estadísticas");
+        statisticsTag.setFont(new java.awt.Font("Bodoni MT", 1, 17)); // NOI18N
+        statisticsTag.setForeground(new java.awt.Color(255, 255, 255));
+        statisticsTag.setText("Estadísticas");
 
-        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
-        jPanel12.setLayout(jPanel12Layout);
-        jPanel12Layout.setHorizontalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
+        javax.swing.GroupLayout statisticsTagContainerLayout = new javax.swing.GroupLayout(statisticsTagContainer);
+        statisticsTagContainer.setLayout(statisticsTagContainerLayout);
+        statisticsTagContainerLayout.setHorizontalGroup(
+            statisticsTagContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, statisticsTagContainerLayout.createSequentialGroup()
                 .addContainerGap(293, Short.MAX_VALUE)
-                .addComponent(jLabel7)
+                .addComponent(statisticsTag)
                 .addGap(271, 271, 271))
         );
-        jPanel12Layout.setVerticalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        statisticsTagContainerLayout.setVerticalGroup(
+            statisticsTagContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(statisticsTag, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jTable7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jTable7.setModel(new javax.swing.table.DefaultTableModel(
+        displayTable.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        displayTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {""},
+                {null},
                 {null},
                 {null},
                 {null},
@@ -555,120 +597,261 @@ public class MiniPC extends javax.swing.JFrame {
             new String [] {
                 "Title 1"
             }
-        ));
-        jTable7.setGridColor(new java.awt.Color(255, 255, 255));
-        jTable7.setRowHeight(18);
-        jTable7.setRowSelectionAllowed(false);
-        jTable7.setSelectionBackground(new java.awt.Color(255, 255, 255));
-        jScrollPane7.setViewportView(jTable7);
-        DefaultTableCellRenderer centerRenderer6 = new DefaultTableCellRenderer();
-        centerRenderer6.setHorizontalAlignment(JLabel.CENTER);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false
+            };
 
-        jTable7.getColumnModel().getColumn(0).setCellRenderer(centerRenderer6);
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        displayTable.setFocusable(false);
+        displayTable.setGridColor(new java.awt.Color(255, 255, 255));
+        displayTable.setRowHeight(19);
+        displayTable.setRowSelectionAllowed(false);
+        displayTable.setSelectionBackground(new java.awt.Color(255, 255, 255));
+        displayScrollPane.setViewportView(displayTable);
+        DefaultTableCellRenderer displayTableCenterRenderer = new DefaultTableCellRenderer();
+        displayTableCenterRenderer.setHorizontalAlignment(JLabel.CENTER);
 
-        jTable7.setTableHeader(null);
+        displayTable.getColumnModel().getColumn(0).setCellRenderer(displayTableCenterRenderer);
 
-        jPanel13.setBackground(new java.awt.Color(90, 129, 158));
-        jPanel13.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        displayTable.setTableHeader(null);
 
-        jLabel8.setFont(new java.awt.Font("Bodoni MT", 1, 17)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Pantalla");
+        statisticsTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "H. inicio", "H. fin", "T. inicio", "T. fin", "Tr", "Tr/Ts"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
 
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel13Layout.createSequentialGroup()
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        statisticsTable.setFocusable(false);
+        statisticsTable.setRowHeight(17);
+        statisticsTable.setRowSelectionAllowed(false);
+        statisticsTable.setSelectionBackground(new java.awt.Color(255, 255, 255));
+        statisticsScrollPane.setViewportView(statisticsTable);
+        statisticsTable.getTableHeader().setFont(new Font("Bodoni MT", Font.BOLD, 14));
+        ((DefaultTableCellRenderer)statisticsTable.getTableHeader().getDefaultRenderer())
+        .setHorizontalAlignment(JLabel.CENTER);
+
+        displayTagContainer.setBackground(new java.awt.Color(90, 129, 158));
+        displayTagContainer.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        displayTag.setFont(new java.awt.Font("Bodoni MT", 1, 17)); // NOI18N
+        displayTag.setForeground(new java.awt.Color(255, 255, 255));
+        displayTag.setText("Pantalla");
+
+        javax.swing.GroupLayout displayTagContainerLayout = new javax.swing.GroupLayout(displayTagContainer);
+        displayTagContainer.setLayout(displayTagContainerLayout);
+        displayTagContainerLayout.setHorizontalGroup(
+            displayTagContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(displayTagContainerLayout.createSequentialGroup()
                 .addGap(126, 126, 126)
-                .addComponent(jLabel8)
+                .addComponent(displayTag)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        displayTagContainerLayout.setVerticalGroup(
+            displayTagContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(displayTag, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
-        kGradientPanel1.setLayout(kGradientPanel1Layout);
-        kGradientPanel1Layout.setHorizontalGroup(
-            kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1360, Short.MAX_VALUE)
-            .addGroup(kGradientPanel1Layout.createSequentialGroup()
+        trAveragePanel.setBackground(new java.awt.Color(95, 125, 154));
+
+        trAverageTitle.setFont(new java.awt.Font("Bodoni MT", 1, 15)); // NOI18N
+        trAverageTitle.setForeground(new java.awt.Color(255, 255, 255));
+        trAverageTitle.setText("Promedio Tr");
+
+        trAverageValue.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        trAverageValue.setForeground(new java.awt.Color(255, 255, 255));
+        trAverageValue.setText("0.0");
+
+        javax.swing.GroupLayout trAveragePanelLayout = new javax.swing.GroupLayout(trAveragePanel);
+        trAveragePanel.setLayout(trAveragePanelLayout);
+        trAveragePanelLayout.setHorizontalGroup(
+            trAveragePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(trAveragePanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTabbedPane1))
+                .addGroup(trAveragePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(trAverageTitle)
+                    .addComponent(trAverageValue))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        trAveragePanelLayout.setVerticalGroup(
+            trAveragePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(trAveragePanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(trAverageTitle)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(trAverageValue)
+                .addContainerGap(32, Short.MAX_VALUE))
+        );
+
+        trTsAveragePanel.setBackground(new java.awt.Color(72, 44, 64));
+
+        trTsAverageTitle.setFont(new java.awt.Font("Bodoni MT", 1, 15)); // NOI18N
+        trTsAverageTitle.setForeground(new java.awt.Color(255, 255, 255));
+        trTsAverageTitle.setText("Promedio Tr / Ts");
+
+        trTsAverageValue.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        trTsAverageValue.setForeground(new java.awt.Color(255, 255, 255));
+        trTsAverageValue.setText("0.0");
+
+        javax.swing.GroupLayout trTsAveragePanelLayout = new javax.swing.GroupLayout(trTsAveragePanel);
+        trTsAveragePanel.setLayout(trTsAveragePanelLayout);
+        trTsAveragePanelLayout.setHorizontalGroup(
+            trTsAveragePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(trTsAveragePanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(trTsAveragePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(trTsAverageTitle)
+                    .addComponent(trTsAverageValue))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        trTsAveragePanelLayout.setVerticalGroup(
+            trTsAveragePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(trTsAveragePanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(trTsAverageTitle)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(trTsAverageValue)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout miniCPUContainerLayout = new javax.swing.GroupLayout(miniCPUContainer);
+        miniCPUContainer.setLayout(miniCPUContainerLayout);
+        miniCPUContainerLayout.setHorizontalGroup(
+            miniCPUContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(headerContainer, javax.swing.GroupLayout.DEFAULT_SIZE, 1360, Short.MAX_VALUE)
+            .addGroup(miniCPUContainerLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(miniCPUContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(memoryTagContainer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(memoriesTabbedPane))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane3)
-                    .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(miniCPUContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(processesTagContainer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(executionTagContainer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(processesScrollPane)
+                    .addGroup(miniCPUContainerLayout.createSequentialGroup()
+                        .addComponent(coresScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 571, Short.MAX_VALUE)
+                        .addComponent(executionScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 571, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel1Layout.createSequentialGroup()
-                        .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(IRScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, miniCPUContainerLayout.createSequentialGroup()
+                        .addGroup(miniCPUContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(displayScrollPane, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(displayTagContainer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(miniCPUContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(statisticsTagContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(miniCPUContainerLayout.createSequentialGroup()
+                                .addComponent(statisticsScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 508, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(miniCPUContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(trAveragePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(trTsAveragePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
                 .addContainerGap())
         );
-        kGradientPanel1Layout.setVerticalGroup(
-            kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        miniCPUContainerLayout.setVerticalGroup(
+            miniCPUContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(miniCPUContainerLayout.createSequentialGroup()
+                .addGroup(miniCPUContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(miniCPUContainerLayout.createSequentialGroup()
+                        .addComponent(headerContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(8, 8, 8)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(memoryTagContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(processesTagContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(miniCPUContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(miniCPUContainerLayout.createSequentialGroup()
+                        .addComponent(processesScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(executionTagContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addGap(18, 18, 18)
-                        .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(miniCPUContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(coresScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(IRScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(executionScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jTabbedPane1))
-                .addContainerGap())
+                        .addGroup(miniCPUContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(statisticsTagContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(displayTagContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(miniCPUContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(statisticsScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addGroup(miniCPUContainerLayout.createSequentialGroup()
+                                .addGroup(miniCPUContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(miniCPUContainerLayout.createSequentialGroup()
+                                        .addComponent(trAveragePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(trTsAveragePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(displayScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE))))
+                    .addComponent(memoriesTabbedPane))
+                .addGap(22, 22, 22))
         );
 
-        rSPanelsSlider1.add(kGradientPanel1, "card2");
+        rSPanelsSliderContainer.add(miniCPUContainer, "card2");
 
-        kGradientPanel2.setkEndColor(new java.awt.Color(108, 194, 189));
-        kGradientPanel2.setkGradientFocus(2000);
-        kGradientPanel2.setkStartColor(new java.awt.Color(255, 193, 167));
+        configContainer.setkEndColor(new java.awt.Color(108, 194, 189));
+        configContainer.setkGradientFocus(2000);
+        configContainer.setkStartColor(new java.awt.Color(255, 193, 167));
 
-        javax.swing.GroupLayout kGradientPanel2Layout = new javax.swing.GroupLayout(kGradientPanel2);
-        kGradientPanel2.setLayout(kGradientPanel2Layout);
-        kGradientPanel2Layout.setHorizontalGroup(
-            kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1360, Short.MAX_VALUE)
+        backToCPUButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        backToCPUButton.setForeground(new java.awt.Color(255, 255, 255));
+        backToCPUButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/back.png"))); // NOI18N
+        backToCPUButton.setToolTipText("");
+        backToCPUButton.setActionCommand("openFiles");
+        backToCPUButton.setBorderPainted(false);
+        backToCPUButton.setContentAreaFilled(false);
+        backToCPUButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        backToCPUButton.setFocusPainted(false);
+        backToCPUButton.setFocusable(false);
+        backToCPUButton.setName("openFilesButton"); // NOI18N
+        backToCPUButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backToCPUButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout configContainerLayout = new javax.swing.GroupLayout(configContainer);
+        configContainer.setLayout(configContainerLayout);
+        configContainerLayout.setHorizontalGroup(
+            configContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(configContainerLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(backToCPUButton, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(1279, Short.MAX_VALUE))
         );
-        kGradientPanel2Layout.setVerticalGroup(
-            kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 730, Short.MAX_VALUE)
+        configContainerLayout.setVerticalGroup(
+            configContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(configContainerLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(backToCPUButton)
+                .addContainerGap(663, Short.MAX_VALUE))
         );
 
-        rSPanelsSlider1.add(kGradientPanel2, "card2");
+        rSPanelsSliderContainer.add(configContainer, "card2");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -676,62 +859,70 @@ public class MiniPC extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(rSPanelsSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(rSPanelsSliderContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(rSPanelsSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(rSPanelsSliderContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void backToCPUButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backToCPUButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_backToCPUButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JScrollPane jScrollPane7;
-    private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTable jTable3;
-    private javax.swing.JTable jTable4;
-    private javax.swing.JTable jTable5;
-    private javax.swing.JTable jTable6;
-    private javax.swing.JTable jTable7;
-    private keeptoo.KGradientPanel kGradientPanel1;
-    private keeptoo.KGradientPanel kGradientPanel2;
-    private javax.swing.JButton openFilesButton;
-    private javax.swing.JButton openFilesButton1;
-    private javax.swing.JButton openFilesButton2;
-    private rojerusan.RSPanelsSlider rSPanelsSlider1;
+    private javax.swing.JScrollPane IRScrollPane;
+    public javax.swing.JTable IRTable;
+    public javax.swing.JButton backToCPUButton;
+    public javax.swing.JButton configButton;
+    private keeptoo.KGradientPanel configContainer;
+    private javax.swing.JScrollPane coresScrollPane;
+    public javax.swing.JTable coresTable;
+    private javax.swing.JLabel cpuTimeTitle;
+    public javax.swing.JLabel cpuTimeValue;
+    private javax.swing.JScrollPane displayScrollPane;
+    public javax.swing.JTable displayTable;
+    private javax.swing.JLabel displayTag;
+    private javax.swing.JPanel displayTagContainer;
+    private javax.swing.JScrollPane executionScrollPane;
+    public javax.swing.JTable executionTable;
+    private javax.swing.JLabel executionTag;
+    private javax.swing.JPanel executionTagContainer;
+    private javax.swing.JPanel headerContainer;
+    private javax.swing.JPanel mainMemoryPanelContainer;
+    private javax.swing.JScrollPane mainMemoryScrollPane;
+    public javax.swing.JTable mainMemoryTable;
+    private javax.swing.JTabbedPane memoriesTabbedPane;
+    private javax.swing.JLabel memoryTag;
+    private javax.swing.JPanel memoryTagContainer;
+    private keeptoo.KGradientPanel miniCPUContainer;
+    public javax.swing.JButton openFilesButton;
+    private javax.swing.JScrollPane processesScrollPane;
+    public javax.swing.JTable processesTable;
+    private javax.swing.JLabel processesTag;
+    private javax.swing.JPanel processesTagContainer;
+    private rojerusan.RSPanelsSlider rSPanelsSliderContainer;
+    private javax.swing.JPanel secondaryMemoryPanelContainer;
+    private javax.swing.JScrollPane secondaryMemoryScrollPane;
+    public javax.swing.JTable secondaryMemoryTable;
+    public javax.swing.JButton startButton;
+    private javax.swing.JScrollPane statisticsScrollPane;
+    public javax.swing.JTable statisticsTable;
+    private javax.swing.JLabel statisticsTag;
+    private javax.swing.JPanel statisticsTagContainer;
+    private javax.swing.JPanel trAveragePanel;
+    private javax.swing.JLabel trAverageTitle;
+    public javax.swing.JLabel trAverageValue;
+    private javax.swing.JPanel trTsAveragePanel;
+    private javax.swing.JLabel trTsAverageTitle;
+    public javax.swing.JLabel trTsAverageValue;
     // End of variables declaration//GEN-END:variables
 }

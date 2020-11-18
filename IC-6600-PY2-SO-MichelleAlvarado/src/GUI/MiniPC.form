@@ -4,9 +4,6 @@
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
     <Property name="title" type="java.lang.String" value="MiniPC SO"/>
-    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[1360, 730]"/>
-    </Property>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -29,7 +26,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-              <Component id="rSPanelsSlider1" min="-2" max="-2" attributes="0"/>
+              <Component id="rSPanelsSliderContainer" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -38,18 +35,23 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-              <Component id="rSPanelsSlider1" min="-2" max="-2" attributes="0"/>
+              <Component id="rSPanelsSliderContainer" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="rojerusan.RSPanelsSlider" name="rSPanelsSlider1">
+    <Container class="rojerusan.RSPanelsSlider" name="rSPanelsSliderContainer">
+      <Properties>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[1360, 730]"/>
+        </Property>
+      </Properties>
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
       <SubComponents>
-        <Container class="keeptoo.KGradientPanel" name="kGradientPanel1">
+        <Container class="keeptoo.KGradientPanel" name="miniCPUContainer">
           <Properties>
             <Property name="kEndColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="bd" green="c2" red="6c" type="rgb"/>
@@ -57,6 +59,9 @@
             <Property name="kGradientFocus" type="int" value="2000"/>
             <Property name="kStartColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="a7" green="c1" red="ff" type="rgb"/>
+            </Property>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[1360, 730]"/>
             </Property>
           </Properties>
           <Constraints>
@@ -68,32 +73,42 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jPanel1" alignment="0" pref="1360" max="32767" attributes="0"/>
+                  <Component id="headerContainer" alignment="0" pref="1360" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jPanel3" max="32767" attributes="0"/>
-                          <Component id="jTabbedPane1" max="32767" attributes="0"/>
+                          <Component id="memoryTagContainer" max="32767" attributes="0"/>
+                          <Component id="memoriesTabbedPane" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jPanel4" max="32767" attributes="0"/>
-                          <Component id="jPanel6" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jScrollPane3" max="32767" attributes="0"/>
+                          <Component id="processesTagContainer" max="32767" attributes="0"/>
+                          <Component id="executionTagContainer" alignment="0" max="32767" attributes="0"/>
+                          <Component id="processesScrollPane" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <Component id="jScrollPane1" min="-2" pref="138" max="-2" attributes="0"/>
+                              <Component id="coresScrollPane" min="-2" pref="138" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jScrollPane4" pref="571" max="32767" attributes="0"/>
+                              <Component id="executionScrollPane" pref="571" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jScrollPane2" min="-2" pref="269" max="-2" attributes="0"/>
+                              <Component id="IRScrollPane" min="-2" pref="269" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jScrollPane7" alignment="0" pref="0" max="32767" attributes="0"/>
-                                  <Component id="jPanel13" max="32767" attributes="0"/>
+                                  <Component id="displayScrollPane" alignment="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="displayTagContainer" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jPanel12" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="statisticsTagContainer" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Component id="statisticsScrollPane" min="-2" pref="508" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="trAveragePanel" max="32767" attributes="0"/>
+                                          <Component id="trTsAveragePanel" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -105,60 +120,75 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                              <Component id="headerContainer" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                              <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
+                              <Component id="memoryTagContainer" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
+                          <Component id="processesTagContainer" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="jScrollPane3" min="-2" pref="153" max="-2" attributes="0"/>
+                              <Component id="processesScrollPane" min="-2" pref="153" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jPanel6" min="-2" max="-2" attributes="0"/>
+                              <Component id="executionTagContainer" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jScrollPane4" pref="0" max="32767" attributes="0"/>
+                                  <Component id="coresScrollPane" min="-2" pref="152" max="-2" attributes="0"/>
+                                  <Component id="IRScrollPane" min="-2" pref="153" max="-2" attributes="0"/>
+                                  <Component id="executionScrollPane" min="-2" pref="176" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="statisticsTagContainer" min="-2" max="-2" attributes="0"/>
+                                  <Component id="displayTagContainer" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="statisticsScrollPane" pref="0" max="32767" attributes="0"/>
                                   <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jScrollPane1" min="-2" pref="152" max="-2" attributes="0"/>
-                                          <Component id="jScrollPane2" min="-2" pref="153" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="trAveragePanel" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="trTsAveragePanel" max="32767" attributes="0"/>
+                                          </Group>
+                                          <Component id="displayScrollPane" min="-2" pref="199" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jPanel12" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jPanel13" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jScrollPane7" min="-2" pref="164" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jTabbedPane1" max="32767" attributes="0"/>
+                          <Component id="memoriesTabbedPane" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane3">
+            <Container class="javax.swing.JScrollPane" name="processesScrollPane">
               <AuxValues>
                 <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
               </AuxValues>
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="jTable3">
+                <Component class="javax.swing.JTable" name="processesTable">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="4" rowCount="7">
-                        <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 4" type="java.lang.Object"/>
+                      <Table columnCount="11" rowCount="7">
+                        <Column editable="false" title="Color" type="java.lang.Object"/>
+                        <Column editable="false" title="ID" type="java.lang.Object"/>
+                        <Column editable="false" title="Llegada" type="java.lang.Object"/>
+                        <Column editable="false" title="Estado" type="java.lang.Object"/>
+                        <Column editable="false" title="PC" type="java.lang.Object"/>
+                        <Column editable="false" title="AC" type="java.lang.Object"/>
+                        <Column editable="false" title="AX" type="java.lang.Object"/>
+                        <Column editable="false" title="BX" type="java.lang.Object"/>
+                        <Column editable="false" title="CX" type="java.lang.Object"/>
+                        <Column editable="false" title="DX" type="java.lang.Object"/>
+                        <Column editable="false" title="Inicio pila" type="java.lang.Object"/>
                       </Table>
                     </Property>
                     <Property name="focusable" type="boolean" value="false"/>
@@ -172,12 +202,13 @@
                     </Property>
                   </Properties>
                   <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jTable3.getTableHeader().setFont(new Font(&quot;Bodoni MT&quot;, Font.BOLD, 15));&#xa;((DefaultTableCellRenderer)jTable3.getTableHeader().getDefaultRenderer())&#xa;    .setHorizontalAlignment(JLabel.CENTER);&#xa;&#xa;DefaultTableCellRenderer centerRenderer5 = new DefaultTableCellRenderer();&#xa;        centerRenderer5.setHorizontalAlignment(JLabel.CENTER);&#xa;&#xa;//jTable1.getColumnModel().getColumn(0).setCellRenderer(centerRenderer);&#xa;//jTable1.getColumnModel().getColumn(1).setCellRenderer(centerRenderer);"/>
+                    <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="processesTable.getTableHeader().setFont(new Font(&quot;Bodoni MT&quot;, Font.BOLD, 14));&#xa;((DefaultTableCellRenderer)processesTable.getTableHeader().getDefaultRenderer())&#xa;    .setHorizontalAlignment(JLabel.CENTER);&#xa;&#xa;DefaultTableCellRenderer processesTableCenterRenderer = new DefaultTableCellRenderer();&#xa;        processesTableCenterRenderer.setHorizontalAlignment(JLabel.CENTER);&#xa;&#xa;for(int i = 0; i &lt; processesTable.getColumnCount(); i++){&#xa;processesTable.getColumnModel().getColumn(i).setCellRenderer(processesTableCenterRenderer);&#xa;}&#xa;&#xa;processesTable.getColumnModel().getColumn(0).setPreferredWidth(1);&#xa;processesTable.getColumnModel().getColumn(1).setPreferredWidth(5);&#xa;processesTable.getColumnModel().getColumn(3).setPreferredWidth(50);&#xa;processesTable.getColumnModel().getColumn(3).setPreferredWidth(150);&#xa;processesTable.getColumnModel().getColumn(4).setPreferredWidth(50);&#xa;processesTable.getColumnModel().getColumn(5).setPreferredWidth(50);&#xa;processesTable.getColumnModel().getColumn(6).setPreferredWidth(50);&#xa;processesTable.getColumnModel().getColumn(7).setPreferredWidth(50);&#xa;processesTable.getColumnModel().getColumn(8).setPreferredWidth(50);&#xa;processesTable.getColumnModel().getColumn(9).setPreferredWidth(50);&#xa;processesTable.getColumnModel().getColumn(10).setPreferredWidth(100);"/>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                   </AuxValues>
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="jPanel1">
+            <Container class="javax.swing.JPanel" name="headerContainer">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="aa" green="b0" red="64" type="rgb"/>
@@ -198,13 +229,13 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="openFilesButton" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="openFilesButton1" min="-2" max="-2" attributes="0"/>
+                          <Component id="startButton" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="186" max="-2" attributes="0"/>
-                          <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                          <Component id="cpuTimeTitle" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel9" min="-2" pref="208" max="-2" attributes="0"/>
+                          <Component id="cpuTimeValue" min="-2" pref="208" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="openFilesButton2" min="-2" max="-2" attributes="0"/>
+                          <Component id="configButton" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -213,10 +244,10 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="openFilesButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="openFilesButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="openFilesButton2" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel9" alignment="3" max="32767" attributes="0"/>
+                              <Component id="startButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="configButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="cpuTimeTitle" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="cpuTimeValue" alignment="3" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
@@ -250,7 +281,7 @@
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JButton" name="openFilesButton1">
+                <Component class="javax.swing.JButton" name="startButton">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="1"/>
@@ -276,7 +307,7 @@
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JButton" name="openFilesButton2">
+                <Component class="javax.swing.JButton" name="configButton">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="1"/>
@@ -302,7 +333,7 @@
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel4">
+                <Component class="javax.swing.JLabel" name="cpuTimeTitle">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="bf" green="c3" red="b0" type="rgb"/>
@@ -319,7 +350,7 @@
                     <Property name="text" type="java.lang.String" value="Tiempo de la CPU:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel9">
+                <Component class="javax.swing.JLabel" name="cpuTimeValue">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="1"/>
@@ -329,10 +360,13 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                  </AuxValues>
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="jPanel3">
+            <Container class="javax.swing.JPanel" name="memoryTagContainer">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="52" green="38" red="ad" type="rgb"/>
@@ -349,19 +383,19 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="118" max="-2" attributes="0"/>
-                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                          <Component id="memoryTag" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel1" alignment="1" max="32767" attributes="0"/>
+                      <Component id="memoryTag" alignment="1" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="jLabel1">
+                <Component class="javax.swing.JLabel" name="memoryTag">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Bodoni MT" size="17" style="1"/>
@@ -374,7 +408,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="jPanel4">
+            <Container class="javax.swing.JPanel" name="processesTagContainer">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="9e" green="81" red="5a" type="rgb"/>
@@ -391,19 +425,19 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                          <Component id="processesTag" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="458" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel2" alignment="1" max="32767" attributes="0"/>
+                      <Component id="processesTag" alignment="1" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="jLabel2">
+                <Component class="javax.swing.JLabel" name="processesTag">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Bodoni MT" size="17" style="1"/>
@@ -416,7 +450,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="jPanel6">
+            <Container class="javax.swing.JPanel" name="executionTagContainer">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="52" green="38" red="ad" type="rgb"/>
@@ -433,19 +467,19 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                          <Component id="executionTag" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="458" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel3" alignment="1" max="32767" attributes="0"/>
+                      <Component id="executionTag" alignment="1" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="jLabel3">
+                <Component class="javax.swing.JLabel" name="executionTag">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Bodoni MT" size="17" style="1"/>
@@ -458,14 +492,14 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+            <Container class="javax.swing.JScrollPane" name="coresScrollPane">
               <AuxValues>
                 <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
               </AuxValues>
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="jTable1">
+                <Component class="javax.swing.JTable" name="coresTable">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="0"/>
@@ -490,19 +524,20 @@
                     </Property>
                   </Properties>
                   <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jTable1.getTableHeader().setFont(new Font(&quot;Bodoni MT&quot;, Font.BOLD, 14));&#xa;((DefaultTableCellRenderer)jTable1.getTableHeader().getDefaultRenderer())&#xa;    .setHorizontalAlignment(JLabel.CENTER);&#xa;&#xa;DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();&#xa;        centerRenderer.setHorizontalAlignment(JLabel.CENTER);&#xa;&#xa;jTable1.getColumnModel().getColumn(0).setCellRenderer(centerRenderer);&#xa;jTable1.getColumnModel().getColumn(1).setCellRenderer(centerRenderer);&#xa;&#xa;jTable1.getTableHeader().setPreferredSize(new Dimension(10, 25));"/>
+                    <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="coresTable.getTableHeader().setFont(new Font(&quot;Bodoni MT&quot;, Font.BOLD, 14));&#xa;((DefaultTableCellRenderer)coresTable.getTableHeader().getDefaultRenderer())&#xa;    .setHorizontalAlignment(JLabel.CENTER);&#xa;&#xa;DefaultTableCellRenderer coresTableCenterRenderer = new DefaultTableCellRenderer();&#xa;        coresTableCenterRenderer.setHorizontalAlignment(JLabel.CENTER);&#xa;&#xa;coresTable.getColumnModel().getColumn(0).setCellRenderer(coresTableCenterRenderer);&#xa;coresTable.getColumnModel().getColumn(1).setCellRenderer(coresTableCenterRenderer);&#xa;&#xa;coresTable.getTableHeader().setPreferredSize(new Dimension(10, 25));"/>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                   </AuxValues>
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+            <Container class="javax.swing.JScrollPane" name="IRScrollPane">
               <AuxValues>
                 <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
               </AuxValues>
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="jTable2">
+                <Component class="javax.swing.JTable" name="IRTable">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="12" style="0"/>
@@ -527,12 +562,13 @@
                     </Property>
                   </Properties>
                   <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jTable2.getTableHeader().setFont(new Font(&quot;Bodoni MT&quot;, Font.BOLD, 14));&#xa;((DefaultTableCellRenderer)jTable2.getTableHeader().getDefaultRenderer())&#xa;    .setHorizontalAlignment(JLabel.CENTER);&#xa;&#xa;DefaultTableCellRenderer centerRenderer1 = new DefaultTableCellRenderer();&#xa;        centerRenderer1.setHorizontalAlignment(JLabel.CENTER);&#xa;&#xa;jTable2.getColumnModel().getColumn(0).setCellRenderer(centerRenderer1);&#xa;jTable2.getColumnModel().getColumn(1).setCellRenderer(centerRenderer1);&#xa;&#xa;jTable2.getColumnModel().getColumn(0).setPreferredWidth(1);&#xa;jTable2.getColumnModel().getColumn(1).setPreferredWidth(130);&#xa;&#xa;jTable2.getTableHeader().setPreferredSize(new Dimension(10, 25));"/>
+                    <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="IRTable.getTableHeader().setFont(new Font(&quot;Bodoni MT&quot;, Font.BOLD, 14));&#xa;((DefaultTableCellRenderer)IRTable.getTableHeader().getDefaultRenderer())&#xa;    .setHorizontalAlignment(JLabel.CENTER);&#xa;&#xa;DefaultTableCellRenderer centerRenderer1 = new DefaultTableCellRenderer();&#xa;        centerRenderer1.setHorizontalAlignment(JLabel.CENTER);&#xa;&#xa;IRTable.getColumnModel().getColumn(0).setCellRenderer(centerRenderer1);&#xa;IRTable.getColumnModel().getColumn(1).setCellRenderer(centerRenderer1);&#xa;&#xa;IRTable.getColumnModel().getColumn(0).setPreferredWidth(1);&#xa;IRTable.getColumnModel().getColumn(1).setPreferredWidth(130);&#xa;&#xa;IRTable.getTableHeader().setPreferredSize(new Dimension(10, 25));"/>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                   </AuxValues>
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane4">
+            <Container class="javax.swing.JScrollPane" name="executionScrollPane">
               <Properties>
                 <Property name="horizontalScrollBarPolicy" type="int" value="32"/>
                 <Property name="verticalScrollBarPolicy" type="int" value="21"/>
@@ -540,45 +576,45 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="jTable6">
+                <Component class="javax.swing.JTable" name="executionTable">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="35" rowCount="6">
-                        <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 4" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 5" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 6" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 7" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 8" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 9" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 10" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 11" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 12" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 13" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 14" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 15" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 16" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 17" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 18" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 19" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 20" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 21" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 22" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 23" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 24" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 25" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 26" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 27" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 28" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 29" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 30" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 31" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 32" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 33" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 34" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 35" type="java.lang.Object"/>
+                        <Column editable="false" title="Title 1" type="java.lang.Object"/>
+                        <Column editable="false" title="Title 2" type="java.lang.Object"/>
+                        <Column editable="false" title="Title 3" type="java.lang.Object"/>
+                        <Column editable="false" title="Title 4" type="java.lang.Object"/>
+                        <Column editable="false" title="Title 5" type="java.lang.Object"/>
+                        <Column editable="false" title="Title 6" type="java.lang.Object"/>
+                        <Column editable="false" title="Title 7" type="java.lang.Object"/>
+                        <Column editable="false" title="Title 8" type="java.lang.Object"/>
+                        <Column editable="false" title="Title 9" type="java.lang.Object"/>
+                        <Column editable="false" title="Title 10" type="java.lang.Object"/>
+                        <Column editable="false" title="Title 11" type="java.lang.Object"/>
+                        <Column editable="false" title="Title 12" type="java.lang.Object"/>
+                        <Column editable="false" title="Title 13" type="java.lang.Object"/>
+                        <Column editable="false" title="Title 14" type="java.lang.Object"/>
+                        <Column editable="false" title="Title 15" type="java.lang.Object"/>
+                        <Column editable="false" title="Title 16" type="java.lang.Object"/>
+                        <Column editable="false" title="Title 17" type="java.lang.Object"/>
+                        <Column editable="false" title="Title 18" type="java.lang.Object"/>
+                        <Column editable="false" title="Title 19" type="java.lang.Object"/>
+                        <Column editable="false" title="Title 20" type="java.lang.Object"/>
+                        <Column editable="false" title="Title 21" type="java.lang.Object"/>
+                        <Column editable="false" title="Title 22" type="java.lang.Object"/>
+                        <Column editable="false" title="Title 23" type="java.lang.Object"/>
+                        <Column editable="false" title="Title 24" type="java.lang.Object"/>
+                        <Column editable="false" title="Title 25" type="java.lang.Object"/>
+                        <Column editable="false" title="Title 26" type="java.lang.Object"/>
+                        <Column editable="false" title="Title 27" type="java.lang.Object"/>
+                        <Column editable="false" title="Title 28" type="java.lang.Object"/>
+                        <Column editable="false" title="Title 29" type="java.lang.Object"/>
+                        <Column editable="false" title="Title 30" type="java.lang.Object"/>
+                        <Column editable="false" title="Title 31" type="java.lang.Object"/>
+                        <Column editable="false" title="Title 32" type="java.lang.Object"/>
+                        <Column editable="false" title="Title 33" type="java.lang.Object"/>
+                        <Column editable="false" title="Title 34" type="java.lang.Object"/>
+                        <Column editable="false" title="Title 35" type="java.lang.Object"/>
                       </Table>
                     </Property>
                     <Property name="autoResizeMode" type="int" value="0"/>
@@ -590,12 +626,13 @@
                     </Property>
                   </Properties>
                   <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jTable6.setTableHeader(null);&#xa;&#xa;for(int i = 0; i &lt; jTable6.getColumnCount(); i++){&#xa;jTable6.getColumnModel().getColumn(i).setPreferredWidth(50);&#xa;}"/>
+                    <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="executionTable.setTableHeader(null);&#xa;&#xa;for(int i = 0; i &lt; executionTable.getColumnCount(); i++){&#xa;executionTable.getColumnModel().getColumn(i).setPreferredWidth(50);&#xa;}"/>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                   </AuxValues>
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JTabbedPane" name="jTabbedPane1">
+            <Container class="javax.swing.JTabbedPane" name="memoriesTabbedPane">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -608,7 +645,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
               <SubComponents>
-                <Container class="javax.swing.JPanel" name="jPanel8">
+                <Container class="javax.swing.JPanel" name="mainMemoryPanelContainer">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -626,17 +663,17 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane5" alignment="0" pref="332" max="32767" attributes="0"/>
+                          <Component id="mainMemoryScrollPane" alignment="0" pref="332" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane5" alignment="0" pref="584" max="32767" attributes="0"/>
+                          <Component id="mainMemoryScrollPane" alignment="0" pref="579" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Container class="javax.swing.JScrollPane" name="jScrollPane5">
+                    <Container class="javax.swing.JScrollPane" name="mainMemoryScrollPane">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -648,10 +685,10 @@
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>
-                        <Component class="javax.swing.JTable" name="jTable4">
+                        <Component class="javax.swing.JTable" name="mainMemoryTable">
                           <Properties>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                              <Table columnCount="2" rowCount="33">
+                              <Table columnCount="2" rowCount="34">
                                 <Column editable="false" title="Posici&#xf3;n" type="java.lang.Object"/>
                                 <Column editable="false" title="Valor" type="java.lang.Object"/>
                               </Table>
@@ -666,14 +703,15 @@
                             </Property>
                           </Properties>
                           <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jTable4.getTableHeader().setFont(new Font(&quot;Bodoni MT&quot;, Font.PLAIN, 14));&#xa;((DefaultTableCellRenderer)jTable1.getTableHeader().getDefaultRenderer())&#xa;    .setHorizontalAlignment(JLabel.CENTER);&#xa;&#xa;DefaultTableCellRenderer centerRenderer3 = new DefaultTableCellRenderer();&#xa;        centerRenderer3.setHorizontalAlignment(JLabel.CENTER);&#xa;&#xa;jTable4.getColumnModel().getColumn(0).setCellRenderer(centerRenderer3);&#xa;jTable4.getColumnModel().getColumn(1).setCellRenderer(centerRenderer3);"/>
+                            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="mainMemoryTable.getTableHeader().setFont(new Font(&quot;Bodoni MT&quot;, Font.PLAIN, 14));&#xa;((DefaultTableCellRenderer)coresTable.getTableHeader().getDefaultRenderer())&#xa;    .setHorizontalAlignment(JLabel.CENTER);&#xa;&#xa;DefaultTableCellRenderer mainMemoryTableCenterRenderer = new DefaultTableCellRenderer();&#xa;        mainMemoryTableCenterRenderer.setHorizontalAlignment(JLabel.CENTER);&#xa;&#xa;mainMemoryTable.getColumnModel().getColumn(0).setCellRenderer(mainMemoryTableCenterRenderer);&#xa;mainMemoryTable.getColumnModel().getColumn(1).setCellRenderer(mainMemoryTableCenterRenderer);"/>
+                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                           </AuxValues>
                         </Component>
                       </SubComponents>
                     </Container>
                   </SubComponents>
                 </Container>
-                <Container class="javax.swing.JPanel" name="jPanel9">
+                <Container class="javax.swing.JPanel" name="secondaryMemoryPanelContainer">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -691,24 +729,24 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane6" alignment="0" pref="332" max="32767" attributes="0"/>
+                          <Component id="secondaryMemoryScrollPane" alignment="0" pref="332" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane6" alignment="0" pref="584" max="32767" attributes="0"/>
+                          <Component id="secondaryMemoryScrollPane" alignment="0" pref="579" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Container class="javax.swing.JScrollPane" name="jScrollPane6">
+                    <Container class="javax.swing.JScrollPane" name="secondaryMemoryScrollPane">
                       <AuxValues>
                         <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
                       </AuxValues>
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>
-                        <Component class="javax.swing.JTable" name="jTable5">
+                        <Component class="javax.swing.JTable" name="secondaryMemoryTable">
                           <Properties>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="33">
@@ -726,7 +764,8 @@
                             </Property>
                           </Properties>
                           <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jTable5.getTableHeader().setFont(new Font(&quot;Bodoni MT&quot;, Font.PLAIN, 14));&#xa;((DefaultTableCellRenderer)jTable1.getTableHeader().getDefaultRenderer())&#xa;    .setHorizontalAlignment(JLabel.CENTER);&#xa;&#xa;DefaultTableCellRenderer centerRenderer4 = new DefaultTableCellRenderer();&#xa;        centerRenderer4.setHorizontalAlignment(JLabel.CENTER);&#xa;&#xa;jTable5.getColumnModel().getColumn(0).setCellRenderer(centerRenderer4);&#xa;jTable5.getColumnModel().getColumn(1).setCellRenderer(centerRenderer4);"/>
+                            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="secondaryMemoryTable.getTableHeader().setFont(new Font(&quot;Bodoni MT&quot;, Font.PLAIN, 14));&#xa;((DefaultTableCellRenderer)coresTable.getTableHeader().getDefaultRenderer())&#xa;    .setHorizontalAlignment(JLabel.CENTER);&#xa;&#xa;DefaultTableCellRenderer secondaryMemoryTableCenterRenderer = new DefaultTableCellRenderer();&#xa;        secondaryMemoryTableCenterRenderer.setHorizontalAlignment(JLabel.CENTER);&#xa;&#xa;secondaryMemoryTable.getColumnModel().getColumn(0).setCellRenderer(secondaryMemoryTableCenterRenderer);&#xa;secondaryMemoryTable.getColumnModel().getColumn(1).setCellRenderer(secondaryMemoryTableCenterRenderer);"/>
+                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                           </AuxValues>
                         </Component>
                       </SubComponents>
@@ -735,7 +774,7 @@
                 </Container>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="jPanel12">
+            <Container class="javax.swing.JPanel" name="statisticsTagContainer">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="52" green="38" red="ad" type="rgb"/>
@@ -752,19 +791,19 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace pref="293" max="32767" attributes="0"/>
-                          <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                          <Component id="statisticsTag" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="271" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel7" alignment="1" max="32767" attributes="0"/>
+                      <Component id="statisticsTag" alignment="1" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="jLabel7">
+                <Component class="javax.swing.JLabel" name="statisticsTag">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Bodoni MT" size="17" style="1"/>
@@ -777,22 +816,23 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane7">
+            <Container class="javax.swing.JScrollPane" name="displayScrollPane">
               <AuxValues>
                 <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
               </AuxValues>
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="jTable7">
+                <Component class="javax.swing.JTable" name="displayTable">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="0"/>
                     </Property>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="1" rowCount="9">
-                        <Column editable="true" title="Title 1" type="java.lang.Object">
+                      <Table columnCount="1" rowCount="10">
+                        <Column editable="false" title="Title 1" type="java.lang.Object">
                           <Data value=""/>
+                          <Data value="null"/>
                           <Data value="null"/>
                           <Data value="null"/>
                           <Data value="null"/>
@@ -804,22 +844,58 @@
                         </Column>
                       </Table>
                     </Property>
+                    <Property name="focusable" type="boolean" value="false"/>
                     <Property name="gridColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="rowHeight" type="int" value="18"/>
+                    <Property name="rowHeight" type="int" value="19"/>
                     <Property name="rowSelectionAllowed" type="boolean" value="false"/>
                     <Property name="selectionBackground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                   </Properties>
                   <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="DefaultTableCellRenderer centerRenderer6 = new DefaultTableCellRenderer();&#xa;        centerRenderer6.setHorizontalAlignment(JLabel.CENTER);&#xa;&#xa;jTable7.getColumnModel().getColumn(0).setCellRenderer(centerRenderer6);&#xa;&#xa;jTable7.setTableHeader(null);"/>
+                    <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="DefaultTableCellRenderer displayTableCenterRenderer = new DefaultTableCellRenderer();&#xa;        displayTableCenterRenderer.setHorizontalAlignment(JLabel.CENTER);&#xa;&#xa;displayTable.getColumnModel().getColumn(0).setCellRenderer(displayTableCenterRenderer);&#xa;&#xa;displayTable.setTableHeader(null);"/>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                   </AuxValues>
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="jPanel13">
+            <Container class="javax.swing.JScrollPane" name="statisticsScrollPane">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="statisticsTable">
+                  <Properties>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="7" rowCount="10">
+                        <Column editable="false" title="ID" type="java.lang.Object"/>
+                        <Column editable="false" title="H. inicio" type="java.lang.Object"/>
+                        <Column editable="false" title="H. fin" type="java.lang.Object"/>
+                        <Column editable="false" title="T. inicio" type="java.lang.Object"/>
+                        <Column editable="false" title="T. fin" type="java.lang.Object"/>
+                        <Column editable="false" title="Tr" type="java.lang.Object"/>
+                        <Column editable="false" title="Tr/Ts" type="java.lang.Object"/>
+                      </Table>
+                    </Property>
+                    <Property name="focusable" type="boolean" value="false"/>
+                    <Property name="rowHeight" type="int" value="17"/>
+                    <Property name="rowSelectionAllowed" type="boolean" value="false"/>
+                    <Property name="selectionBackground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="statisticsTable.getTableHeader().setFont(new Font(&quot;Bodoni MT&quot;, Font.BOLD, 14));&#xa;((DefaultTableCellRenderer)statisticsTable.getTableHeader().getDefaultRenderer())&#xa;    .setHorizontalAlignment(JLabel.CENTER);"/>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                  </AuxValues>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="displayTagContainer">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="9e" green="81" red="5a" type="rgb"/>
@@ -836,19 +912,19 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="126" max="-2" attributes="0"/>
-                          <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                          <Component id="displayTag" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel8" alignment="1" max="32767" attributes="0"/>
+                      <Component id="displayTag" alignment="1" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="jLabel8">
+                <Component class="javax.swing.JLabel" name="displayTag">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Bodoni MT" size="17" style="1"/>
@@ -861,9 +937,129 @@
                 </Component>
               </SubComponents>
             </Container>
+            <Container class="javax.swing.JPanel" name="trAveragePanel">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="9a" green="7d" red="5f" type="rgb"/>
+                </Property>
+              </Properties>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="trAverageTitle" min="-2" max="-2" attributes="0"/>
+                              <Component id="trAverageValue" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="trAverageTitle" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="trAverageValue" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="32" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="trAverageTitle">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Bodoni MT" size="15" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Promedio Tr"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="trAverageValue">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="16" style="0"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="0.0"/>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                  </AuxValues>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="trTsAveragePanel">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="40" green="2c" red="48" type="rgb"/>
+                </Property>
+              </Properties>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="trTsAverageTitle" min="-2" max="-2" attributes="0"/>
+                              <Component id="trTsAverageValue" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="trTsAverageTitle" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="trTsAverageValue" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="trTsAverageTitle">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Bodoni MT" size="15" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Promedio Tr / Ts"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="trTsAverageValue">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="16" style="0"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="0.0"/>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                  </AuxValues>
+                </Component>
+              </SubComponents>
+            </Container>
           </SubComponents>
         </Container>
-        <Container class="keeptoo.KGradientPanel" name="kGradientPanel2">
+        <Container class="keeptoo.KGradientPanel" name="configContainer">
           <Properties>
             <Property name="kEndColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="bd" green="c2" red="6c" type="rgb"/>
@@ -882,15 +1078,54 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="1360" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="backToCPUButton" min="-2" pref="69" max="-2" attributes="0"/>
+                      <EmptySpace pref="1279" max="32767" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="730" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="backToCPUButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="663" max="32767" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
           </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JButton" name="backToCPUButton">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="14" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/GUI/Images/back.png"/>
+                </Property>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
+                <Property name="actionCommand" type="java.lang.String" value="openFiles"/>
+                <Property name="borderPainted" type="boolean" value="false"/>
+                <Property name="contentAreaFilled" type="boolean" value="false"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Cursor de Mano"/>
+                </Property>
+                <Property name="focusPainted" type="boolean" value="false"/>
+                <Property name="focusable" type="boolean" value="false"/>
+                <Property name="name" type="java.lang.String" value="openFilesButton" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backToCPUButtonActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+          </SubComponents>
         </Container>
       </SubComponents>
     </Container>
