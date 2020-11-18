@@ -177,10 +177,11 @@
                 <Component class="javax.swing.JTable" name="processesTable">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="11" rowCount="7">
+                      <Table columnCount="12" rowCount="7">
                         <Column editable="false" title="Color" type="java.lang.Object"/>
                         <Column editable="false" title="ID" type="java.lang.Object"/>
                         <Column editable="false" title="Llegada" type="java.lang.Object"/>
+                        <Column editable="false" title="Nombre" type="java.lang.Object"/>
                         <Column editable="false" title="Estado" type="java.lang.Object"/>
                         <Column editable="false" title="PC" type="java.lang.Object"/>
                         <Column editable="false" title="AC" type="java.lang.Object"/>
@@ -202,7 +203,7 @@
                     </Property>
                   </Properties>
                   <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="processesTable.getTableHeader().setFont(new Font(&quot;Bodoni MT&quot;, Font.BOLD, 14));&#xa;((DefaultTableCellRenderer)processesTable.getTableHeader().getDefaultRenderer())&#xa;    .setHorizontalAlignment(JLabel.CENTER);&#xa;&#xa;DefaultTableCellRenderer processesTableCenterRenderer = new DefaultTableCellRenderer();&#xa;        processesTableCenterRenderer.setHorizontalAlignment(JLabel.CENTER);&#xa;&#xa;for(int i = 0; i &lt; processesTable.getColumnCount(); i++){&#xa;processesTable.getColumnModel().getColumn(i).setCellRenderer(processesTableCenterRenderer);&#xa;}&#xa;&#xa;processesTable.getColumnModel().getColumn(0).setPreferredWidth(1);&#xa;processesTable.getColumnModel().getColumn(1).setPreferredWidth(5);&#xa;processesTable.getColumnModel().getColumn(3).setPreferredWidth(50);&#xa;processesTable.getColumnModel().getColumn(3).setPreferredWidth(150);&#xa;processesTable.getColumnModel().getColumn(4).setPreferredWidth(50);&#xa;processesTable.getColumnModel().getColumn(5).setPreferredWidth(50);&#xa;processesTable.getColumnModel().getColumn(6).setPreferredWidth(50);&#xa;processesTable.getColumnModel().getColumn(7).setPreferredWidth(50);&#xa;processesTable.getColumnModel().getColumn(8).setPreferredWidth(50);&#xa;processesTable.getColumnModel().getColumn(9).setPreferredWidth(50);&#xa;processesTable.getColumnModel().getColumn(10).setPreferredWidth(100);"/>
+                    <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="processesTable.getTableHeader().setFont(new Font(&quot;Bodoni MT&quot;, Font.BOLD, 14));&#xa;((DefaultTableCellRenderer)processesTable.getTableHeader().getDefaultRenderer())&#xa;    .setHorizontalAlignment(JLabel.CENTER);&#xa;&#xa;DefaultTableCellRenderer processesTableCenterRenderer = new DefaultTableCellRenderer();&#xa;        processesTableCenterRenderer.setHorizontalAlignment(JLabel.CENTER);&#xa;&#xa;for(int i = 0; i &lt; processesTable.getColumnCount(); i++){&#xa;processesTable.getColumnModel().getColumn(i).setCellRenderer(processesTableCenterRenderer);&#xa;}&#xa;&#xa;processesTable.getColumnModel().getColumn(0).setPreferredWidth(5);&#xa;processesTable.getColumnModel().getColumn(1).setPreferredWidth(2);&#xa;processesTable.getColumnModel().getColumn(2).setPreferredWidth(40);&#xa;processesTable.getColumnModel().getColumn(3).setPreferredWidth(90);&#xa;processesTable.getColumnModel().getColumn(4).setPreferredWidth(120);&#xa;processesTable.getColumnModel().getColumn(5).setPreferredWidth(60);&#xa;processesTable.getColumnModel().getColumn(6).setPreferredWidth(50);&#xa;processesTable.getColumnModel().getColumn(7).setPreferredWidth(50);&#xa;processesTable.getColumnModel().getColumn(8).setPreferredWidth(50);&#xa;processesTable.getColumnModel().getColumn(9).setPreferredWidth(50);&#xa;processesTable.getColumnModel().getColumn(10).setPreferredWidth(50);&#xa;processesTable.getColumnModel().getColumn(11).setPreferredWidth(90);"/>
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                   </AuxValues>
                 </Component>
