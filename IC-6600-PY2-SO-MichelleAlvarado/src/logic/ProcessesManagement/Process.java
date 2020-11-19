@@ -25,23 +25,46 @@ public class Process {
     private int PCBSize;
     private String initTime;
     private String finalTime;
+    private String arrivalTime;
     private Color processColor;
     private double trValue;
     private double trTsValue;
 
-    public Process(ArrayList<String> instructions, String initTime, String name, PCB pcb, int processIDIndex) {
+    public Process(ArrayList<String> instructions, String name, int processIDIndex) {
         this.processInstructions = instructions;
         this.allocatedMemory = new ArrayList<Register>();
         this.processBurstTime = this.processInstructions.size();
         this.processIsCorrect = false;
         this.processName = name;
         this.PCBSize = 19;
-        this.initTime = initTime;
+        this.initTime = initTime = "";
         this.finalTime = "";
-        this.PCB = pcb;
+        this.arrivalTime = "";
         this.processID = "P-" + processIDIndex;
-        this.PCB.getProcessID().setRegisterValue(this.processID);
         this.trValue = -1;
         this.trTsValue = -1;
     }
+
+    public void setPCB(PCB PCB) {
+        this.PCB = PCB;
+    }
+
+    public void setProcessIsCorrect() {
+        this.processIsCorrect = !processIsCorrect;
+    }
+
+    public ArrayList<String> getProcessInstructions() {
+        return processInstructions;
+    }
+
+    public void setProcessName(String processName) {
+        this.processName = processName;
+    }
+
+    public String getProcessID() {
+        return processID;
+    }
+    
+    
+    
 }

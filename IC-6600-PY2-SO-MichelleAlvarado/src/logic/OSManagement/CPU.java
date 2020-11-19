@@ -17,14 +17,12 @@ import logic.memory.MemoryManager;
 public class CPU {
     private static CPU myCPU = null;
     private int CPUCurrentTime;
-    private int processesToExecute;
     private MemoryManager memoryManager;
     private ProcessManager processesManager;
     private ArrayList<Core> CPUCores;
     
     public CPU(){
         this.CPUCurrentTime = 0;
-        this.processesToExecute = 0;
         this.memoryManager = new MemoryManager();
         this.processesManager = new ProcessManager();
     }

@@ -88,7 +88,7 @@ public class MainController implements ActionListener {
         int result = fileChooser.showOpenDialog(view);
         switch (result) {
             case JFileChooser.APPROVE_OPTION:
-                CPU.getInstance().getProcessesManager().setProcessesFiles(fileChooser.getSelectedFiles());
+                CPU.getInstance().getProcessesManager().loadProcesses(fileChooser.getSelectedFiles());
             case JFileChooser.CANCEL_OPTION:
                 break;
             default:
