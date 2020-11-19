@@ -1,0 +1,6 @@
+oneRegisterOpRegex:(LOAD|STORE|ADD|SUB|PUSH|POP)(\s)(AX|BX|CX|DX)
+twoRegistersOpRegex:(MOV|CMP)(\s)(AX|BX|CX|DX),(\s)?(AX|BX|CX|DX)
+singleOpRegex:(INC|DEC)
+paramRegex:PARAM(\s)(-)?(\d)+(,(\s)?(-)?(\d)+){0,2}
+interruptionRegex:INT(\s)(20H|09H)
+jumpRegex:(JUM|JUMP|JE|JNE)(\s)(-)?([1-9])+([0-9])*

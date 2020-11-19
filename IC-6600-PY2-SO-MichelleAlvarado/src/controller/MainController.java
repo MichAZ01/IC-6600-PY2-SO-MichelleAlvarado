@@ -6,12 +6,20 @@
 package controller;
 
 import GUI.MiniPC;
+import GUI.MyCustomFilter;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFileChooser;
+import logic.OSManagement.CPU;
 
 /**
  *
  * @author Michelle Alvarado
  */
-public class MainController {
+public class MainController implements ActionListener {
     private MiniPC view;
     
     public MainController(){
@@ -43,7 +51,7 @@ public class MainController {
         //</editor-fold>
         this.view = new MiniPC();
         MiniPC viewP = this.view;
-
+        this.view.openFilesButton.addActionListener(this);
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -52,5 +60,39 @@ public class MainController {
                 viewP.setLocationRelativeTo(null);
             }
         });
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        switch (e.getActionCommand()) {
+            case "openFiles":
+        {
+            try {
+                this.OpenFolderButtonActionPerformed(view);
+            } catch (IOException ex) {
+                Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+                break;
+            default:
+                break;
+        }
+    }
+    
+    public void OpenFolderButtonActionPerformed(javax.swing.JFrame view) throws IOException {
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setMultiSelectionEnabled(true);
+        fileChooser.setAcceptAllFileFilterUsed(false);
+        MyCustomFilter assemblerFilter = (MyCustomFilter) new MyCustomFilter(".asm", "Archivo de código Ensamblador");
+        fileChooser.addChoosableFileFilter(assemblerFilter);
+        int result = fileChooser.showOpenDialog(view);
+        switch (result) {
+            case JFileChooser.APPROVE_OPTION:
+                CPU.getInstance().getProcessesManager().setProcessesFiles(fileChooser.getSelectedFiles());
+            case JFileChooser.CANCEL_OPTION:
+                break;
+            default:
+                break;
+        }
     }
 }
