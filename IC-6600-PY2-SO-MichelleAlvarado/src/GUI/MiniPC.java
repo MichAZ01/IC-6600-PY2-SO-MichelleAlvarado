@@ -34,6 +34,11 @@ public class MiniPC extends javax.swing.JFrame {
 
         rSPanelsSliderContainer = new rojerusan.RSPanelsSlider();
         miniCPUContainer = new keeptoo.KGradientPanel();
+        arrivalTimePanel = new javax.swing.JPanel();
+        arrivalTimeTag = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        firstProcessesTable = new javax.swing.JTable();
+        jButton2 = new javax.swing.JButton();
         processesScrollPane = new javax.swing.JScrollPane();
         processesTable = new javax.swing.JTable();
         headerContainer = new javax.swing.JPanel();
@@ -80,13 +85,109 @@ public class MiniPC extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("MiniPC SO");
+        setPreferredSize(new java.awt.Dimension(1360, 710));
 
-        rSPanelsSliderContainer.setPreferredSize(new java.awt.Dimension(1360, 730));
+        rSPanelsSliderContainer.setBackground(new java.awt.Color(0, 255, 255));
+        rSPanelsSliderContainer.setPreferredSize(new java.awt.Dimension(1360, 690));
 
         miniCPUContainer.setkEndColor(new java.awt.Color(108, 194, 189));
         miniCPUContainer.setkGradientFocus(2000);
         miniCPUContainer.setkStartColor(new java.awt.Color(255, 193, 167));
-        miniCPUContainer.setPreferredSize(new java.awt.Dimension(1360, 730));
+        miniCPUContainer.setPreferredSize(new java.awt.Dimension(1360, 700));
+        miniCPUContainer.setLayout(null);
+
+        arrivalTimePanel.setBackground(new java.awt.Color(100, 176, 170));
+        arrivalTimePanel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        arrivalTimeTag.setFont(new java.awt.Font("Bodoni MT", 1, 22)); // NOI18N
+        arrivalTimeTag.setForeground(new java.awt.Color(255, 255, 255));
+        arrivalTimeTag.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        arrivalTimeTag.setText("Indique el tiempo de llegada de los procesos");
+
+        firstProcessesTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Nombre archivo", "ID Proceso", "Tiempo de llegada"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.Object.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        firstProcessesTable.setFocusable(false);
+        firstProcessesTable.setRowHeight(20);
+        firstProcessesTable.setRowSelectionAllowed(false);
+        firstProcessesTable.setSelectionBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane1.setViewportView(firstProcessesTable);
+        firstProcessesTable.getTableHeader().setFont(new Font("Bodoni MT", Font.BOLD, 14));
+        ((DefaultTableCellRenderer)IRTable.getTableHeader().getDefaultRenderer())
+        .setHorizontalAlignment(JLabel.CENTER);
+
+        DefaultTableCellRenderer firstProcessesTableCenterRenderer = new DefaultTableCellRenderer();
+        firstProcessesTableCenterRenderer.setHorizontalAlignment(JLabel.CENTER);
+
+        firstProcessesTable.getColumnModel().getColumn(0).setCellRenderer(firstProcessesTableCenterRenderer);
+        firstProcessesTable.getColumnModel().getColumn(1).setCellRenderer(firstProcessesTableCenterRenderer);
+        firstProcessesTable.getColumnModel().getColumn(2).setCellRenderer(firstProcessesTableCenterRenderer);
+
+        jButton2.setBackground(new java.awt.Color(100, 176, 170));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/button_aceptar.png"))); // NOI18N
+        jButton2.setBorderPainted(false);
+        jButton2.setContentAreaFilled(false);
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2.setFocusPainted(false);
+        jButton2.setFocusable(false);
+
+        javax.swing.GroupLayout arrivalTimePanelLayout = new javax.swing.GroupLayout(arrivalTimePanel);
+        arrivalTimePanel.setLayout(arrivalTimePanelLayout);
+        arrivalTimePanelLayout.setHorizontalGroup(
+            arrivalTimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(arrivalTimePanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(arrivalTimeTag, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(72, 72, 72))
+            .addGroup(arrivalTimePanelLayout.createSequentialGroup()
+                .addGroup(arrivalTimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(arrivalTimePanelLayout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(arrivalTimePanelLayout.createSequentialGroup()
+                        .addGap(151, 151, 151)
+                        .addComponent(jButton2)))
+                .addContainerGap(36, Short.MAX_VALUE))
+        );
+        arrivalTimePanelLayout.setVerticalGroup(
+            arrivalTimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(arrivalTimePanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(arrivalTimeTag)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        miniCPUContainer.add(arrivalTimePanel);
+        arrivalTimePanel.setBounds(510, 130, 530, 290);
+        arrivalTimePanel.setVisible(false);
 
         processesTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -110,6 +211,7 @@ public class MiniPC extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        processesTable.setEnabled(false);
         processesTable.setFocusable(false);
         processesTable.setGridColor(new java.awt.Color(255, 255, 255));
         processesTable.setRowHeight(17);
@@ -140,6 +242,9 @@ public class MiniPC extends javax.swing.JFrame {
         processesTable.getColumnModel().getColumn(10).setPreferredWidth(50);
         processesTable.getColumnModel().getColumn(11).setPreferredWidth(50);
         processesTable.getColumnModel().getColumn(12).setPreferredWidth(70);
+
+        miniCPUContainer.add(processesScrollPane);
+        processesScrollPane.setBounds(356, 102, 992, 153);
 
         headerContainer.setBackground(new java.awt.Color(100, 176, 170));
         headerContainer.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -218,6 +323,9 @@ public class MiniPC extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
+        miniCPUContainer.add(headerContainer);
+        headerContainer.setBounds(0, 0, 1360, 60);
+
         memoryTagContainer.setBackground(new java.awt.Color(173, 56, 82));
         memoryTagContainer.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -238,6 +346,9 @@ public class MiniPC extends javax.swing.JFrame {
             memoryTagContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(memoryTag, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
+        miniCPUContainer.add(memoryTagContainer);
+        memoryTagContainer.setBounds(12, 68, 337, 27);
 
         processesTagContainer.setBackground(new java.awt.Color(90, 129, 158));
         processesTagContainer.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -260,6 +371,9 @@ public class MiniPC extends javax.swing.JFrame {
             .addComponent(processesTag, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        miniCPUContainer.add(processesTagContainer);
+        processesTagContainer.setBounds(356, 68, 992, 27);
+
         executionTagContainer.setBackground(new java.awt.Color(173, 56, 82));
         executionTagContainer.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -280,6 +394,9 @@ public class MiniPC extends javax.swing.JFrame {
             executionTagContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(executionTag, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
+        miniCPUContainer.add(executionTagContainer);
+        executionTagContainer.setBounds(356, 262, 992, 27);
 
         coresTable.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         coresTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -318,6 +435,9 @@ public class MiniPC extends javax.swing.JFrame {
         coresTable.getColumnModel().getColumn(1).setCellRenderer(coresTableCenterRenderer);
 
         coresTable.getTableHeader().setPreferredSize(new Dimension(10, 25));
+
+        miniCPUContainer.add(coresScrollPane);
+        coresScrollPane.setBounds(356, 296, 138, 152);
 
         IRTable.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         IRTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -360,8 +480,12 @@ public class MiniPC extends javax.swing.JFrame {
 
         IRTable.getTableHeader().setPreferredSize(new Dimension(10, 25));
 
+        miniCPUContainer.add(IRScrollPane);
+        IRScrollPane.setBounds(1079, 296, 269, 153);
+
         executionScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
         executionScrollPane.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+        executionScrollPane.setEnabled(false);
 
         executionTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -385,6 +509,7 @@ public class MiniPC extends javax.swing.JFrame {
             }
         });
         executionTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
+        executionTable.setEnabled(false);
         executionTable.setFocusable(false);
         executionTable.setRowHeight(25);
         executionTable.setRowSelectionAllowed(false);
@@ -395,6 +520,9 @@ public class MiniPC extends javax.swing.JFrame {
         for(int i = 0; i < executionTable.getColumnCount(); i++){
             executionTable.getColumnModel().getColumn(i).setPreferredWidth(50);
         }
+
+        miniCPUContainer.add(executionScrollPane);
+        executionScrollPane.setBounds(501, 296, 571, 176);
 
         memoriesTabbedPane.setBackground(new java.awt.Color(255, 255, 255));
         memoriesTabbedPane.setFocusable(false);
@@ -477,7 +605,7 @@ public class MiniPC extends javax.swing.JFrame {
         );
         mainMemoryPanelContainerLayout.setVerticalGroup(
             mainMemoryPanelContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mainMemoryScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 579, Short.MAX_VALUE)
+            .addComponent(mainMemoryScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)
         );
 
         memoriesTabbedPane.addTab("Principal", mainMemoryPanelContainer);
@@ -556,10 +684,13 @@ public class MiniPC extends javax.swing.JFrame {
         );
         secondaryMemoryPanelContainerLayout.setVerticalGroup(
             secondaryMemoryPanelContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(secondaryMemoryScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 579, Short.MAX_VALUE)
+            .addComponent(secondaryMemoryScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)
         );
 
         memoriesTabbedPane.addTab("Secundaria", secondaryMemoryPanelContainer);
+
+        miniCPUContainer.add(memoriesTabbedPane);
+        memoriesTabbedPane.setBounds(12, 102, 337, 560);
 
         statisticsTagContainer.setBackground(new java.awt.Color(173, 56, 82));
         statisticsTagContainer.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -582,13 +713,13 @@ public class MiniPC extends javax.swing.JFrame {
             .addComponent(statisticsTag, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        miniCPUContainer.add(statisticsTagContainer);
+        statisticsTagContainer.setBounds(696, 479, 652, 27);
+
         displayTable.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         displayTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {""},
-                {null},
-                {null},
-                {null},
                 {null},
                 {null},
                 {null},
@@ -620,6 +751,9 @@ public class MiniPC extends javax.swing.JFrame {
         displayTable.getColumnModel().getColumn(0).setCellRenderer(displayTableCenterRenderer);
 
         displayTable.setTableHeader(null);
+
+        miniCPUContainer.add(displayScrollPane);
+        displayScrollPane.setBounds(356, 513, 333, 150);
 
         statisticsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -655,6 +789,9 @@ public class MiniPC extends javax.swing.JFrame {
         ((DefaultTableCellRenderer)statisticsTable.getTableHeader().getDefaultRenderer())
         .setHorizontalAlignment(JLabel.CENTER);
 
+        miniCPUContainer.add(statisticsScrollPane);
+        statisticsScrollPane.setBounds(696, 513, 508, 150);
+
         displayTagContainer.setBackground(new java.awt.Color(90, 129, 158));
         displayTagContainer.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -676,6 +813,9 @@ public class MiniPC extends javax.swing.JFrame {
             .addComponent(displayTag, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        miniCPUContainer.add(displayTagContainer);
+        displayTagContainer.setBounds(356, 479, 333, 27);
+
         trAveragePanel.setBackground(new java.awt.Color(95, 125, 154));
 
         trAverageTitle.setFont(new java.awt.Font("Bodoni MT", 1, 15)); // NOI18N
@@ -695,17 +835,20 @@ public class MiniPC extends javax.swing.JFrame {
                 .addGroup(trAveragePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(trAverageTitle)
                     .addComponent(trAverageValue))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
         trAveragePanelLayout.setVerticalGroup(
             trAveragePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(trAveragePanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(trAverageTitle)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(trAverageValue)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        miniCPUContainer.add(trAveragePanel);
+        trAveragePanel.setBounds(1211, 513, 137, 70);
 
         trTsAveragePanel.setBackground(new java.awt.Color(72, 44, 64));
 
@@ -726,92 +869,20 @@ public class MiniPC extends javax.swing.JFrame {
                 .addGroup(trTsAveragePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(trTsAverageTitle)
                     .addComponent(trTsAverageValue))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
         trTsAveragePanelLayout.setVerticalGroup(
             trTsAveragePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(trTsAveragePanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(trTsAverageTitle)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(trTsAverageValue)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout miniCPUContainerLayout = new javax.swing.GroupLayout(miniCPUContainer);
-        miniCPUContainer.setLayout(miniCPUContainerLayout);
-        miniCPUContainerLayout.setHorizontalGroup(
-            miniCPUContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(headerContainer, javax.swing.GroupLayout.DEFAULT_SIZE, 1360, Short.MAX_VALUE)
-            .addGroup(miniCPUContainerLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(miniCPUContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(memoryTagContainer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(memoriesTabbedPane))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(miniCPUContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(processesTagContainer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(executionTagContainer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(processesScrollPane)
-                    .addGroup(miniCPUContainerLayout.createSequentialGroup()
-                        .addComponent(coresScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(executionScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 571, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(IRScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, miniCPUContainerLayout.createSequentialGroup()
-                        .addGroup(miniCPUContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(displayScrollPane, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addComponent(displayTagContainer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(miniCPUContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(statisticsTagContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(miniCPUContainerLayout.createSequentialGroup()
-                                .addComponent(statisticsScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 508, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(miniCPUContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(trAveragePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(trTsAveragePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
-                .addContainerGap())
-        );
-        miniCPUContainerLayout.setVerticalGroup(
-            miniCPUContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(miniCPUContainerLayout.createSequentialGroup()
-                .addGroup(miniCPUContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(miniCPUContainerLayout.createSequentialGroup()
-                        .addComponent(headerContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(8, 8, 8)
-                        .addComponent(memoryTagContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(processesTagContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(miniCPUContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(miniCPUContainerLayout.createSequentialGroup()
-                        .addComponent(processesScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(executionTagContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(miniCPUContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(coresScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(IRScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(executionScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(miniCPUContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(statisticsTagContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(displayTagContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(miniCPUContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(statisticsScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addGroup(miniCPUContainerLayout.createSequentialGroup()
-                                .addGroup(miniCPUContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(miniCPUContainerLayout.createSequentialGroup()
-                                        .addComponent(trAveragePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(trTsAveragePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addComponent(displayScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 0, Short.MAX_VALUE))))
-                    .addComponent(memoriesTabbedPane))
-                .addGap(22, 22, 22))
-        );
+        miniCPUContainer.add(trTsAveragePanel);
+        trTsAveragePanel.setBounds(1210, 590, 137, 72);
 
         rSPanelsSliderContainer.add(miniCPUContainer, "card2");
 
@@ -850,7 +921,7 @@ public class MiniPC extends javax.swing.JFrame {
             .addGroup(configContainerLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(backToCPUButton)
-                .addContainerGap(663, Short.MAX_VALUE))
+                .addContainerGap(629, Short.MAX_VALUE))
         );
 
         rSPanelsSliderContainer.add(configContainer, "card2");
@@ -868,8 +939,7 @@ public class MiniPC extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(rSPanelsSliderContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(rSPanelsSliderContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -883,6 +953,8 @@ public class MiniPC extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane IRScrollPane;
     public javax.swing.JTable IRTable;
+    public javax.swing.JPanel arrivalTimePanel;
+    private javax.swing.JLabel arrivalTimeTag;
     public javax.swing.JButton backToCPUButton;
     public javax.swing.JButton configButton;
     private keeptoo.KGradientPanel configContainer;
@@ -898,7 +970,10 @@ public class MiniPC extends javax.swing.JFrame {
     public javax.swing.JTable executionTable;
     private javax.swing.JLabel executionTag;
     private javax.swing.JPanel executionTagContainer;
+    public javax.swing.JTable firstProcessesTable;
     private javax.swing.JPanel headerContainer;
+    public javax.swing.JButton jButton2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel mainMemoryPanelContainer;
     private javax.swing.JScrollPane mainMemoryScrollPane;
     public javax.swing.JTable mainMemoryTable;

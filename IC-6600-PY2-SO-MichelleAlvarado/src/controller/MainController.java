@@ -9,6 +9,7 @@ import GUI.MiniPC;
 import GUI.MyCustomFilter;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -88,11 +89,23 @@ public class MainController implements ActionListener {
         int result = fileChooser.showOpenDialog(view);
         switch (result) {
             case JFileChooser.APPROVE_OPTION:
-                CPU.getInstance().getProcessesManager().loadProcesses(fileChooser.getSelectedFiles());
+                this.prepareProcesses(fileChooser.getSelectedFiles());
             case JFileChooser.CANCEL_OPTION:
                 break;
             default:
                 break;
         }
+    }
+    
+    public void prepareProcesses(File[] files) throws IOException{
+        CPU.getInstance().getProcessesManager().loadProcesses(files);
+        this.setButtonsEnabled();
+        this.view.arrivalTimePanel.setVisible(true);
+    }
+    
+    public void setButtonsEnabled(){
+        this.view.openFilesButton.setEnabled(!this.view.openFilesButton.isEnabled());
+        this.view.startButton.setEnabled(!this.view.startButton.isEnabled());
+        this.view.configButton.setEnabled(!this.view.configButton.isEnabled());
     }
 }
