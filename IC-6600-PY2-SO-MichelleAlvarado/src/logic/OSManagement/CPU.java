@@ -6,8 +6,9 @@
 package logic.OSManagement;
 
 import java.util.ArrayList;
-import logic.ProcessesManagement.ProcessManager;
+import logic.ProcessesManagement.ProcessesManager;
 import logic.coresManagement.Core;
+import logic.coresManagement.CoresManager;
 import logic.memory.MemoryManager;
 
 /**
@@ -17,14 +18,12 @@ import logic.memory.MemoryManager;
 public class CPU {
     private static CPU myCPU = null;
     private int CPUCurrentTime;
-    private MemoryManager memoryManager;
-    private ProcessManager processesManager;
+    
     private ArrayList<Core> CPUCores;
     
-    public CPU(){
+    private CPU(){
         this.CPUCurrentTime = 0;
-        this.memoryManager = new MemoryManager();
-        this.processesManager = new ProcessManager();
+        this.CPUCores = new CoresManager().createCores(5);
     }
     
     /**
@@ -37,9 +36,5 @@ public class CPU {
             myCPU = new CPU();
         }
         return myCPU;
-    }
-
-    public ProcessManager getProcessesManager() {
-        return processesManager;
     }
 }

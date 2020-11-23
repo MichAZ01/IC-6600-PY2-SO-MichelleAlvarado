@@ -15,6 +15,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import logic.OSManagement.CPU;
+import logic.computer.Computer;
+import rojerusan.RSPanelsSlider;
 
 /**
  *
@@ -53,6 +55,9 @@ public class MainController implements ActionListener {
         this.view = new MiniPC();
         MiniPC viewP = this.view;
         this.view.openFilesButton.addActionListener(this);
+        this.view.startButton.addActionListener(this);
+        this.view.configButton.addActionListener(this);
+        this.view.backToCPUButton.addActionListener(this);
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -74,6 +79,15 @@ public class MainController implements ActionListener {
                 Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+                break;
+            case "startExecution":
+                this.startButtonActionPerformed();
+                break;
+            case "openConfig":
+                this.configButtonActionPerformed();
+                break;
+            case "backToMiniCPU":
+                this.backToCPUButtonActionPerformed();
                 break;
             default:
                 break;
@@ -98,14 +112,32 @@ public class MainController implements ActionListener {
     }
     
     public void prepareProcesses(File[] files) throws IOException{
-        CPU.getInstance().getProcessesManager().loadProcesses(files);
+        Computer.getInstance().getOS().getKernel().getProcessesManager().loadProcesses(files);
         this.setButtonsEnabled();
-        this.view.arrivalTimePanel.setVisible(true);
+        if(Computer.getInstance().getOS().getKernel().getProcessesManager().getConfigurableProcessesCount() > 1){
+            ConfigurableProcessesController configurableProcessesController = new ConfigurableProcessesController(this.view);
+            configurableProcessesController.setConfigurableProcessesTable();
+            this.view.arrivalTimePanel.setVisible(true);
+            
+        }
     }
     
     public void setButtonsEnabled(){
         this.view.openFilesButton.setEnabled(!this.view.openFilesButton.isEnabled());
         this.view.startButton.setEnabled(!this.view.startButton.isEnabled());
         this.view.configButton.setEnabled(!this.view.configButton.isEnabled());
+    }
+    
+    public void startButtonActionPerformed(){
+        this.view.openFilesButton.setEnabled(false);
+        this.view.configButton.setEnabled(false);
+    }
+    
+    public void configButtonActionPerformed(){
+        this.view.panelsSliderContainer.setPanelSlider(MiniPC.WIDTH, this.view.configContainer, RSPanelsSlider.DIRECT.RIGHT);
+    }
+    
+    public void backToCPUButtonActionPerformed(){
+        this.view.panelsSliderContainer.setPanelSlider(MiniPC.WIDTH, this.view.miniCPUContainer, RSPanelsSlider.DIRECT.RIGHT);
     }
 }

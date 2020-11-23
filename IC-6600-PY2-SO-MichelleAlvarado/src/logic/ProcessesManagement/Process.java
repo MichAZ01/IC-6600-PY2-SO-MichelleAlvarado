@@ -29,6 +29,7 @@ public class Process {
     private Color processColor;
     private double trValue;
     private double trTsValue;
+    private boolean hasArrivalTime;
 
     public Process(ArrayList<String> instructions, String name, int processIDIndex) {
         this.processInstructions = instructions;
@@ -43,6 +44,7 @@ public class Process {
         this.processID = "P-" + processIDIndex;
         this.trValue = -1;
         this.trTsValue = -1;
+        this.hasArrivalTime = false;
     }
 
     public void setPCB(PCB PCB) {
@@ -63,6 +65,26 @@ public class Process {
 
     public String getProcessID() {
         return processID;
+    }
+
+    public void setInitTime(String initTime) {
+        this.initTime = initTime;
+    }
+
+    public void setFinalTime(String finalTime) {
+        this.finalTime = finalTime;
+    }
+
+    public void setArrivalTime(String arrivalTime) {
+        this.arrivalTime = arrivalTime;
+    }
+
+    public String getProcessName() {
+        return processName;
+    }
+
+    public int getPCBSize() {
+        return PCBSize;
     }
     
     

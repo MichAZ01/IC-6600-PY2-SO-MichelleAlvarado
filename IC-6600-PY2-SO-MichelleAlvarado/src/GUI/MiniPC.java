@@ -32,13 +32,13 @@ public class MiniPC extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        rSPanelsSliderContainer = new rojerusan.RSPanelsSlider();
+        panelsSliderContainer = new rojerusan.RSPanelsSlider();
         miniCPUContainer = new keeptoo.KGradientPanel();
         arrivalTimePanel = new javax.swing.JPanel();
         arrivalTimeTag = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        firstProcessesScrollPane = new javax.swing.JScrollPane();
         firstProcessesTable = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
+        arrivalTimeButtonAccept = new javax.swing.JButton();
         processesScrollPane = new javax.swing.JScrollPane();
         processesTable = new javax.swing.JTable();
         headerContainer = new javax.swing.JPanel();
@@ -85,14 +85,16 @@ public class MiniPC extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("MiniPC SO");
-        setPreferredSize(new java.awt.Dimension(1360, 710));
 
-        rSPanelsSliderContainer.setBackground(new java.awt.Color(0, 255, 255));
-        rSPanelsSliderContainer.setPreferredSize(new java.awt.Dimension(1360, 690));
+        panelsSliderContainer.setBackground(new java.awt.Color(255, 193, 167));
+        panelsSliderContainer.setFocusable(false);
+        panelsSliderContainer.setMaximumSize(new java.awt.Dimension(1360, 690));
+        panelsSliderContainer.setPreferredSize(new java.awt.Dimension(1360, 690));
 
         miniCPUContainer.setkEndColor(new java.awt.Color(108, 194, 189));
         miniCPUContainer.setkGradientFocus(2000);
         miniCPUContainer.setkStartColor(new java.awt.Color(255, 193, 167));
+        miniCPUContainer.setName("miniCPUContainer"); // NOI18N
         miniCPUContainer.setPreferredSize(new java.awt.Dimension(1360, 700));
         miniCPUContainer.setLayout(null);
 
@@ -106,7 +108,6 @@ public class MiniPC extends javax.swing.JFrame {
 
         firstProcessesTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
                 {null, null, null},
                 {null, null, null},
                 {null, null, null},
@@ -135,7 +136,7 @@ public class MiniPC extends javax.swing.JFrame {
         firstProcessesTable.setRowHeight(20);
         firstProcessesTable.setRowSelectionAllowed(false);
         firstProcessesTable.setSelectionBackground(new java.awt.Color(255, 255, 255));
-        jScrollPane1.setViewportView(firstProcessesTable);
+        firstProcessesScrollPane.setViewportView(firstProcessesTable);
         firstProcessesTable.getTableHeader().setFont(new Font("Bodoni MT", Font.BOLD, 14));
         ((DefaultTableCellRenderer)IRTable.getTableHeader().getDefaultRenderer())
         .setHorizontalAlignment(JLabel.CENTER);
@@ -147,13 +148,14 @@ public class MiniPC extends javax.swing.JFrame {
         firstProcessesTable.getColumnModel().getColumn(1).setCellRenderer(firstProcessesTableCenterRenderer);
         firstProcessesTable.getColumnModel().getColumn(2).setCellRenderer(firstProcessesTableCenterRenderer);
 
-        jButton2.setBackground(new java.awt.Color(100, 176, 170));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/button_aceptar.png"))); // NOI18N
-        jButton2.setBorderPainted(false);
-        jButton2.setContentAreaFilled(false);
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton2.setFocusPainted(false);
-        jButton2.setFocusable(false);
+        arrivalTimeButtonAccept.setBackground(new java.awt.Color(100, 176, 170));
+        arrivalTimeButtonAccept.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/button_aceptar.png"))); // NOI18N
+        arrivalTimeButtonAccept.setActionCommand("arrivalTimeAccept");
+        arrivalTimeButtonAccept.setBorderPainted(false);
+        arrivalTimeButtonAccept.setContentAreaFilled(false);
+        arrivalTimeButtonAccept.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        arrivalTimeButtonAccept.setFocusPainted(false);
+        arrivalTimeButtonAccept.setFocusable(false);
 
         javax.swing.GroupLayout arrivalTimePanelLayout = new javax.swing.GroupLayout(arrivalTimePanel);
         arrivalTimePanel.setLayout(arrivalTimePanelLayout);
@@ -167,10 +169,10 @@ public class MiniPC extends javax.swing.JFrame {
                 .addGroup(arrivalTimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(arrivalTimePanelLayout.createSequentialGroup()
                         .addGap(36, 36, 36)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(firstProcessesScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(arrivalTimePanelLayout.createSequentialGroup()
                         .addGap(151, 151, 151)
-                        .addComponent(jButton2)))
+                        .addComponent(arrivalTimeButtonAccept)))
                 .addContainerGap(36, Short.MAX_VALUE))
         );
         arrivalTimePanelLayout.setVerticalGroup(
@@ -179,9 +181,9 @@ public class MiniPC extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(arrivalTimeTag)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addComponent(firstProcessesScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
+                .addComponent(arrivalTimeButtonAccept)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -266,10 +268,12 @@ public class MiniPC extends javax.swing.JFrame {
         startButton.setForeground(new java.awt.Color(255, 255, 255));
         startButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/start.png"))); // NOI18N
         startButton.setText("Iniciar ejecución");
-        startButton.setActionCommand("openFiles");
+        startButton.setToolTipText("Presione para empezar la simulación");
+        startButton.setActionCommand("startExecution");
         startButton.setBorderPainted(false);
         startButton.setContentAreaFilled(false);
         startButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        startButton.setEnabled(false);
         startButton.setFocusPainted(false);
         startButton.setFocusable(false);
         startButton.setName("openFilesButton"); // NOI18N
@@ -278,7 +282,7 @@ public class MiniPC extends javax.swing.JFrame {
         configButton.setForeground(new java.awt.Color(255, 255, 255));
         configButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/settings.png"))); // NOI18N
         configButton.setText("Configuraciones");
-        configButton.setActionCommand("openFiles");
+        configButton.setActionCommand("openConfig");
         configButton.setBorderPainted(false);
         configButton.setContentAreaFilled(false);
         configButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -401,18 +405,18 @@ public class MiniPC extends javax.swing.JFrame {
         coresTable.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         coresTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Núcleo 1", null},
-                {"Núcleo 2", null},
-                {"Núcleo 3", null},
-                {"Núcleo 4", null},
-                {"Núcleo 5", null}
+                {"Núcleo 1", null, null},
+                {"Núcleo 2", null, null},
+                {"Núcleo 3", null, null},
+                {"Núcleo 4", null, null},
+                {"Núcleo 5", null, null}
             },
             new String [] {
-                "Núcleo", "Proceso"
+                "Núcleo", "Proceso", "Ráfaga"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false
+                false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -433,11 +437,12 @@ public class MiniPC extends javax.swing.JFrame {
 
         coresTable.getColumnModel().getColumn(0).setCellRenderer(coresTableCenterRenderer);
         coresTable.getColumnModel().getColumn(1).setCellRenderer(coresTableCenterRenderer);
+        coresTable.getColumnModel().getColumn(2).setCellRenderer(coresTableCenterRenderer);
 
         coresTable.getTableHeader().setPreferredSize(new Dimension(10, 25));
 
         miniCPUContainer.add(coresScrollPane);
-        coresScrollPane.setBounds(356, 296, 138, 152);
+        coresScrollPane.setBounds(356, 296, 200, 152);
 
         IRTable.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         IRTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -518,11 +523,11 @@ public class MiniPC extends javax.swing.JFrame {
         executionTable.setTableHeader(null);
 
         for(int i = 0; i < executionTable.getColumnCount(); i++){
-            executionTable.getColumnModel().getColumn(i).setPreferredWidth(50);
+            executionTable.getColumnModel().getColumn(i).setPreferredWidth(60);
         }
 
         miniCPUContainer.add(executionScrollPane);
-        executionScrollPane.setBounds(501, 296, 571, 176);
+        executionScrollPane.setBounds(562, 296, 510, 176);
 
         memoriesTabbedPane.setBackground(new java.awt.Color(255, 255, 255));
         memoriesTabbedPane.setFocusable(false);
@@ -884,17 +889,19 @@ public class MiniPC extends javax.swing.JFrame {
         miniCPUContainer.add(trTsAveragePanel);
         trTsAveragePanel.setBounds(1210, 590, 137, 72);
 
-        rSPanelsSliderContainer.add(miniCPUContainer, "card2");
+        panelsSliderContainer.add(miniCPUContainer, "card2");
 
         configContainer.setkEndColor(new java.awt.Color(108, 194, 189));
         configContainer.setkGradientFocus(2000);
         configContainer.setkStartColor(new java.awt.Color(255, 193, 167));
+        configContainer.setMaximumSize(new java.awt.Dimension(1360, 690));
+        configContainer.setName("configContainer"); // NOI18N
 
         backToCPUButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         backToCPUButton.setForeground(new java.awt.Color(255, 255, 255));
         backToCPUButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/back.png"))); // NOI18N
         backToCPUButton.setToolTipText("");
-        backToCPUButton.setActionCommand("openFiles");
+        backToCPUButton.setActionCommand("backToMiniCPU");
         backToCPUButton.setBorderPainted(false);
         backToCPUButton.setContentAreaFilled(false);
         backToCPUButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -921,10 +928,10 @@ public class MiniPC extends javax.swing.JFrame {
             .addGroup(configContainerLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(backToCPUButton)
-                .addContainerGap(629, Short.MAX_VALUE))
+                .addContainerGap(619, Short.MAX_VALUE))
         );
 
-        rSPanelsSliderContainer.add(configContainer, "card2");
+        panelsSliderContainer.add(configContainer, "card2");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -932,14 +939,14 @@ public class MiniPC extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(rSPanelsSliderContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(panelsSliderContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(rSPanelsSliderContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(panelsSliderContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -953,11 +960,12 @@ public class MiniPC extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane IRScrollPane;
     public javax.swing.JTable IRTable;
+    public javax.swing.JButton arrivalTimeButtonAccept;
     public javax.swing.JPanel arrivalTimePanel;
     private javax.swing.JLabel arrivalTimeTag;
     public javax.swing.JButton backToCPUButton;
     public javax.swing.JButton configButton;
-    private keeptoo.KGradientPanel configContainer;
+    public keeptoo.KGradientPanel configContainer;
     private javax.swing.JScrollPane coresScrollPane;
     public javax.swing.JTable coresTable;
     private javax.swing.JLabel cpuTimeTitle;
@@ -970,23 +978,22 @@ public class MiniPC extends javax.swing.JFrame {
     public javax.swing.JTable executionTable;
     private javax.swing.JLabel executionTag;
     private javax.swing.JPanel executionTagContainer;
+    private javax.swing.JScrollPane firstProcessesScrollPane;
     public javax.swing.JTable firstProcessesTable;
     private javax.swing.JPanel headerContainer;
-    public javax.swing.JButton jButton2;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel mainMemoryPanelContainer;
     private javax.swing.JScrollPane mainMemoryScrollPane;
     public javax.swing.JTable mainMemoryTable;
     private javax.swing.JTabbedPane memoriesTabbedPane;
     private javax.swing.JLabel memoryTag;
     private javax.swing.JPanel memoryTagContainer;
-    private keeptoo.KGradientPanel miniCPUContainer;
+    public keeptoo.KGradientPanel miniCPUContainer;
     public javax.swing.JButton openFilesButton;
+    public rojerusan.RSPanelsSlider panelsSliderContainer;
     private javax.swing.JScrollPane processesScrollPane;
     public javax.swing.JTable processesTable;
     private javax.swing.JLabel processesTag;
     private javax.swing.JPanel processesTagContainer;
-    private rojerusan.RSPanelsSlider rSPanelsSliderContainer;
     private javax.swing.JPanel secondaryMemoryPanelContainer;
     private javax.swing.JScrollPane secondaryMemoryScrollPane;
     public javax.swing.JTable secondaryMemoryTable;

@@ -16,22 +16,27 @@ import logic.custom.FileManager;
  *
  * @author Michelle Alvarado
  */
-public class ProcessManager {
+public class ProcessesManager {
     private ArrayList<Process> loadedProcesses;
-    private ArrayList<Process> currentReadyProcesses;
+    private ArrayList<Process> currentWaitingProcesses;
+    private ArrayList<Process> currentExecutingProcesses;
     private ArrayList<Process> finishedProcesses;
     private int processesToExecute;
     private String currentProcessesInitTime;
     
-    public ProcessManager(){
+    public ProcessesManager(){
         this.processesToExecute = 0;
         this.currentProcessesInitTime = "";
+        this.currentWaitingProcesses = new ArrayList<Process>();
+        this.loadedProcesses = new ArrayList<Process>();
+        this.currentExecutingProcesses = new ArrayList<Process>();
+        this.finishedProcesses = new ArrayList<Process>();
     }
     
     public void loadProcesses(File[] processFiles) throws IOException{
         this.setCurrentProcessesInitTime();
         this.loadedProcesses = new ArrayList<Process>();
-        this.currentReadyProcesses = new ArrayList<Process>();
+        this.currentWaitingProcesses = new ArrayList<Process>();
         File currentProcessFile;
         FileManager fileReader = new FileManager();
         ProgramValidator programValidator = new ProgramValidator();
@@ -45,7 +50,7 @@ public class ProcessManager {
             if(processStatus[0].equals("0")){
                 newProcess.setProcessIsCorrect();
                 this.processesToExecute += 1;
-                this.currentReadyProcesses.add(newProcess);
+                this.currentWaitingProcesses.add(newProcess);
             }
             PCB newProcessPCB = new PCB(processStatus[1], newProcess.getProcessInstructions().size());
             newProcessPCB.getProcessID().setRegisterValue(newProcess.getProcessID());
@@ -59,5 +64,27 @@ public class ProcessManager {
         Date time = new java.util.Date(System.currentTimeMillis());
         this.currentProcessesInitTime = new SimpleDateFormat("HH:mm:ss").format(time);
     }
+    
+    public int getConfigurableProcessesCount(){
+        int count = 0;
+        if(this.currentWaitingProcesses.size() >= 5) count = 5;
+        else count = this.currentWaitingProcesses.size();
+        return count;
+    }
+    
+    public ArrayList<Process> getConfigurableProcesses(){
+        ArrayList<Process> configurableProcesses = new ArrayList<Process>();
+        int count = this.getConfigurableProcessesCount();
+        for(int i = 0; i < count; i++){
+            configurableProcesses.add(this.currentWaitingProcesses.get(i));
+        }
+        return configurableProcesses;
+    }
+
+    public int getProcessesToExecute() {
+        return processesToExecute;
+    }
+    
+    
     
 }
