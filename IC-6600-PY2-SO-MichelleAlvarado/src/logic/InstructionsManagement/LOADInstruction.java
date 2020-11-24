@@ -5,21 +5,26 @@
  */
 package logic.InstructionsManagement;
 import logic.ProcessesManagement.Process;
+import logic.memory.Register;
 
 /**
  *
  * @author Michelle Alvarado
  */
-public class LOADInstruction implements Instruction{
+public class LOADInstruction extends Instruction implements IInstruction{
     private String instruction;
     
     public LOADInstruction(String instruction){
+        super();
         this.instruction = instruction;
     }
 
     @Override
-    public void execute(Process process) {
-        
+    public int execute(Process process) {
+        int result = 0;
+        Register register = this.getRegister(process, instruction.split(" ")[1]);
+        process.getPCB().getAC().setRegisterValue(register.getRegisterValue());
+        return result;
     }
 
 }

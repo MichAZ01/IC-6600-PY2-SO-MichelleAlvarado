@@ -30,6 +30,7 @@ public class Process {
     private double trValue;
     private double trTsValue;
     private boolean hasArrivalTime;
+    private String CPMFlag;
 
     public Process(ArrayList<String> instructions, String name, int processIDIndex) {
         this.processInstructions = instructions;
@@ -45,10 +46,15 @@ public class Process {
         this.trValue = -1;
         this.trTsValue = -1;
         this.hasArrivalTime = false;
+        this.CPMFlag = "-";
     }
 
     public void setPCB(PCB PCB) {
         this.PCB = PCB;
+    }
+
+    public PCB getPCB() {
+        return PCB;
     }
 
     public void setProcessIsCorrect() {
@@ -87,6 +93,21 @@ public class Process {
         return PCBSize;
     }
     
+    public int getStackAvailableSpace(){
+        int space = 0;
+        for(int i = 0; i < this.PCB.getStack().size(); i++){
+            if(this.PCB.getStack().get(i).getRegisterValue().equals("00000000")) space += 1;
+        }
+        return space;
+    }
+
+    public String getCPMFlag() {
+        return CPMFlag;
+    }
+
+    public void setCPMFlag(String CPMFlag) {
+        this.CPMFlag = CPMFlag;
+    }
     
     
 }

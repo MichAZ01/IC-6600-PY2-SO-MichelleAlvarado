@@ -10,7 +10,7 @@ import logic.ProcessesManagement.Process;
  *
  * @author Michelle Alvarado
  */
-public class JNEInstruction implements Instruction{
+public class JNEInstruction implements IInstruction{
     private String instruction;
     
     public JNEInstruction(String instruction){
@@ -18,7 +18,9 @@ public class JNEInstruction implements Instruction{
     }
 
     @Override
-    public void execute(Process process) {
+    public int execute(Process process) {
+        int result = 0;
         
+        return result;
     }
 }

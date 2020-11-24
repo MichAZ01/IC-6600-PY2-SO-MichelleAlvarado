@@ -10,7 +10,7 @@ import logic.ProcessesManagement.Process;
  *
  * @author Michelle Alvarado
  */
-public class INT09HInstruction implements Instruction{
+public class INT09HInstruction implements IInstruction{
     private String instruction;
     
     public INT09HInstruction(String instruction){
@@ -18,7 +18,9 @@ public class INT09HInstruction implements Instruction{
     }
 
     @Override
-    public void execute(Process process) {
+    public int execute(Process process) {
+        int result = 0;
         
+        return result;
     }
 }

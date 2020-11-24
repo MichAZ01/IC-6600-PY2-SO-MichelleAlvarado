@@ -13,7 +13,7 @@ import logic.ProcessesManagement.Process;
  *
  * @author Michelle Alvarado
  */
-public interface MemoryManagementAlgorithm {
+public interface IMemoryManagementAlgorithm {
     
     public ArrayList<Register> allocateProcessInMemory(Process process);
     

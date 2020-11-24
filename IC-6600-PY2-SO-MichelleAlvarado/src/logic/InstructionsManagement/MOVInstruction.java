@@ -5,21 +5,35 @@
  */
 package logic.InstructionsManagement;
 import logic.ProcessesManagement.Process;
+import logic.memory.Register;
 
 /**
  *
  * @author Michelle Alvarado
  */
-public class MOVInstruction implements Instruction{
+public class MOVInstruction extends Instruction implements IInstruction{
     private String instruction;
     
     public MOVInstruction(String instruction){
+        super();
         this.instruction = instruction;
     }
 
     @Override
-    public void execute(Process process) {
+    public int execute(Process process) {
+        int result = 0;
         
+        String[] registers = instruction.split(",");
+        
+        String destinationRegisterName = registers[0].split(" ")[1].trim();
+        String originRegisterName = registers[1].trim();
+        
+        Register destinationRegister = this.getRegister(process, destinationRegisterName);
+        Register originRegister = this.getRegister(process, originRegisterName);
+        
+        destinationRegister.setRegisterValue(originRegister.getRegisterValue());
+        
+        return result;
     }
     
 }

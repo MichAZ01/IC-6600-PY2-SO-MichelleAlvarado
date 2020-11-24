@@ -16,7 +16,7 @@ import logic.memory.Register;
  *
  * @author Michelle Alvarado
  */
-public class DynamicPartition implements MemoryManagementAlgorithm{
+public class DynamicPartition implements IMemoryManagementAlgorithm{
     private String dynamicPartitionUbicationType;
     public int mainMemoryLastIndex;
     public int secondaryMemoryLastIndex;
