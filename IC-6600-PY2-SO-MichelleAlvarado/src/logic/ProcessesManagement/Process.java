@@ -16,7 +16,6 @@ import logic.memory.Register;
 public class Process {
 
     private ArrayList<String> processInstructions;
-    private ArrayList<Register> allocatedMemory;
     private int processBurstTime;
     private PCB PCB;
     private boolean processIsCorrect;
@@ -34,7 +33,6 @@ public class Process {
 
     public Process(ArrayList<String> instructions, String name, int processIDIndex) {
         this.processInstructions = instructions;
-        this.allocatedMemory = new ArrayList<Register>();
         this.processBurstTime = this.processInstructions.size();
         this.processIsCorrect = false;
         this.processName = name;

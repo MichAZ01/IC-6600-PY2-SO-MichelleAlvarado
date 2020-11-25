@@ -193,20 +193,20 @@ public class MiniPC extends javax.swing.JFrame {
 
         processesTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Color", "ID", "Llegada", "Nombre", "Estado", "Estado E/S", "PC", "AC", "AX", "BX", "CX", "DX", "Inicio pila"
+                "Color", "ID", "Llegada", "Nombre", "Estado", "PC", "AC", "AX", "BX", "CX", "DX", "Inicio pila"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -235,15 +235,14 @@ public class MiniPC extends javax.swing.JFrame {
         processesTable.getColumnModel().getColumn(1).setPreferredWidth(2);
         processesTable.getColumnModel().getColumn(2).setPreferredWidth(40);
         processesTable.getColumnModel().getColumn(3).setPreferredWidth(80);
-        processesTable.getColumnModel().getColumn(4).setPreferredWidth(60);
+        processesTable.getColumnModel().getColumn(4).setPreferredWidth(120);
         processesTable.getColumnModel().getColumn(5).setPreferredWidth(60);
-        processesTable.getColumnModel().getColumn(6).setPreferredWidth(60);
+        processesTable.getColumnModel().getColumn(6).setPreferredWidth(50);
         processesTable.getColumnModel().getColumn(7).setPreferredWidth(50);
         processesTable.getColumnModel().getColumn(8).setPreferredWidth(50);
         processesTable.getColumnModel().getColumn(9).setPreferredWidth(50);
         processesTable.getColumnModel().getColumn(10).setPreferredWidth(50);
-        processesTable.getColumnModel().getColumn(11).setPreferredWidth(50);
-        processesTable.getColumnModel().getColumn(12).setPreferredWidth(70);
+        processesTable.getColumnModel().getColumn(11).setPreferredWidth(70);
 
         miniCPUContainer.add(processesScrollPane);
         processesScrollPane.setBounds(356, 102, 992, 153);

@@ -54,6 +54,7 @@ public class ConfigurableProcessesController extends TableController implements 
     public void setConfigurableProcessesTable(){
         ArrayList<logic.ProcessesManagement.Process> configurableProcesses = Computer.getInstance().getOS().getKernel().getProcessesManager().getConfigurableProcesses();
         int count = Computer.getInstance().getOS().getKernel().getProcessesManager().getConfigurableProcessesCount() - 1;
+        System.out.println();
         String[] header = new String[]{"Nombre archivo", "ID Proceso", "Tiempo de llegada"};
         boolean editable[] = new boolean[]{false, false, true};
         Object rows[][] = new Object[count][3];

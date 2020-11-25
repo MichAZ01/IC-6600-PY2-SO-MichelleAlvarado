@@ -10,25 +10,10 @@ package logic.OSManagement;
  * @author Michelle Alvarado
  */
 public class OperatingSystem {
-    private static OperatingSystem operatingSystem = null;
-    private static Kernel kernel;
+    private Kernel kernel;
     
-    private OperatingSystem(){
-        kernel = Kernel.getInstance();
-    }
-    
-    /**
-     * Singleton method
-     * @return
-     * @throws IOException 
-     */
-    public static OperatingSystem getInstance(){
-        if(operatingSystem == null){
-            return new OperatingSystem();
-        }
-        else{
-            return operatingSystem;
-        }
+    public OperatingSystem(){
+        kernel = new Kernel();
     }
     
     public Kernel getKernel(){

@@ -16,25 +16,11 @@ import logic.memory.MemoryManager;
  * @author Michelle Alvarado
  */
 public class CPU {
-    private static CPU myCPU = null;
     private int CPUCurrentTime;
-    
     private ArrayList<Core> CPUCores;
     
-    private CPU(){
+    public CPU(){
         this.CPUCurrentTime = 0;
         this.CPUCores = new CoresManager().createCores(5);
-    }
-    
-    /**
-     * Singleton method
-     * @return
-     * @throws IOException 
-     */
-    public static CPU getInstance(){
-        if(myCPU == null){
-            myCPU = new CPU();
-        }
-        return myCPU;
     }
 }

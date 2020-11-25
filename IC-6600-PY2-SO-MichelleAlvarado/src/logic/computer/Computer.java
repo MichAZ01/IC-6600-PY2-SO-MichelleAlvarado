@@ -17,22 +17,20 @@ import logic.memory.MemoryManager;
 public class Computer {
     private static Computer myComputer = null;
     private MemoryManager memoryManager;
-    private static CPU myCPU;
-    private static OperatingSystem myOS;
+    private CPU myCPU;
+    private OperatingSystem myOS;
     
     private Computer(){
         this.memoryManager = new MemoryManager();
-        myCPU = CPU.getInstance();
-        myOS = OperatingSystem.getInstance();
+        myCPU = new CPU();
+        myOS = new OperatingSystem();
     }
     
     public static Computer getInstance(){
         if(myComputer == null){
-            return new Computer();
+            myComputer = new Computer();
         }
-        else{
-            return myComputer;
-        }
+        return myComputer;
     }
     
     public CPU getCPU(){

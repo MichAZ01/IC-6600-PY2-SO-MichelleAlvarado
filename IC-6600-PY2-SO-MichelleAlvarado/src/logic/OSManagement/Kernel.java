@@ -11,20 +11,10 @@ import logic.ProcessesManagement.ProcessesManager;
  * @author Michelle Alvarado
  */
 public class Kernel {
-    private static Kernel myKernel = null;
     private ProcessesManager processesManager;
     
-    private Kernel(){
+    public Kernel(){
         this.processesManager = new ProcessesManager();
-    }
-    
-    public static Kernel getInstance(){
-        if(myKernel == null){
-            return new Kernel();
-        }
-        else{
-            return myKernel;
-        }
     }
     
     public ProcessesManager getProcessesManager() {
