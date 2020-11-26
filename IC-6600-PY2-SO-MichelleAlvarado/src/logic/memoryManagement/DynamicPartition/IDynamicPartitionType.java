@@ -3,19 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package logic.memoryManagement;
+package logic.memoryManagement.DynamicPartition;
 
 import java.util.ArrayList;
 import logic.memory.Register;
-import logic.ProcessesManagement.Process;
 
 /**
  *
  * @author Michelle Alvarado
  */
-public interface IMemoryManagementAlgorithm {
+public interface IDynamicPartitionType {
+    public ArrayList<Register> allocateProcessInMemory(logic.ProcessesManagement.Process process);
     
-    public void allocateProcessInMemory(Process process);
-    
-    public void freeUpProcessMemory(Process process);
+    public void freeUpProcessMemory(logic.ProcessesManagement.Process process);
 }

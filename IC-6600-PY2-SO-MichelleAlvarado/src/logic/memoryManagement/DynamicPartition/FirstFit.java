@@ -3,62 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package logic.memoryManagement;
-
+package logic.memoryManagement.DynamicPartition;
 import java.util.ArrayList;
 import java.util.List;
-import logic.ProcessesManagement.Process;
 import logic.computer.Computer;
 import logic.memory.Memory;
 import logic.memory.Register;
-
+import logic.memoryManagement.IMemoryManagementAlgorithm;
 /**
  *
  * @author Michelle Alvarado
  */
-public class DynamicPartition implements IMemoryManagementAlgorithm{
-    private String dynamicPartitionUbicationType;
-    public int mainMemoryLastIndex;
-    public int secondaryMemoryLastIndex;
+public class FirstFit implements IDynamicPartitionType{
     
-    public DynamicPartition(String ubicationType){
-        this.dynamicPartitionUbicationType = ubicationType;
-        this.mainMemoryLastIndex = 0;
-        this.secondaryMemoryLastIndex = 0;
+    public FirstFit(){
+        
     }
-
+    
     @Override
-    public ArrayList<Register> allocateProcessInMemory(Process process) {
-        ArrayList<Register> memoryRegisters = new ArrayList<Register>();
-        switch(this.dynamicPartitionUbicationType){
-            case "BestFit":
-                memoryRegisters = this.getFreeMemoryByBestFit(process);
-                break;
-            case "FirstFit":
-                memoryRegisters = this.getFreeMemoryByFirstFit(process);
-                break;
-            case "NextFit":
-                memoryRegisters = this.getFreeMemoryByNextFit(process);
-                break;
-            default:
-                break;
-        }
-        
-        return memoryRegisters;
-    }
-
-    @Override
-    public void freeUpProcessMemory(Process process) {
-        
-    }
-    
-    public ArrayList<Register> getFreeMemoryByBestFit(Process process){
-        ArrayList<Register> memoryRegisters = new ArrayList<Register>();
-        
-        return memoryRegisters;
-    }
-    
-    public ArrayList<Register> getFreeMemoryByFirstFit(Process process){
+    public ArrayList<Register> allocateProcessInMemory(logic.ProcessesManagement.Process process) {
         ArrayList<Register> memoryRegisters = new ArrayList<Register>();
         int requiredSpace = process.getPCBSize() + process.getProcessInstructions().size();
         if(Computer.getInstance().getMemoryManager().getMainMemory().getFreeSpaces() >= requiredSpace){
@@ -99,11 +62,9 @@ public class DynamicPartition implements IMemoryManagementAlgorithm{
         
         return memorySpaces;
     }
-    
-    public ArrayList<Register> getFreeMemoryByNextFit(Process process){
-        ArrayList<Register> memoryRegisters = new ArrayList<Register>();
+
+    @Override
+    public void freeUpProcessMemory(logic.ProcessesManagement.Process process) {
         
-        return memoryRegisters;
     }
-    
 }

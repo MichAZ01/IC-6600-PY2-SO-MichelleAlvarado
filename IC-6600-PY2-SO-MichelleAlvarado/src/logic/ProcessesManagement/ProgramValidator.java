@@ -13,8 +13,8 @@ import logic.custom.FileManager;
  *
  * @author Michelle Alvarado
  */
-public class ProgramValidator {
-
+public final class ProgramValidator {
+    public static final String REGEXFILEPATH = System.getProperty("user.dir") + "\\src\\logic\\configFiles\\InstructionsRegexConfigFile.txt";
     String[] regexInstructionsArray;
 
     public ProgramValidator() throws IOException {
@@ -23,7 +23,7 @@ public class ProgramValidator {
 
     public void loadRegexInstructions() throws IOException {
         FileManager fileReader = new FileManager();
-        String regexConfigFile = System.getProperty("user.dir") + "\\src\\logic\\configFiles\\InstructionsRegexConfigFile.txt";
+        String regexConfigFile = REGEXFILEPATH;
         String[] fileLines = fileReader.readFile(regexConfigFile);
         String[] regexInstructions = new String[fileLines.length];
         for (int i = 0; i < fileLines.length; i++) {
@@ -37,13 +37,11 @@ public class ProgramValidator {
      *
      * @param line
      * @return
-     * @throws IOException
      */
     public Boolean validateSingleLine(String line) {
         Boolean correctFormat = false;
-        String operation = line.split(" ")[0];
-        for (int i = 0; i < this.regexInstructionsArray.length; i++) {
-            if (Pattern.matches(this.regexInstructionsArray[i], line)) {
+        for (String regexInstruction : this.regexInstructionsArray) {
+            if (Pattern.matches(regexInstruction, line)) {
                 correctFormat = true;
                 break;
             }

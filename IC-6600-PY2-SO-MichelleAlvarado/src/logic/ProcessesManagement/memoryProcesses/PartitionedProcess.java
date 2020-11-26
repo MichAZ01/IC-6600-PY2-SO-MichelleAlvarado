@@ -11,10 +11,10 @@ import logic.memory.Register;
  *
  * @author Michelle Alvarado
  */
-public class DynamicallyPartitionedProcess extends Process {
+public class PartitionedProcess extends Process {
     ArrayList<Register> allocatedMemory;
     
-    public DynamicallyPartitionedProcess(ArrayList<String> instructions, String name, int processIDIndex){
+    public PartitionedProcess(ArrayList<String> instructions, String name, int processIDIndex){
         super(instructions, name, processIDIndex);
         this.allocatedMemory = new ArrayList<Register>();
     }
