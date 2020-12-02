@@ -103,16 +103,15 @@ public class ProcessesManager {
         Process firstProcess = configurableProcesses.get(0);
         firstProcess.setArrivalTime("0");
         firstProcess.setArrivalHour(this.currentProcessesInitHour.getTime().toString().split(" ")[3]);
-        System.out.println(firstProcess.getProcessID() + ". " + this.currentProcessesInitHour.getTime().toString().split(" ")[3]);
         int x = 0;
         for(int i = 1; i < configurableProcesses.size(); i++){
             Process process = configurableProcesses.get(i);
             process.setArrivalTime(Integer.toString((int) processesArrivalTime.get(x)));
-            Calendar calendar = this.currentProcessesInitHour;
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(this.currentProcessesInitHour.getTime());
             calendar.add(this.currentProcessesInitHour.SECOND, (int) processesArrivalTime.get(x));
             process.setArrivalHour(calendar.getTime().toString().split(" ")[3]);
-            System.out.println(process.getProcessID() + ". " + process.getArrivalHour());
-            System.out.println(process.getArrivalTime());
+            x++;
         }
     }
 }
