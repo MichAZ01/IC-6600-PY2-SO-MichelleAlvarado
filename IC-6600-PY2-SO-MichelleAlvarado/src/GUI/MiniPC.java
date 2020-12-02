@@ -297,7 +297,7 @@ public class MiniPC extends javax.swing.JFrame {
 
         cpuTimeValue.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         cpuTimeValue.setForeground(new java.awt.Color(255, 255, 255));
-        cpuTimeValue.setText("0");
+        cpuTimeValue.setText("-");
 
         javax.swing.GroupLayout headerContainerLayout = new javax.swing.GroupLayout(headerContainer);
         headerContainer.setLayout(headerContainerLayout);

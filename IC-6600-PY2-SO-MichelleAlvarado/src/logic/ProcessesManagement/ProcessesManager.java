@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import logic.custom.FileManager;
 
@@ -19,22 +20,23 @@ import logic.custom.FileManager;
 public class ProcessesManager {
     private ArrayList<Process> loadedProcesses;
     private ArrayList<Process> currentWaitingProcesses;
+    private ArrayList<Process> currentReadyProcesses;
     private ArrayList<Process> currentExecutingProcesses;
     private ArrayList<Process> finishedProcesses;
     private int processesToExecute;
-    private String currentProcessesInitTime;
+    private Calendar currentProcessesInitHour;
     
     public ProcessesManager(){
         this.processesToExecute = 0;
-        this.currentProcessesInitTime = "";
         this.currentWaitingProcesses = new ArrayList<Process>();
+        this.currentReadyProcesses = new ArrayList<Process>();
         this.loadedProcesses = new ArrayList<Process>();
         this.currentExecutingProcesses = new ArrayList<Process>();
         this.finishedProcesses = new ArrayList<Process>();
     }
     
     public void loadProcesses(File[] processFiles) throws IOException{
-        this.setCurrentProcessesInitTime();
+        this.setCurrentProcessesInitHour();
         this.loadedProcesses = new ArrayList<Process>();
         this.currentWaitingProcesses = new ArrayList<Process>();
         File currentProcessFile;
@@ -46,7 +48,7 @@ public class ProcessesManager {
             String processLine = fileReader.extractFileInfo(currentProcessFile);
             processStatus = programValidator.validateSelectedFile(processLine);
             ArrayList<String> instructions = fileReader.getCleanData(processLine);
-            Process newProcess = new Process(instructions, currentProcessFile.getName(), i);
+            Process newProcess = new FactoryProcess().getProcess(instructions, currentProcessFile.getName(), i);
             if(processStatus[0].equals("0")){
                 newProcess.setProcessIsCorrect();
                 this.processesToExecute += 1;
@@ -60,15 +62,14 @@ public class ProcessesManager {
         }
     }
     
-    public void setCurrentProcessesInitTime(){
-        Date time = new java.util.Date(System.currentTimeMillis());
-        this.currentProcessesInitTime = new SimpleDateFormat("HH:mm:ss").format(time);
+    public void setCurrentProcessesInitHour(){
+        this.currentProcessesInitHour = Calendar.getInstance();
     }
     
     public int getConfigurableProcessesCount(){
         int count = 0;
-        if(this.currentWaitingProcesses.size() >= 5) count = 5;
-        else count = this.currentWaitingProcesses.size();
+        if(this.currentReadyProcesses.size() >= 5) count = 5;
+        else count = this.currentReadyProcesses.size();
         return count;
     }
     
@@ -76,7 +77,7 @@ public class ProcessesManager {
         ArrayList<Process> configurableProcesses = new ArrayList<Process>();
         int count = this.getConfigurableProcessesCount();
         for(int i = 0; i < count; i++){
-            configurableProcesses.add(this.currentWaitingProcesses.get(i));
+            configurableProcesses.add(this.currentReadyProcesses.get(i));
         }
         return configurableProcesses;
     }
@@ -85,6 +86,33 @@ public class ProcessesManager {
         return processesToExecute;
     }
     
+    public void addProcessTocurrentReadyProcesses(Process process){
+        this.currentReadyProcesses.add(process);
+    }
+
+    public ArrayList<Process> getCurrentReadyProcesses() {
+        return currentReadyProcesses;
+    }
+
+    public ArrayList<Process> getCurrentWaitingProcesses() {
+        return currentWaitingProcesses;
+    }
     
-    
+    public void setReadyProcessesArrivalTime(ArrayList<Object> processesArrivalTime){
+        ArrayList<Process> configurableProcesses = this.getConfigurableProcesses();
+        Process firstProcess = configurableProcesses.get(0);
+        firstProcess.setArrivalTime("0");
+        firstProcess.setArrivalHour(this.currentProcessesInitHour.getTime().toString().split(" ")[3]);
+        System.out.println(firstProcess.getProcessID() + ". " + this.currentProcessesInitHour.getTime().toString().split(" ")[3]);
+        int x = 0;
+        for(int i = 1; i < configurableProcesses.size(); i++){
+            Process process = configurableProcesses.get(i);
+            process.setArrivalTime(Integer.toString((int) processesArrivalTime.get(x)));
+            Calendar calendar = this.currentProcessesInitHour;
+            calendar.add(this.currentProcessesInitHour.SECOND, (int) processesArrivalTime.get(x));
+            process.setArrivalHour(calendar.getTime().toString().split(" ")[3]);
+            System.out.println(process.getProcessID() + ". " + process.getArrivalHour());
+            System.out.println(process.getArrivalTime());
+        }
+    }
 }

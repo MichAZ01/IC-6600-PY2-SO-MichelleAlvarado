@@ -21,30 +21,29 @@ public class Process {
     private boolean processIsCorrect;
     private String processName;
     private String processID;
-    private int PCBSize;
-    private String initTime;
-    private String finalTime;
+    private String arrivalHour;
     private String arrivalTime;
     private Color processColor;
     private double trValue;
     private double trTsValue;
     private boolean hasArrivalTime;
     private String CPMFlag;
+    private ArrayList<Register> memorySpacesIndexes;
 
     public Process(ArrayList<String> instructions, String name, int processIDIndex) {
         this.processInstructions = instructions;
         this.processBurstTime = this.processInstructions.size();
         this.processIsCorrect = false;
         this.processName = name;
-        this.PCBSize = 19;
-        this.initTime = initTime = "";
-        this.finalTime = "";
+        this.arrivalHour = "";
         this.arrivalTime = "";
         this.processID = "P-" + processIDIndex;
         this.trValue = -1;
         this.trTsValue = -1;
         this.hasArrivalTime = false;
         this.CPMFlag = "-";
+        this.memorySpacesIndexes = new ArrayList<>();
+        this.processBurstTime = instructions.size();
     }
 
     public void setPCB(PCB PCB) {
@@ -71,12 +70,8 @@ public class Process {
         return processID;
     }
 
-    public void setInitTime(String initTime) {
-        this.initTime = initTime;
-    }
-
-    public void setFinalTime(String finalTime) {
-        this.finalTime = finalTime;
+    public void setArrivalHour(String arrivalHour) {
+        this.arrivalHour = arrivalHour;
     }
 
     public void setArrivalTime(String arrivalTime) {
@@ -85,10 +80,6 @@ public class Process {
 
     public String getProcessName() {
         return processName;
-    }
-
-    public int getPCBSize() {
-        return PCBSize;
     }
     
     public int getStackAvailableSpace(){
@@ -106,6 +97,12 @@ public class Process {
     public void setCPMFlag(String CPMFlag) {
         this.CPMFlag = CPMFlag;
     }
-    
-    
+
+    public String getArrivalHour() {
+        return arrivalHour;
+    }
+
+    public String getArrivalTime() {
+        return arrivalTime;
+    }
 }

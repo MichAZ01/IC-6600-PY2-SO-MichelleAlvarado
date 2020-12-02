@@ -5,18 +5,26 @@
  */
 package logic.OSManagement;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.xml.parsers.ParserConfigurationException;
+import logic.custom.OSSettings.OSConfig;
+import org.xml.sax.SAXException;
+
 /**
  *
  * @author Michelle Alvarado
  */
 public class OperatingSystem {
+
     private Kernel kernel;
-    
-    public OperatingSystem(){
+
+    public OperatingSystem() {
         kernel = new Kernel();
     }
-    
-    public Kernel getKernel(){
+
+    public Kernel getKernel() {
         return kernel;
     }
 }

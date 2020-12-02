@@ -11,13 +11,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import logic.OSManagement.CPU;
 import logic.computer.Computer;
 import rojerusan.RSPanelsSlider;
-
+import logic.ProcessesManagement.Process;
 /**
  *
  * @author Michelle Alvarado
@@ -26,7 +27,6 @@ public class MainController implements ActionListener {
     private MiniPC view;
     
     public MainController(){
-        
     }
     
     public void showView(){
@@ -113,12 +113,13 @@ public class MainController implements ActionListener {
     
     public void prepareProcesses(File[] files) throws IOException{
         Computer.getInstance().getOS().getKernel().getProcessesManager().loadProcesses(files);
+        ArrayList<Process> waitingProcesses = Computer.getInstance().getOS().getKernel().getProcessesManager().getCurrentWaitingProcesses();
+        Computer.getInstance().getOS().getKernel().getProgramsLoader().allocateProcessesInMemory(waitingProcesses);
         this.setButtonsEnabled();
         if(Computer.getInstance().getOS().getKernel().getProcessesManager().getConfigurableProcessesCount() > 1){
             ConfigurableProcessesController configurableProcessesController = new ConfigurableProcessesController(this.view);
             configurableProcessesController.setConfigurableProcessesTable();
             this.view.arrivalTimePanel.setVisible(true);
-            
         }
     }
     

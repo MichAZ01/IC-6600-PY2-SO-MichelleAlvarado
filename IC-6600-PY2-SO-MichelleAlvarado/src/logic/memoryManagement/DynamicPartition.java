@@ -3,27 +3,30 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package logic.memoryManagement.DynamicPartition;
+package logic.memoryManagement;
+
 import java.util.ArrayList;
 import java.util.List;
+import logic.ProcessesManagement.Process;
+import logic.ProcessesManagement.memoryProcesses.DynamicPartitionedProcess;
 import logic.computer.Computer;
 import logic.memory.Memory;
 import logic.memory.Register;
 import logic.memoryManagement.IMemoryManagementAlgorithm;
+
 /**
  *
  * @author Michelle Alvarado
  */
-public class FirstFit implements IDynamicPartitionType{
+public class DynamicPartition implements IMemoryManagementAlgorithm{
     
-    public FirstFit(){
-        
+    public DynamicPartition(){
     }
-    
+
     @Override
-    public ArrayList<Register> allocateProcessInMemory(logic.ProcessesManagement.Process process) {
-        ArrayList<Register> memoryRegisters = new ArrayList<Register>();
-        int requiredSpace = process.getPCBSize() + process.getProcessInstructions().size();
+    public void allocateProcessInMemory(Process process) {
+        ArrayList<Register> memoryRegisters = new ArrayList<>();
+        int requiredSpace = process.getProcessInstructions().size();
         if(Computer.getInstance().getMemoryManager().getMainMemory().getFreeSpaces() >= requiredSpace){
             memoryRegisters = this.getMemorySpaces(Computer.getInstance().getMemoryManager().getMainMemory(), requiredSpace);
             Computer.getInstance().getMemoryManager().getMainMemory().setFreeSpaces(Computer.getInstance().getMemoryManager().getMainMemory().getFreeSpaces() - memoryRegisters.size());
@@ -33,7 +36,11 @@ public class FirstFit implements IDynamicPartitionType{
             Computer.getInstance().getMemoryManager().getSecondaryMemory().setFreeSpaces(Computer.getInstance().getMemoryManager().getSecondaryMemory().getFreeSpaces() - memoryRegisters.size());
         }
         
-        return memoryRegisters;
+        if(memoryRegisters.size() > 0){
+            DynamicPartitionedProcess allocatedProcess = (DynamicPartitionedProcess) process;
+            allocatedProcess.setAllocatedMemory(memoryRegisters);
+            allocatedProcess.getPCB().getProcessStatus().setRegisterValue("Preparado");
+        }
     }
     
     public ArrayList<Register> getMemorySpaces(Memory memory, int requiredSpace){
@@ -64,7 +71,8 @@ public class FirstFit implements IDynamicPartitionType{
     }
 
     @Override
-    public void freeUpProcessMemory(logic.ProcessesManagement.Process process) {
+    public void freeUpProcessMemory(Process process) {
         
     }
+    
 }

@@ -9,6 +9,7 @@ import GUI.MiniPC;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import logic.computer.Computer;
 
@@ -43,29 +44,32 @@ public class ConfigurableProcessesController extends TableController implements 
             this.view.firstProcessesTable.getCellEditor().stopCellEditing();
         }
         int columnIndex = this.getColumnIndex(this.view.firstProcessesTable, "Tiempo de llegada");
-        ArrayList<Object> processesArrivalTime = new ArrayList<Object>();
+        ArrayList<Object> processesArrivalTime = new ArrayList<>();
         for (int i = 0; i < count; i++) {
             Object arrivalTime = this.view.firstProcessesTable.getModel().getValueAt(i, columnIndex);
             if(arrivalTime != null) processesArrivalTime.add(arrivalTime);
         }
-
+        this.verifyArrivalTimesAreCorrect(processesArrivalTime, count);
+    }
+    
+    public void verifyArrivalTimesAreCorrect(ArrayList<Object> processesArrivalTime,int count){
+        if(processesArrivalTime.size() == count){
+            Computer.getInstance().getOS().getKernel().getProcessesManager().setReadyProcessesArrivalTime(processesArrivalTime);
+            this.view.arrivalTimePanel.setVisible(false);
+        }
+        else{
+            JOptionPane.showMessageDialog(this.view, "Los tiempos de llegada deben ser números enteros y no se pueden dejar vacíos.");
+        }
     }
     
     public void setConfigurableProcessesTable(){
         ArrayList<logic.ProcessesManagement.Process> configurableProcesses = Computer.getInstance().getOS().getKernel().getProcessesManager().getConfigurableProcesses();
-        int count = Computer.getInstance().getOS().getKernel().getProcessesManager().getConfigurableProcessesCount() - 1;
-        System.out.println();
-        String[] header = new String[]{"Nombre archivo", "ID Proceso", "Tiempo de llegada"};
-        boolean editable[] = new boolean[]{false, false, true};
-        Object rows[][] = new Object[count][3];
         int j = 1;
         for (int i = 0; i < configurableProcesses.size() - 1; i++) {
-            rows[i][0] = configurableProcesses.get(j).getProcessName();
-            rows[i][1] = configurableProcesses.get(j).getProcessID();
+            this.view.firstProcessesTable.getModel().setValueAt(configurableProcesses.get(j).getProcessName(), i, 0);
+            this.view.firstProcessesTable.getModel().setValueAt(configurableProcesses.get(j).getProcessID(), i, 1);
             j++;
         }
-        
-        this.setTableModel(rows, this.view.firstProcessesTable, header, editable);
     }
 
     int getColumnIndex(JTable table, String columnTitle) {

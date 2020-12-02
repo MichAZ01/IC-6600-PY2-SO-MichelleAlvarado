@@ -1,41 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<MemoryManagement>
+<systemConfig>
     <MemoriesSize>
-        <MainMemory size="256"></MainMemory>  
-        <SecondaryMemory size="128"></SecondaryMemory>
+        <MainMemory>256</MainMemory>  
+        <SecondaryMemory>128</SecondaryMemory>
     </MemoriesSize>
     <MemoryManagementMethods>
         <Method active="1">
-		<MethodName>DynamicPartition</MethodName>
-	</Method>
+            <MethodName>DynamicPartition</MethodName>
+        </Method>
         <Method active="0">
-		<MethodName>FixedPartition</MethodName>
-                <partitionSize>16</partitionSize>
-	</Method>
+            <MethodName>FixedPartition</MethodName>
+            <partitionSize>16</partitionSize>
+        </Method>
         <Method active="0">
-		<MethodName>Pagination</MethodName>
-                <frameSize>4</frameSize>
-	</Method>
+            <MethodName>Pagination</MethodName>
+            <frameSize>4</frameSize>
+        </Method>
         <Method active="0">
-		<MethodName>Segmentation</MethodName>
-	</Method>
+            <MethodName>Segmentation</MethodName>
+        </Method>
     </MemoryManagementMethods>
-</MemoryManagement>
-<Scheduling>
-    <SchedulingMethod active="1">
-        <SchedulingName>FCFS</SchedulingName>
-    </SchedulingMethod>
-     <SchedulingMethod active="0">
-        <SchedulingName>SRT</SchedulingName>
-    </SchedulingMethod>
-    <SchedulingMethod active="0">
-        <SchedulingName>SJF</SchedulingName>
-    </SchedulingMethod>
-    <SchedulingMethod active="0">
-        <SchedulingName>RR</SchedulingName>
-        <quantum>2</quantum>
-    </SchedulingMethod>
-    <SchedulingMethod active="0">
-        <SchedulingName>HRRN</SchedulingName>
-    </SchedulingMethod>
-</Scheduling>
+    <Scheduling>
+        <SchedulingMethod active="1">
+            <SchedulingName>FCFS</SchedulingName>
+        </SchedulingMethod>
+        <SchedulingMethod active="0">
+            <SchedulingName>SRT</SchedulingName>
+        </SchedulingMethod>
+        <SchedulingMethod active="0">
+            <SchedulingName>SJF</SchedulingName>
+        </SchedulingMethod>
+        <SchedulingMethod active="0">
+            <SchedulingName>RR</SchedulingName>
+            <quantum>2</quantum>
+        </SchedulingMethod>
+        <SchedulingMethod active="0">
+            <SchedulingName>HRRN</SchedulingName>
+        </SchedulingMethod>
+    </Scheduling>
+</systemConfig>

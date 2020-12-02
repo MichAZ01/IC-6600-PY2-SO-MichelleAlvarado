@@ -20,7 +20,7 @@ public class CPU {
     private ArrayList<Core> CPUCores;
     
     public CPU(){
-        this.CPUCurrentTime = 0;
+        this.CPUCurrentTime = 1;
         this.CPUCores = new CoresManager().createCores(5);
     }
 }
