@@ -193,26 +193,27 @@ public class MiniPC extends javax.swing.JFrame {
 
         processesTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Color", "ID", "Llegada", "Nombre", "Estado", "PC", "AC", "AX", "BX", "CX", "DX", "Inicio pila"
+                "Color", "ID", "Llegada", "Nombre", "Estado", "PC", "AC", "AX", "BX", "CX", "DX", "Pl V1", "Pl V2", "Pl V3", "Pl V4", "Pl V5"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
+        processesTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
         processesTable.setEnabled(false);
         processesTable.setFocusable(false);
         processesTable.setGridColor(new java.awt.Color(255, 255, 255));
@@ -223,26 +224,6 @@ public class MiniPC extends javax.swing.JFrame {
         processesTable.getTableHeader().setFont(new Font("Bodoni MT", Font.BOLD, 14));
         ((DefaultTableCellRenderer)processesTable.getTableHeader().getDefaultRenderer())
         .setHorizontalAlignment(JLabel.CENTER);
-
-        DefaultTableCellRenderer processesTableCenterRenderer = new DefaultTableCellRenderer();
-        processesTableCenterRenderer.setHorizontalAlignment(JLabel.CENTER);
-
-        for(int i = 0; i < processesTable.getColumnCount(); i++){
-            processesTable.getColumnModel().getColumn(i).setCellRenderer(processesTableCenterRenderer);
-        }
-
-        processesTable.getColumnModel().getColumn(0).setPreferredWidth(10);
-        processesTable.getColumnModel().getColumn(1).setPreferredWidth(2);
-        processesTable.getColumnModel().getColumn(2).setPreferredWidth(40);
-        processesTable.getColumnModel().getColumn(3).setPreferredWidth(80);
-        processesTable.getColumnModel().getColumn(4).setPreferredWidth(120);
-        processesTable.getColumnModel().getColumn(5).setPreferredWidth(60);
-        processesTable.getColumnModel().getColumn(6).setPreferredWidth(50);
-        processesTable.getColumnModel().getColumn(7).setPreferredWidth(50);
-        processesTable.getColumnModel().getColumn(8).setPreferredWidth(50);
-        processesTable.getColumnModel().getColumn(9).setPreferredWidth(50);
-        processesTable.getColumnModel().getColumn(10).setPreferredWidth(50);
-        processesTable.getColumnModel().getColumn(11).setPreferredWidth(70);
 
         miniCPUContainer.add(processesScrollPane);
         processesScrollPane.setBounds(356, 102, 992, 153);
@@ -536,6 +517,8 @@ public class MiniPC extends javax.swing.JFrame {
         mainMemoryPanelContainer.setAutoscrolls(true);
 
         mainMemoryScrollPane.setBackground(new java.awt.Color(255, 255, 255));
+        mainMemoryScrollPane.setBorder(null);
+        mainMemoryScrollPane.setFocusable(false);
 
         mainMemoryTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -594,12 +577,6 @@ public class MiniPC extends javax.swing.JFrame {
         mainMemoryTable.getTableHeader().setFont(new Font("Bodoni MT", Font.PLAIN, 14));
         ((DefaultTableCellRenderer)coresTable.getTableHeader().getDefaultRenderer())
         .setHorizontalAlignment(JLabel.CENTER);
-
-        DefaultTableCellRenderer mainMemoryTableCenterRenderer = new DefaultTableCellRenderer();
-        mainMemoryTableCenterRenderer.setHorizontalAlignment(JLabel.CENTER);
-
-        mainMemoryTable.getColumnModel().getColumn(0).setCellRenderer(mainMemoryTableCenterRenderer);
-        mainMemoryTable.getColumnModel().getColumn(1).setCellRenderer(mainMemoryTableCenterRenderer);
 
         javax.swing.GroupLayout mainMemoryPanelContainerLayout = new javax.swing.GroupLayout(mainMemoryPanelContainer);
         mainMemoryPanelContainer.setLayout(mainMemoryPanelContainerLayout);
@@ -674,12 +651,6 @@ public class MiniPC extends javax.swing.JFrame {
         ((DefaultTableCellRenderer)coresTable.getTableHeader().getDefaultRenderer())
         .setHorizontalAlignment(JLabel.CENTER);
 
-        DefaultTableCellRenderer secondaryMemoryTableCenterRenderer = new DefaultTableCellRenderer();
-        secondaryMemoryTableCenterRenderer.setHorizontalAlignment(JLabel.CENTER);
-
-        secondaryMemoryTable.getColumnModel().getColumn(0).setCellRenderer(secondaryMemoryTableCenterRenderer);
-        secondaryMemoryTable.getColumnModel().getColumn(1).setCellRenderer(secondaryMemoryTableCenterRenderer);
-
         javax.swing.GroupLayout secondaryMemoryPanelContainerLayout = new javax.swing.GroupLayout(secondaryMemoryPanelContainer);
         secondaryMemoryPanelContainer.setLayout(secondaryMemoryPanelContainerLayout);
         secondaryMemoryPanelContainerLayout.setHorizontalGroup(
@@ -745,7 +716,7 @@ public class MiniPC extends javax.swing.JFrame {
         });
         displayTable.setFocusable(false);
         displayTable.setGridColor(new java.awt.Color(255, 255, 255));
-        displayTable.setRowHeight(19);
+        displayTable.setRowHeight(21);
         displayTable.setRowSelectionAllowed(false);
         displayTable.setSelectionBackground(new java.awt.Color(255, 255, 255));
         displayScrollPane.setViewportView(displayTable);

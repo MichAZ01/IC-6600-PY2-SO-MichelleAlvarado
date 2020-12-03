@@ -26,20 +26,24 @@ public class DynamicPartition implements IMemoryManagementAlgorithm{
     @Override
     public void allocateProcessInMemory(Process process) {
         ArrayList<Register> memoryRegisters = new ArrayList<>();
+        String memoryType = "";
         int requiredSpace = process.getProcessInstructions().size();
         if(Computer.getInstance().getMemoryManager().getMainMemory().getFreeSpaces() >= requiredSpace){
             memoryRegisters = this.getMemorySpaces(Computer.getInstance().getMemoryManager().getMainMemory(), requiredSpace);
             Computer.getInstance().getMemoryManager().getMainMemory().setFreeSpaces(Computer.getInstance().getMemoryManager().getMainMemory().getFreeSpaces() - memoryRegisters.size());
+            memoryType = "mainMemory";
         }
         else if(Computer.getInstance().getMemoryManager().getSecondaryMemory().getFreeSpaces() >= requiredSpace){
             memoryRegisters = this.getMemorySpaces(Computer.getInstance().getMemoryManager().getSecondaryMemory(), requiredSpace);
             Computer.getInstance().getMemoryManager().getSecondaryMemory().setFreeSpaces(Computer.getInstance().getMemoryManager().getSecondaryMemory().getFreeSpaces() - memoryRegisters.size());
+            memoryType = "secondaryMemory";
         }
         
         if(memoryRegisters.size() > 0){
             DynamicPartitionedProcess allocatedProcess = (DynamicPartitionedProcess) process;
             allocatedProcess.setAllocatedMemory(memoryRegisters);
-            allocatedProcess.getPCB().getProcessStatus().setRegisterValue("Preparado");
+            if(memoryType.equals("mainMemory")) allocatedProcess.getPCB().getProcessStatus().setRegisterValue("Preparado");
+            else allocatedProcess.getPCB().getProcessStatus().setRegisterValue("En espera");
         }
     }
     

@@ -83,7 +83,7 @@ public final class ProgramValidator {
 
         if (fileIsEmpty) {
             result[0] = "1";
-            result[1] = "Error: el archivo está vacío";
+            result[1] = "Error: archivo vacío";
             return result;
         } else {
             String linesWithError = this.validateLineFormat(data);
@@ -94,9 +94,9 @@ public final class ProgramValidator {
             else{
                 result[0] = "1";
                 if(linesWithError.split(" ").length > 1){
-                    result[1] = "Error en las líneas: " + linesWithError;
+                    result[1] = "Error en líneas: " + linesWithError;
                 }
-                else result[1] = "Error en la línea: " + linesWithError;
+                else result[1] = "Error en línea: " + linesWithError;
             }
         }
 

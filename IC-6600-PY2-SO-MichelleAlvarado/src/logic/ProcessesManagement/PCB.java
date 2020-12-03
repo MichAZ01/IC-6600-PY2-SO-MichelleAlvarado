@@ -58,7 +58,7 @@ public class PCB {
     public void setStackRegisters(){
         for(int i = 0; i < 5; i++){
             Register stackRegister = new Register();
-            stackRegister.setRegisterValue("00000000");
+            stackRegister.setRegisterValue("-");
             this.stack.add(stackRegister);
         }
     }

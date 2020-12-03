@@ -12,12 +12,14 @@ import java.util.ArrayList;
  * @author Michelle Alvarado
  */
 public class Memory {
+    private String memoryType;
     private int memoryLength;
     private ArrayList<Register> memoryRegisters;
     private int freeSpaces;
     
-    public Memory(){
+    public Memory(String memoryType){
         this.memoryRegisters = new ArrayList<Register>();
+        this.memoryType = memoryType;
     }
 
     public int getMemoryLength() {

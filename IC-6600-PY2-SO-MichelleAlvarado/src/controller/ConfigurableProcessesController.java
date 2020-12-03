@@ -17,14 +17,24 @@ import logic.computer.Computer;
  *
  * @author Michelle Alvarado
  */
-public class ConfigurableProcessesController extends TableController implements ActionListener {
-
+public class ConfigurableProcessesController implements ActionListener {
+    private static ConfigurableProcessesController myConfigurableProcessesController;
     private MiniPC view;
+    private ArrayList<Object> currentProcessesArrivalTime;
 
-    public ConfigurableProcessesController(MiniPC viewp) {
+    private ConfigurableProcessesController() {
         super();
+    }
+    
+    public void initView(MiniPC viewp){
         this.view = viewp;
         this.view.arrivalTimeButtonAccept.addActionListener(this);
+    }
+    
+    public static ConfigurableProcessesController getInstance(){
+        if(myConfigurableProcessesController == null) myConfigurableProcessesController = new ConfigurableProcessesController();
+        
+        return myConfigurableProcessesController;
     }
 
     @Override
@@ -49,12 +59,14 @@ public class ConfigurableProcessesController extends TableController implements 
             Object arrivalTime = this.view.firstProcessesTable.getModel().getValueAt(i, columnIndex);
             if(arrivalTime != null) processesArrivalTime.add(arrivalTime);
         }
-        this.verifyArrivalTimesAreCorrect(processesArrivalTime, count);
+        this.currentProcessesArrivalTime = processesArrivalTime;
+        this.verifyArrivalTimesAreCorrect(count);
     }
     
-    public void verifyArrivalTimesAreCorrect(ArrayList<Object> processesArrivalTime,int count){
-        if(processesArrivalTime.size() == count){
-            Computer.getInstance().getOS().getKernel().getProcessesManager().setReadyProcessesArrivalTime(processesArrivalTime);
+    public void verifyArrivalTimesAreCorrect(int count){
+        if(this.currentProcessesArrivalTime.size() == count){
+            Computer.getInstance().getOS().getKernel().getProcessesManager().setReadyProcessesArrivalTime(ConfigurableProcessesController.getInstance().getCurrentProcessesArrivalTime());
+            ProcessesTableController.getInstance().setProcessesTable();
             this.view.arrivalTimePanel.setVisible(false);
         }
         else{
@@ -84,4 +96,7 @@ public class ConfigurableProcessesController extends TableController implements 
         return -1;
     }
 
+    public ArrayList<Object> getCurrentProcessesArrivalTime() {
+        return currentProcessesArrivalTime;
+    }
 }

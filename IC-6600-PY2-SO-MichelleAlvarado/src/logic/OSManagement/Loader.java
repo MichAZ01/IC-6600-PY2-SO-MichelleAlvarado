@@ -19,11 +19,14 @@ public class Loader {
     }
     
     public void allocateProcessesInMemory(ArrayList<Process> currentWaitingProcesses){
+        ArrayList<Process> readyProcesses = new ArrayList<>();
         for (Process currentWaitingProcess : currentWaitingProcesses) {
             Computer.getInstance().getOS().getKernel().getMemoryManagementAlgorithm().allocateProcessInMemory(currentWaitingProcess);
             if(currentWaitingProcess.getPCB().getProcessStatus().getRegisterValue().equals("Preparado")){
                 Computer.getInstance().getOS().getKernel().getProcessesManager().addProcessTocurrentReadyProcesses(currentWaitingProcess);
+                readyProcesses.add(currentWaitingProcess);
             }
         }
+        Computer.getInstance().getOS().getKernel().getProcessesManager().cleanCurrenWaitingProcesses(readyProcesses);
     }
 }

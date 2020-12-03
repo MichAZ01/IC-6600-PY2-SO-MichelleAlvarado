@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package logic;
+package logic.custom;
 
 import java.awt.Color;
 import java.util.ArrayList;
@@ -14,14 +14,17 @@ import java.util.Random;
  * @author Michelle Alvarado
  */
 public class ColorManager {
-    public ArrayList<String> usedColors;
+    private static ColorManager myColorManager = null;
+    private ArrayList<String> usedColors;
 
-    public ColorManager() {
-        this.setUsedColors();
+    private ColorManager() {
+        this.usedColors = new ArrayList<>();
     }
     
-    public void setUsedColors(){
-        this.usedColors = new ArrayList<String>();
+    public static ColorManager getInstance(){
+        if(myColorManager == null) myColorManager = new ColorManager();
+        
+        return myColorManager;
     }
 
     public boolean StringExistsInArray(String string, ArrayList<String> array) {

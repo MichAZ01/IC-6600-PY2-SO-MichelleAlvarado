@@ -17,8 +17,8 @@ public class MemoryManager {
     private Memory secondaryMemory;
 
     public MemoryManager() {
-        this.mainMemory = new Memory();
-        this.secondaryMemory = new Memory();
+        this.mainMemory = new Memory("MainMemory");
+        this.secondaryMemory = new Memory("SecondaryMemory");
         this.init();
     }
 
@@ -46,11 +46,11 @@ public class MemoryManager {
     public String getProcessAddressForRegister(Register register) {
         String processAddress = "";
         if (register.getRegisterAddress().getMemoryType().equals("mainMemory")) {
-            processAddress += "0000 ";
+            processAddress += "00 ";
         } else {
-            processAddress += "1000 ";
+            processAddress += "10 ";
         }
-        int zerosAmount = 4 - (Integer.toString(register.getRegisterAddress().getMemoryIndex()).length());
+        int zerosAmount = 6 - (Integer.toString(register.getRegisterAddress().getMemoryIndex()).length());
         for (int i = 0; i < zerosAmount; i++) {
             processAddress += "0";
         }

@@ -14,7 +14,7 @@ import logic.memory.Register;
  * @author Michelle Alvarado
  */
 public class PARAMInstruction implements IInstruction{
-    private String instruction;
+    private final String instruction;
     
     public PARAMInstruction(String instruction){
         super();
@@ -26,7 +26,7 @@ public class PARAMInstruction implements IInstruction{
         int result = 0;
         String[] instructionParts = this.instruction.split(",");
         String param1 = instructionParts[0].split(" ")[1];
-        ArrayList<String> params = new ArrayList<String>();
+        ArrayList<String> params = new ArrayList<>();
         params.add(param1.trim());
         PCB currentPCB = process.getPCB();
         if (instructionParts.length == 3) {
@@ -46,7 +46,7 @@ public class PARAMInstruction implements IInstruction{
     
     public void storeParamsIntoStack(ArrayList<String> params, ArrayList<Register> stack){
         for(int i = 0; i < stack.size(); i++){
-            if(stack.get(i).getRegisterValue().equals("00000000")){
+            if(stack.get(i).getRegisterValue().equals("-")){
                 int x = i;
                 for(int j = 0; j < params.size(); j++){
                     stack.get(x).setRegisterValue(params.get(j));

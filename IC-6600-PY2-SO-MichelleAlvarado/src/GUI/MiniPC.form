@@ -226,7 +226,7 @@
                 <Component class="javax.swing.JTable" name="processesTable">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="12" rowCount="7">
+                      <Table columnCount="16" rowCount="7">
                         <Column editable="false" title="Color" type="java.lang.Object"/>
                         <Column editable="false" title="ID" type="java.lang.Object"/>
                         <Column editable="false" title="Llegada" type="java.lang.Object"/>
@@ -238,9 +238,14 @@
                         <Column editable="false" title="BX" type="java.lang.Object"/>
                         <Column editable="false" title="CX" type="java.lang.Object"/>
                         <Column editable="false" title="DX" type="java.lang.Object"/>
-                        <Column editable="false" title="Inicio pila" type="java.lang.Object"/>
+                        <Column editable="false" title="Pl V1" type="java.lang.Object"/>
+                        <Column editable="false" title="Pl V2" type="java.lang.Object"/>
+                        <Column editable="false" title="Pl V3" type="java.lang.Object"/>
+                        <Column editable="false" title="Pl V4" type="java.lang.Object"/>
+                        <Column editable="false" title="Pl V5" type="java.lang.Object"/>
                       </Table>
                     </Property>
+                    <Property name="autoResizeMode" type="int" value="4"/>
                     <Property name="enabled" type="boolean" value="false"/>
                     <Property name="focusable" type="boolean" value="false"/>
                     <Property name="gridColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -253,7 +258,7 @@
                     </Property>
                   </Properties>
                   <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="processesTable.getTableHeader().setFont(new Font(&quot;Bodoni MT&quot;, Font.BOLD, 14));&#xa;((DefaultTableCellRenderer)processesTable.getTableHeader().getDefaultRenderer())&#xa;    .setHorizontalAlignment(JLabel.CENTER);&#xa;&#xa;DefaultTableCellRenderer processesTableCenterRenderer = new DefaultTableCellRenderer();&#xa;        processesTableCenterRenderer.setHorizontalAlignment(JLabel.CENTER);&#xa;&#xa;for(int i = 0; i &lt; processesTable.getColumnCount(); i++){&#xa;processesTable.getColumnModel().getColumn(i).setCellRenderer(processesTableCenterRenderer);&#xa;}&#xa;&#xa;processesTable.getColumnModel().getColumn(0).setPreferredWidth(10);&#xa;processesTable.getColumnModel().getColumn(1).setPreferredWidth(2);&#xa;processesTable.getColumnModel().getColumn(2).setPreferredWidth(40);&#xa;processesTable.getColumnModel().getColumn(3).setPreferredWidth(80);&#xa;processesTable.getColumnModel().getColumn(4).setPreferredWidth(120);&#xa;processesTable.getColumnModel().getColumn(5).setPreferredWidth(60);&#xa;processesTable.getColumnModel().getColumn(6).setPreferredWidth(50);&#xa;processesTable.getColumnModel().getColumn(7).setPreferredWidth(50);&#xa;processesTable.getColumnModel().getColumn(8).setPreferredWidth(50);&#xa;processesTable.getColumnModel().getColumn(9).setPreferredWidth(50);&#xa;processesTable.getColumnModel().getColumn(10).setPreferredWidth(50);&#xa;processesTable.getColumnModel().getColumn(11).setPreferredWidth(70);"/>
+                    <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="processesTable.getTableHeader().setFont(new Font(&quot;Bodoni MT&quot;, Font.BOLD, 14));&#xa;((DefaultTableCellRenderer)processesTable.getTableHeader().getDefaultRenderer())&#xa;    .setHorizontalAlignment(JLabel.CENTER);"/>
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                   </AuxValues>
                 </Component>
@@ -774,6 +779,10 @@
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
                         </Property>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="null"/>
+                        </Property>
+                        <Property name="focusable" type="boolean" value="false"/>
                       </Properties>
                       <AuxValues>
                         <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
@@ -799,7 +808,7 @@
                             </Property>
                           </Properties>
                           <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="mainMemoryTable.getTableHeader().setFont(new Font(&quot;Bodoni MT&quot;, Font.PLAIN, 14));&#xa;((DefaultTableCellRenderer)coresTable.getTableHeader().getDefaultRenderer())&#xa;    .setHorizontalAlignment(JLabel.CENTER);&#xa;&#xa;DefaultTableCellRenderer mainMemoryTableCenterRenderer = new DefaultTableCellRenderer();&#xa;        mainMemoryTableCenterRenderer.setHorizontalAlignment(JLabel.CENTER);&#xa;&#xa;mainMemoryTable.getColumnModel().getColumn(0).setCellRenderer(mainMemoryTableCenterRenderer);&#xa;mainMemoryTable.getColumnModel().getColumn(1).setCellRenderer(mainMemoryTableCenterRenderer);"/>
+                            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="mainMemoryTable.getTableHeader().setFont(new Font(&quot;Bodoni MT&quot;, Font.PLAIN, 14));&#xa;((DefaultTableCellRenderer)coresTable.getTableHeader().getDefaultRenderer())&#xa;    .setHorizontalAlignment(JLabel.CENTER);"/>
                             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                           </AuxValues>
                         </Component>
@@ -860,7 +869,7 @@
                             </Property>
                           </Properties>
                           <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="secondaryMemoryTable.getTableHeader().setFont(new Font(&quot;Bodoni MT&quot;, Font.PLAIN, 14));&#xa;((DefaultTableCellRenderer)coresTable.getTableHeader().getDefaultRenderer())&#xa;    .setHorizontalAlignment(JLabel.CENTER);&#xa;&#xa;DefaultTableCellRenderer secondaryMemoryTableCenterRenderer = new DefaultTableCellRenderer();&#xa;        secondaryMemoryTableCenterRenderer.setHorizontalAlignment(JLabel.CENTER);&#xa;&#xa;secondaryMemoryTable.getColumnModel().getColumn(0).setCellRenderer(secondaryMemoryTableCenterRenderer);&#xa;secondaryMemoryTable.getColumnModel().getColumn(1).setCellRenderer(secondaryMemoryTableCenterRenderer);"/>
+                            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="secondaryMemoryTable.getTableHeader().setFont(new Font(&quot;Bodoni MT&quot;, Font.PLAIN, 14));&#xa;((DefaultTableCellRenderer)coresTable.getTableHeader().getDefaultRenderer())&#xa;    .setHorizontalAlignment(JLabel.CENTER);"/>
                             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                           </AuxValues>
                         </Component>
@@ -951,7 +960,7 @@
                     <Property name="gridColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="rowHeight" type="int" value="19"/>
+                    <Property name="rowHeight" type="int" value="21"/>
                     <Property name="rowSelectionAllowed" type="boolean" value="false"/>
                     <Property name="selectionBackground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>

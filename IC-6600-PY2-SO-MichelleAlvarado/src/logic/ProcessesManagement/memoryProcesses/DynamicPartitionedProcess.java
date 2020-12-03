@@ -19,10 +19,17 @@ public class DynamicPartitionedProcess extends Process {
         this.allocatedMemory = new ArrayList<Register>();
     }
     
+    @Override
     public void setAllocatedMemory(ArrayList<Register> memorySpaces){
         for(int i = 0; i < memorySpaces.size(); i++){
             Register register = memorySpaces.get(i);
             register.setRegisterValue(this.getProcessInstructions().get(i));
         }
+        this.allocatedMemory = memorySpaces;
+    }
+
+    @Override
+    public ArrayList<Register> getMemorySpaces() {
+        return this.allocatedMemory;
     }
 }

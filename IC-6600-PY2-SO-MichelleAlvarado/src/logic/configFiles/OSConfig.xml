@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <systemConfig>
     <MemoriesSize>
-        <MainMemory>256</MainMemory>  
+        <MainMemory>16</MainMemory>  
         <SecondaryMemory>128</SecondaryMemory>
     </MemoriesSize>
     <MemoryManagementMethods>

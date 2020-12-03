@@ -5,13 +5,9 @@
  */
 package logic.computer;
 
-import java.io.IOException;
-import javax.xml.parsers.ParserConfigurationException;
 import logic.OSManagement.CPU;
 import logic.OSManagement.OperatingSystem;
-import logic.ProcessesManagement.ProcessesManager;
 import logic.memory.MemoryManager;
-import org.xml.sax.SAXException;
 
 /**
  *
@@ -19,9 +15,9 @@ import org.xml.sax.SAXException;
  */
 public class Computer {
     private static Computer myComputer = null;
-    private MemoryManager memoryManager;
-    private CPU myCPU;
-    private OperatingSystem myOS;
+    private final MemoryManager memoryManager;
+    private final CPU myCPU;
+    private final OperatingSystem myOS;
     
     private Computer(){
         myOS = new OperatingSystem();

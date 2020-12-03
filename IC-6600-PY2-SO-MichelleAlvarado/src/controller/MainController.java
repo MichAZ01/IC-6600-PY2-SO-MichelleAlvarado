@@ -15,21 +15,24 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import logic.OSManagement.CPU;
 import logic.computer.Computer;
 import rojerusan.RSPanelsSlider;
 import logic.ProcessesManagement.Process;
+
 /**
  *
  * @author Michelle Alvarado
  */
 public class MainController implements ActionListener {
+
     private MiniPC view;
-    
-    public MainController(){
+
+    public MainController() {
     }
-    
-    public void showView(){
+
+    public void showView() {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -54,6 +57,9 @@ public class MainController implements ActionListener {
         //</editor-fold>
         this.view = new MiniPC();
         MiniPC viewP = this.view;
+        MemoryTableController.getInstance().initView(viewP);
+        ConfigurableProcessesController.getInstance().initView(viewP);
+        ProcessesTableController.getInstance().initView(viewP);
         this.view.openFilesButton.addActionListener(this);
         this.view.startButton.addActionListener(this);
         this.view.configButton.addActionListener(this);
@@ -71,15 +77,14 @@ public class MainController implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
-            case "openFiles":
-        {
-            try {
-                this.OpenFolderButtonActionPerformed(view);
-            } catch (IOException ex) {
-                Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, ex);
+            case "openFiles": {
+                try {
+                    this.OpenFolderButtonActionPerformed(view);
+                } catch (IOException ex) {
+                    Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
-        }
-                break;
+            break;
             case "startExecution":
                 this.startButtonActionPerformed();
                 break;
@@ -93,7 +98,7 @@ public class MainController implements ActionListener {
                 break;
         }
     }
-    
+
     public void OpenFolderButtonActionPerformed(javax.swing.JFrame view) throws IOException {
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setMultiSelectionEnabled(true);
@@ -110,35 +115,63 @@ public class MainController implements ActionListener {
                 break;
         }
     }
-    
-    public void prepareProcesses(File[] files) throws IOException{
+
+    public void prepareProcesses(File[] files) throws IOException {
         Computer.getInstance().getOS().getKernel().getProcessesManager().loadProcesses(files);
         ArrayList<Process> waitingProcesses = Computer.getInstance().getOS().getKernel().getProcessesManager().getCurrentWaitingProcesses();
         Computer.getInstance().getOS().getKernel().getProgramsLoader().allocateProcessesInMemory(waitingProcesses);
-        this.setButtonsEnabled();
-        if(Computer.getInstance().getOS().getKernel().getProcessesManager().getConfigurableProcessesCount() > 1){
-            ConfigurableProcessesController configurableProcessesController = new ConfigurableProcessesController(this.view);
-            configurableProcessesController.setConfigurableProcessesTable();
+        this.setButtonsDisabled();
+        if (Computer.getInstance().getOS().getKernel().getProcessesManager().getConfigurableProcessesCount() > 1) {
+            ConfigurableProcessesController.getInstance();
+            ConfigurableProcessesController.getInstance().setConfigurableProcessesTable();
             this.view.arrivalTimePanel.setVisible(true);
+        } if (Computer.getInstance().getOS().getKernel().getProcessesManager().getConfigurableProcessesCount() >= 1) {
+            MemoryTableController.getInstance().setMainMemoryTable();
+            MemoryTableController.getInstance().setSecondaryMemoryTable();
+        } if (Computer.getInstance().getOS().getKernel().getProcessesManager().getConfigurableProcessesCount() == 1){
+            Computer.getInstance().getOS().getKernel().getProcessesManager().setReadyProcessesArrivalTime(ConfigurableProcessesController.getInstance().getCurrentProcessesArrivalTime());
+            ProcessesTableController.getInstance().setProcessesTable();
+        }
+        else{
+            this.setButtonsEnabled();
+            this.generateSystemMessages();
         }
     }
     
-    public void setButtonsEnabled(){
-        this.view.openFilesButton.setEnabled(!this.view.openFilesButton.isEnabled());
-        this.view.startButton.setEnabled(!this.view.startButton.isEnabled());
-        this.view.configButton.setEnabled(!this.view.configButton.isEnabled());
+    public void generateSystemMessages(){
+        if(Computer.getInstance().getOS().getKernel().getProcessesManager().getLoadedProcesses().size() > 0 && 
+                Computer.getInstance().getOS().getKernel().getProcessesManager().getCurrentReadyProcesses().isEmpty() && 
+                Computer.getInstance().getOS().getKernel().getProcessesManager().getCurrentWaitingProcesses().isEmpty()){
+            JOptionPane.showMessageDialog(this.view, "Los procesos cargados tienen errores. \nPor favor revise y modifique las instrucciones, \nluego proceda a cargar de nuevo los archivos. ");
+        }
+        if(Computer.getInstance().getOS().getKernel().getProcessesManager().getCurrentReadyProcesses().isEmpty() && 
+                Computer.getInstance().getOS().getKernel().getProcessesManager().getCurrentWaitingProcesses().size() > 0){
+            JOptionPane.showMessageDialog(this.view, "El tamaño definido para la memoria principal no es lo suficientemente \ngrande para almacenar los procesos que fueron cargados.");
+        }
+    }
+
+    public void setButtonsEnabled() {
+        this.view.openFilesButton.setEnabled(true);
+        this.view.startButton.setEnabled(false);
+        this.view.configButton.setEnabled(true);
     }
     
-    public void startButtonActionPerformed(){
+    public void setButtonsDisabled() {
+        this.view.openFilesButton.setEnabled(false);
+        this.view.startButton.setEnabled(true);
+        this.view.configButton.setEnabled(false);
+    }
+
+    public void startButtonActionPerformed() {
         this.view.openFilesButton.setEnabled(false);
         this.view.configButton.setEnabled(false);
     }
-    
-    public void configButtonActionPerformed(){
+
+    public void configButtonActionPerformed() {
         this.view.panelsSliderContainer.setPanelSlider(MiniPC.WIDTH, this.view.configContainer, RSPanelsSlider.DIRECT.RIGHT);
     }
-    
-    public void backToCPUButtonActionPerformed(){
+
+    public void backToCPUButtonActionPerformed() {
         this.view.panelsSliderContainer.setPanelSlider(MiniPC.WIDTH, this.view.miniCPUContainer, RSPanelsSlider.DIRECT.RIGHT);
     }
 }

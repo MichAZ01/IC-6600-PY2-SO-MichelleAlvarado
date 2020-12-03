@@ -13,7 +13,7 @@ import logic.memory.Register;
  *
  * @author Michelle Alvarado
  */
-public class Process {
+public abstract class Process {
 
     private ArrayList<String> processInstructions;
     private int processBurstTime;
@@ -85,7 +85,7 @@ public class Process {
     public int getStackAvailableSpace(){
         int space = 0;
         for(int i = 0; i < this.PCB.getStack().size(); i++){
-            if(this.PCB.getStack().get(i).getRegisterValue().equals("00000000")) space += 1;
+            if(this.PCB.getStack().get(i).getRegisterValue().equals("-")) space += 1;
         }
         return space;
     }
@@ -105,4 +105,16 @@ public class Process {
     public String getArrivalTime() {
         return arrivalTime;
     }
+
+    public Color getProcessColor() {
+        return processColor;
+    }
+
+    public void setProcessColor(Color processColor) {
+        this.processColor = processColor;
+    }
+    
+    public abstract void setAllocatedMemory(ArrayList<Register> memorySpaces);
+    
+    public abstract ArrayList<Register> getMemorySpaces();
 }
