@@ -39,4 +39,12 @@ public class CoresManager {
         }
         return cores;
     }
+    
+    public ArrayList<Core> getBusyCores(){
+        ArrayList<Core> cores = null;
+        for(Core core: this.CPUCores){
+            if(!core.getIsAvailable()) cores.add(core);
+        }
+        return cores;
+    }
 }

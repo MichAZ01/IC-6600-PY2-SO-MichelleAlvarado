@@ -26,8 +26,12 @@ public class CPU {
         this.hasProcessesToExecute = false;
     }
     
-    public void setHasProcessesToExecute(){
-        this.hasProcessesToExecute = !this.hasProcessesToExecute;
+    public void setHasProcessesToExecute(boolean processesToExecute){
+        this.hasProcessesToExecute = processesToExecute;
+    }
+
+    public boolean getHasProcessesToExecute() {
+        return hasProcessesToExecute;
     }
 
     public int getCPUCurrentTime() {
@@ -37,6 +41,8 @@ public class CPU {
     public void setCPUCurrentTime() {
         this.CPUCurrentTime += 1;
     }
-    
-    
+
+    public CoresManager getMyCoresManager() {
+        return myCoresManager;
+    }
 }

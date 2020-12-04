@@ -15,39 +15,39 @@ import logic.memory.Register;
  */
 public abstract class Process {
 
-    private ArrayList<String> processInstructions;
+    private final ArrayList<String> processInstructions;
     private int processBurstTime;
     private PCB PCB;
-    private boolean processIsCorrect;
     private String processName;
-    private String processID;
+    private final String processID;
     private String arrivalHour;
     private String arrivalTime;
     private Color processColor;
     private double trValue;
     private double trTsValue;
-    private boolean hasArrivalTime;
     private String CPMFlag;
-    private ArrayList<Register> memorySpacesIndexes;
     private int currentProcessRemainingBurstTime;
     private int coreWhereIsRuning;
+    private String initHour;
+    private String finalHour;
+    private int internalPC;
 
     public Process(ArrayList<String> instructions, String name, int processIDIndex) {
         this.processInstructions = instructions;
         this.processBurstTime = this.processInstructions.size();
-        this.processIsCorrect = false;
         this.processName = name;
         this.arrivalHour = "";
+        this.initHour = "";
+        this.finalHour = "";
         this.arrivalTime = "";
         this.processID = "P-" + processIDIndex;
         this.trValue = -1;
         this.trTsValue = -1;
-        this.hasArrivalTime = false;
         this.CPMFlag = "-";
-        this.memorySpacesIndexes = new ArrayList<>();
         this.processBurstTime = instructions.size();
         this.currentProcessRemainingBurstTime = instructions.size();
-        this.arrivalTime = "-";
+        this.arrivalTime = "-1";
+        this.internalPC = 0;
     }
 
     public void setPCB(PCB PCB) {
@@ -56,10 +56,6 @@ public abstract class Process {
 
     public PCB getPCB() {
         return PCB;
-    }
-
-    public void setProcessIsCorrect() {
-        this.processIsCorrect = !processIsCorrect;
     }
 
     public ArrayList<String> getProcessInstructions() {
@@ -136,5 +132,57 @@ public abstract class Process {
 
     public void setCoreWhereIsRuning(int coreWhereIsRuning) {
         this.coreWhereIsRuning = coreWhereIsRuning;
+    }
+
+    public String getInitHour() {
+        return initHour;
+    }
+
+    public void setInitHour(String initHour) {
+        this.initHour = initHour;
+    }
+
+    public String getFinalHour() {
+        return finalHour;
+    }
+
+    public void setFinalHour(String finalHour) {
+        this.finalHour = finalHour;
+    }
+
+    public int getProcessBurstTime() {
+        return processBurstTime;
+    }
+
+    public double getTrValue() {
+        return trValue;
+    }
+
+    public void setTrValue(double trValue) {
+        this.trValue = trValue;
+    }
+
+    public double getTrTsValue() {
+        return trTsValue;
+    }
+
+    public void setTrTsValue(double trTsValue) {
+        this.trTsValue = trTsValue;
+    }
+
+    public void setProcessBurstTime(int processBurstTime) {
+        this.processBurstTime = processBurstTime;
+    }
+
+    public int getInternalPC() {
+        return internalPC;
+    }
+
+    public void setInternalPC() {
+        this.internalPC += 1;
+    }
+    
+    public void setInternalPC(int pc) {
+        this.internalPC = pc;
     }
 }

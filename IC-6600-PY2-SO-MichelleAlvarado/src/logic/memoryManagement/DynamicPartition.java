@@ -8,17 +8,15 @@ package logic.memoryManagement;
 import java.util.ArrayList;
 import java.util.List;
 import logic.ProcessesManagement.Process;
-import logic.ProcessesManagement.memoryProcesses.DynamicPartitionedProcess;
 import logic.computer.Computer;
 import logic.memory.Memory;
 import logic.memory.Register;
-import logic.memoryManagement.IMemoryManagementAlgorithm;
 
 /**
  *
  * @author Michelle Alvarado
  */
-public class DynamicPartition implements IMemoryManagementAlgorithm{
+public class DynamicPartition extends MemoryManagementAlgorithm{
     
     public DynamicPartition(){
     }
@@ -40,10 +38,7 @@ public class DynamicPartition implements IMemoryManagementAlgorithm{
         }
         
         if(memoryRegisters.size() > 0){
-            DynamicPartitionedProcess allocatedProcess = (DynamicPartitionedProcess) process;
-            allocatedProcess.setAllocatedMemory(memoryRegisters);
-            if(memoryType.equals("mainMemory")) allocatedProcess.getPCB().getProcessStatus().setRegisterValue("Preparado");
-            else allocatedProcess.getPCB().getProcessStatus().setRegisterValue("En espera");
+            this.setAllocatedProcess(process, memoryType, memoryRegisters);
         }
     }
     

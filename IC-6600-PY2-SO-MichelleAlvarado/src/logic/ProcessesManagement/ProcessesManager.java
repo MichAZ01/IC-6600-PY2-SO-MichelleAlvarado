@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
+import logic.computer.Computer;
 import logic.custom.ColorManager;
 import logic.custom.FileManager;
 
@@ -51,16 +52,17 @@ public class ProcessesManager {
             ArrayList<String> instructions = fileReader.getCleanData(processLine);
             Process newProcess = new FactoryProcess().getProcess(instructions, currentProcessFile.getName(), i);
             if(processStatus[0].equals("0")){
-                newProcess.setProcessIsCorrect();
                 this.processesToExecute += 1;
                 this.newProcesses.add(newProcess);
             }
             PCB newProcessPCB = new PCB(processStatus[1], newProcess.getProcessInstructions().size());
-            newProcessPCB.getProcessID().setRegisterValue(newProcess.getProcessID());
             newProcess.setPCB(newProcessPCB);
             newProcess.setProcessName(currentProcessFile.getName());
             newProcess.setProcessColor(ColorManager.getInstance().generateColor(i));
             this.loadedProcesses.add(newProcess);
+        }
+        if(this.newProcesses.size() > 0){
+            Computer.getInstance().getCPU().setHasProcessesToExecute(true);
         }
     }
     
@@ -130,10 +132,54 @@ public class ProcessesManager {
         }
     }
     
+    public void setProcessArrivalTime(Process process){
+        process.setArrivalTime(Integer.toString(Computer.getInstance().getCPU().getCPUCurrentTime()));
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(this.currentProcessesInitHour.getTime());
+        calendar.add(Calendar.SECOND, Computer.getInstance().getCPU().getCPUCurrentTime());
+        process.setArrivalHour(calendar.getTime().toString().split(" ")[3]);
+    }
+    
+    public void setProcessInitTime(Process process){
+        process.getPCB().getInitTime().setRegisterValue(Integer.toString(Computer.getInstance().getCPU().getCPUCurrentTime()));
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(this.currentProcessesInitHour.getTime());
+        calendar.add(Calendar.SECOND, Computer.getInstance().getCPU().getCPUCurrentTime());
+        process.setInitHour(calendar.getTime().toString().split(" ")[3]);
+    }
+    
+    public void setProcessFinalTime(Process process){
+        process.getPCB().getFinalTime().setRegisterValue(Integer.toString(Computer.getInstance().getCPU().getCPUCurrentTime() + 1));
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(this.currentProcessesInitHour.getTime());
+        calendar.add(Calendar.SECOND, (Computer.getInstance().getCPU().getCPUCurrentTime() + 1));
+        process.setFinalHour(calendar.getTime().toString().split(" ")[3]);
+    }
+    
     public void cleanNewProcesses(ArrayList<Process> processes){
         for(Process process: processes){
             if(process.getPCB().getProcessStatus().getRegisterValue().equals("Preparado") || 
                     process.getPCB().getProcessStatus().getRegisterValue().equals("En espera")) this.newProcesses.remove(process);
         }
+    }
+    
+    public void cleanWaitingProcesses(ArrayList<Process> processes){
+        for(Process process: processes){
+            if(process.getPCB().getProcessStatus().getRegisterValue().equals("Preparado")) this.currentWaitingProcesses.remove(process);
+        }
+    }
+    
+    public void cleanCurrentReadyProcesses(ArrayList<Process> processes){
+        for(Process process: processes){
+            this.currentReadyProcesses.remove(process);
+        }
+    }
+
+    public ArrayList<Process> getCurrentExecutingProcesses() {
+        return currentExecutingProcesses;
+    }
+
+    public ArrayList<Process> getFinishedProcesses() {
+        return finishedProcesses;
     }
 }

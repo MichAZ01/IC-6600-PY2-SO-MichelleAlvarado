@@ -133,8 +133,7 @@ public class MainController implements ActionListener {
 
     public void prepareProcesses(File[] files) throws IOException {
         Computer.getInstance().getOS().getKernel().getProcessesManager().loadProcesses(files);
-        ArrayList<Process> newProcesses = Computer.getInstance().getOS().getKernel().getProcessesManager().getNewProcesses();
-        Computer.getInstance().getOS().getKernel().getProgramsLoader().allocateProcessesInMemory(newProcesses);
+        Computer.getInstance().getOS().getKernel().getProgramsLoader().allocateNewProcessesInMemory();
         this.setButtonsDisabled();
         if (Computer.getInstance().getOS().getKernel().getProcessesManager().getConfigurableProcessesCount() > 1) {
             ConfigurableProcessesController.getInstance();
@@ -146,8 +145,9 @@ public class MainController implements ActionListener {
         } if (Computer.getInstance().getOS().getKernel().getProcessesManager().getConfigurableProcessesCount() == 1){
             Computer.getInstance().getOS().getKernel().getProcessesManager().setReadyProcessesArrivalTime(ConfigurableProcessesController.getInstance().getCurrentProcessesArrivalTime());
             ProcessesTableController.getInstance().setProcessesTable();
-        }
-        else{
+        } if (Computer.getInstance().getOS().getKernel().getProcessesManager().getCurrentReadyProcesses().size() > 0){
+            this.view.startButton.setEnabled(true);
+        } else{
             this.setButtonsEnabled();
             this.generateSystemMessages();
         }
@@ -173,7 +173,7 @@ public class MainController implements ActionListener {
     
     public void setButtonsDisabled() {
         this.view.openFilesButton.setEnabled(false);
-        this.view.startButton.setEnabled(true);
+        this.view.startButton.setEnabled(false);
         this.view.configButton.setEnabled(false);
     }
 

@@ -18,7 +18,8 @@ public class Loader {
         
     }
     
-    public void allocateProcessesInMemory(ArrayList<Process> newProcesses){
+    public void allocateNewProcessesInMemory(){
+        ArrayList<Process> newProcesses = Computer.getInstance().getOS().getKernel().getProcessesManager().getNewProcesses();
         ArrayList<Process> allocatedProcesses = new ArrayList<>();
         for (Process newProcess : newProcesses) {
             Computer.getInstance().getOS().getKernel().getMemoryManagementAlgorithm().allocateProcessInMemory(newProcess);
@@ -32,5 +33,19 @@ public class Loader {
             }
         }
         Computer.getInstance().getOS().getKernel().getProcessesManager().cleanNewProcesses(allocatedProcesses);
+    }
+    
+    public void allocateWaitingProcessesInMemory(){
+        ArrayList<Process> allocatedProcesses = new ArrayList<>();
+        ArrayList<Process> waitingProcesses = Computer.getInstance().getOS().getKernel().getProcessesManager().getCurrentWaitingProcesses();
+        for(Process process: waitingProcesses){
+            Computer.getInstance().getOS().getKernel().getMemoryManagementAlgorithm().allocateProcessInMemory(process);
+            
+            if(process.getPCB().getProcessStatus().getRegisterValue().equals("Preparado")){
+                Computer.getInstance().getOS().getKernel().getProcessesManager().addProcessTocurrentReadyProcesses(process);
+                allocatedProcesses.add(process);
+            }
+        }
+        Computer.getInstance().getOS().getKernel().getProcessesManager().cleanWaitingProcesses(allocatedProcesses);
     }
 }

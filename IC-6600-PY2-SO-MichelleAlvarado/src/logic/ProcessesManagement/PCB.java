@@ -13,7 +13,6 @@ import logic.memory.Register;
  * @author Michelle Alvarado
  */
 public class PCB {
-        private Register processID;
     private Register processStatus;
     private Register PC;
     private Register AC;
@@ -33,7 +32,6 @@ public class PCB {
         this.processStatus.setRegisterValue(processStatus);
         this.processLength = new Register();
         this.processLength.setRegisterValue(Integer.toString(processLength));
-        this.processID = new Register();
         this.stack = new ArrayList<Register>(5);
         this.setStackRegisters();
         this.PC = new Register();
@@ -69,10 +67,6 @@ public class PCB {
 
     public Register getProcessLength() {
         return processLength;
-    }
-
-    public Register getProcessID() {
-        return processID;
     }
 
     public Register getInitProgramIndex() {

@@ -12,8 +12,7 @@ import logic.ProcessesManagement.Process;
  * @author Michelle Alvarado
  */
 public class Core {
-    private int coreIndex;
-    private Register currentProcessID;
+    private final int coreIndex;
     private Register IRRegister;
     private boolean isAvailable;
     private int currentProcessRemainingBurstTime;
@@ -21,20 +20,11 @@ public class Core {
     private Process currentProcess;
     
     public Core(int i){
-        this.currentProcessID = new Register();
         this.IRRegister = new Register();
         this.isAvailable = true;
         this.currentProcessRemainingBurstTime = 0;
         this.CPUCycleRemainingTime = 1;
         this.coreIndex = i;
-    }
-
-    public Register getCurrentProcessID() {
-        return currentProcessID;
-    }
-
-    public void setCurrentProcessID(Register currentProcessID) {
-        this.currentProcessID = currentProcessID;
     }
 
     public Register getIRRegister() {

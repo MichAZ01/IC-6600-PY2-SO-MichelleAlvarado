@@ -5,6 +5,8 @@
  */
 package logic.schedulingAlgorithms;
 
+import logic.ProcessesManagement.Process;
+
 /**
  *
  * @author Michelle Alvarado
@@ -12,6 +14,16 @@ package logic.schedulingAlgorithms;
 public class FCFS extends Scheduler{
     
     public FCFS(){
-        
+       super(); 
+    }
+
+    @Override
+    public int getCPUCycleRemainingTime(Process process) {
+        return process.getProcessBurstTime();
+    }
+
+    @Override
+    public Process getNextProcess() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

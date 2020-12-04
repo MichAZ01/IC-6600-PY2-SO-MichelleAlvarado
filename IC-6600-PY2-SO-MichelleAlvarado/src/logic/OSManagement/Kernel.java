@@ -5,21 +5,18 @@
  */
 package logic.OSManagement;
 
-import java.io.IOException;
-import javax.xml.parsers.ParserConfigurationException;
 import logic.ProcessesManagement.ProcessesManager;
 import logic.custom.OSSettings.OSConfig;
 import logic.custom.OSSettings.OSConfigReader;
-import logic.memoryManagement.IMemoryManagementAlgorithm;
+import logic.memoryManagement.MemoryManagementAlgorithm;
 import logic.schedulingAlgorithms.Scheduler;
-import org.xml.sax.SAXException;
 /**
  *
  * @author Michelle Alvarado
  */
 public class Kernel {
     private ProcessesManager processesManager;
-    private IMemoryManagementAlgorithm memoryManagementAlgorithm;
+    private MemoryManagementAlgorithm memoryManagementAlgorithm;
     private Scheduler myScheduler;
     private Loader programsLoader;
     
@@ -35,7 +32,7 @@ public class Kernel {
         return processesManager;
     }
 
-    public IMemoryManagementAlgorithm getMemoryManagementAlgorithm() {
+    public MemoryManagementAlgorithm getMemoryManagementAlgorithm() {
         return memoryManagementAlgorithm;
     }
 

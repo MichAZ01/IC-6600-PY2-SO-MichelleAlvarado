@@ -7,7 +7,7 @@ package logic.custom.OSSettings;
 
 import java.util.ArrayList;
 import logic.memoryManagement.DynamicPartition;
-import logic.memoryManagement.IMemoryManagementAlgorithm;
+import logic.memoryManagement.MemoryManagementAlgorithm;
 import logic.schedulingAlgorithms.FCFS;
 import logic.schedulingAlgorithms.Scheduler;
 
@@ -66,8 +66,8 @@ public class OSConfig {
         this.schedulingMethods = schedulingMethods;
     }
     
-    public IMemoryManagementAlgorithm getMemoryManagementAlgorithm(){
-        IMemoryManagementAlgorithm memoryManagementAlgorithm = null;
+    public MemoryManagementAlgorithm getMemoryManagementAlgorithm(){
+        MemoryManagementAlgorithm memoryManagementAlgorithm = null;
         ArrayList<String> activeMethod = this.getActiveMethod(this.memoryManagementMethods);
         String memoryManagementMethodName = activeMethod.get(1);
         switch(memoryManagementMethodName){
