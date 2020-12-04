@@ -11,6 +11,7 @@ import logic.ProcessesManagement.ProcessesManager;
 import logic.custom.OSSettings.OSConfig;
 import logic.custom.OSSettings.OSConfigReader;
 import logic.memoryManagement.IMemoryManagementAlgorithm;
+import logic.schedulingAlgorithms.Scheduler;
 import org.xml.sax.SAXException;
 /**
  *
@@ -19,12 +20,14 @@ import org.xml.sax.SAXException;
 public class Kernel {
     private ProcessesManager processesManager;
     private IMemoryManagementAlgorithm memoryManagementAlgorithm;
+    private Scheduler myScheduler;
     private Loader programsLoader;
     
     public Kernel() {
         this.processesManager = new ProcessesManager();
         OSConfigReader.getInstance().getSOConfig();
-        memoryManagementAlgorithm = OSConfig.getInstance().getMemoryManagementAlgorithm();
+        this.memoryManagementAlgorithm = OSConfig.getInstance().getMemoryManagementAlgorithm();
+        this.myScheduler = OSConfig.getInstance().getSchedulerAlgorithm();
         this.programsLoader = new Loader();
     }
     

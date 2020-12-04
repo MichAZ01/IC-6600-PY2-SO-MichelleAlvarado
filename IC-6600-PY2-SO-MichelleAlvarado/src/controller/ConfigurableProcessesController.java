@@ -18,22 +18,26 @@ import logic.computer.Computer;
  * @author Michelle Alvarado
  */
 public class ConfigurableProcessesController implements ActionListener {
+
     private static ConfigurableProcessesController myConfigurableProcessesController;
     private MiniPC view;
     private ArrayList<Object> currentProcessesArrivalTime;
 
     private ConfigurableProcessesController() {
         super();
+        this.currentProcessesArrivalTime = new ArrayList<Object>();
     }
-    
-    public void initView(MiniPC viewp){
+
+    public void initView(MiniPC viewp) {
         this.view = viewp;
         this.view.arrivalTimeButtonAccept.addActionListener(this);
     }
-    
-    public static ConfigurableProcessesController getInstance(){
-        if(myConfigurableProcessesController == null) myConfigurableProcessesController = new ConfigurableProcessesController();
-        
+
+    public static ConfigurableProcessesController getInstance() {
+        if (myConfigurableProcessesController == null) {
+            myConfigurableProcessesController = new ConfigurableProcessesController();
+        }
+
         return myConfigurableProcessesController;
     }
 
@@ -57,30 +61,41 @@ public class ConfigurableProcessesController implements ActionListener {
         ArrayList<Object> processesArrivalTime = new ArrayList<>();
         for (int i = 0; i < count; i++) {
             Object arrivalTime = this.view.firstProcessesTable.getModel().getValueAt(i, columnIndex);
-            if(arrivalTime != null) processesArrivalTime.add(arrivalTime);
+            if (arrivalTime != null && isNumeric(arrivalTime)) {
+                processesArrivalTime.add(arrivalTime);
+            }
         }
         this.currentProcessesArrivalTime = processesArrivalTime;
         this.verifyArrivalTimesAreCorrect(count);
     }
-    
-    public void verifyArrivalTimesAreCorrect(int count){
-        if(this.currentProcessesArrivalTime.size() == count){
+
+    public void verifyArrivalTimesAreCorrect(int count) {
+        if (this.currentProcessesArrivalTime.size() == count) {
             Computer.getInstance().getOS().getKernel().getProcessesManager().setReadyProcessesArrivalTime(ConfigurableProcessesController.getInstance().getCurrentProcessesArrivalTime());
             ProcessesTableController.getInstance().setProcessesTable();
             this.view.arrivalTimePanel.setVisible(false);
-        }
-        else{
+        } else {
             JOptionPane.showMessageDialog(this.view, "Los tiempos de llegada deben ser números enteros y no se pueden dejar vacíos.");
         }
     }
-    
-    public void setConfigurableProcessesTable(){
+
+    public void setConfigurableProcessesTable() {
         ArrayList<logic.ProcessesManagement.Process> configurableProcesses = Computer.getInstance().getOS().getKernel().getProcessesManager().getConfigurableProcesses();
         int j = 1;
         for (int i = 0; i < configurableProcesses.size() - 1; i++) {
             this.view.firstProcessesTable.getModel().setValueAt(configurableProcesses.get(j).getProcessName(), i, 0);
             this.view.firstProcessesTable.getModel().setValueAt(configurableProcesses.get(j).getProcessID(), i, 1);
             j++;
+        }
+    }
+
+    public void cleanConfigurableProcessesTable() {
+        int rowCount = this.view.firstProcessesTable.getRowCount();
+        for (int i = 0; i < rowCount; i++) {
+            this.view.firstProcessesTable.getModel().setValueAt("", i, 0);
+            this.view.firstProcessesTable.getModel().setValueAt("", i, 1);
+            this.view.firstProcessesTable.getModel().setValueAt("", i, 2);
+
         }
     }
 
@@ -98,5 +113,19 @@ public class ConfigurableProcessesController implements ActionListener {
 
     public ArrayList<Object> getCurrentProcessesArrivalTime() {
         return currentProcessesArrivalTime;
+    }
+
+    public void cleanConfigurableProcessesController() {
+        myConfigurableProcessesController = new ConfigurableProcessesController();
+        this.cleanConfigurableProcessesTable();
+    }
+
+    private static boolean isNumeric(Object cadena) {
+        try {
+            int number = (int) cadena;
+            return true;
+        } catch (ClassCastException e) {
+            return false;
+        }
     }
 }

@@ -29,6 +29,8 @@ public abstract class Process {
     private boolean hasArrivalTime;
     private String CPMFlag;
     private ArrayList<Register> memorySpacesIndexes;
+    private int currentProcessRemainingBurstTime;
+    private int coreWhereIsRuning;
 
     public Process(ArrayList<String> instructions, String name, int processIDIndex) {
         this.processInstructions = instructions;
@@ -44,6 +46,8 @@ public abstract class Process {
         this.CPMFlag = "-";
         this.memorySpacesIndexes = new ArrayList<>();
         this.processBurstTime = instructions.size();
+        this.currentProcessRemainingBurstTime = instructions.size();
+        this.arrivalTime = "-";
     }
 
     public void setPCB(PCB PCB) {
@@ -117,4 +121,20 @@ public abstract class Process {
     public abstract void setAllocatedMemory(ArrayList<Register> memorySpaces);
     
     public abstract ArrayList<Register> getMemorySpaces();
+
+    public int getCurrentProcessRemainingBurstTime() {
+        return currentProcessRemainingBurstTime;
+    }
+
+    public void setCurrentProcessRemainingBurstTime(int currentProcessRemainingBurstTime) {
+        this.currentProcessRemainingBurstTime = currentProcessRemainingBurstTime;
+    }
+
+    public int getCoreWhereIsRuning() {
+        return coreWhereIsRuning;
+    }
+
+    public void setCoreWhereIsRuning(int coreWhereIsRuning) {
+        this.coreWhereIsRuning = coreWhereIsRuning;
+    }
 }

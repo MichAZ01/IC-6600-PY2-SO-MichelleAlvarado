@@ -130,4 +130,8 @@ public class OSConfigReader {
         this.setMemoryManagementMethods();
         this.setSchedulingMethods();
     }
+    
+    public void cleanOSConfigReader(){
+        myOSConfigReader = new OSConfigReader();
+    }
 }

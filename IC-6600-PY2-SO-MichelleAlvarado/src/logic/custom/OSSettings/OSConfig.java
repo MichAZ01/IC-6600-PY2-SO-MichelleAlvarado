@@ -8,6 +8,8 @@ package logic.custom.OSSettings;
 import java.util.ArrayList;
 import logic.memoryManagement.DynamicPartition;
 import logic.memoryManagement.IMemoryManagementAlgorithm;
+import logic.schedulingAlgorithms.FCFS;
+import logic.schedulingAlgorithms.Scheduler;
 
 /**
  *
@@ -88,5 +90,23 @@ public class OSConfig {
         }
         
         return activeMethod;
+    }
+    
+    public Scheduler getSchedulerAlgorithm(){
+        Scheduler myScheduler = null;
+        ArrayList<String> activeMethod = this.getActiveMethod(this.schedulingMethods);
+        String schedulingMethod = activeMethod.get(1);
+        switch(schedulingMethod){
+            case "FCFS":
+                myScheduler = new FCFS();
+                break;
+            default:
+                break;
+        }
+        return myScheduler;
+    }
+    
+    public void cleanOSConfig(){
+        myOSConfig = new OSConfig();
     }
 }

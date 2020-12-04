@@ -8,6 +8,7 @@ package logic.ProcessesManagement;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.regex.Pattern;
+import logic.computer.Computer;
 import logic.custom.FileManager;
 /**
  *
@@ -85,7 +86,11 @@ public final class ProgramValidator {
             result[0] = "1";
             result[1] = "Error: archivo vacío";
             return result;
-        } else {
+        } 
+        else if (new FileManager().getCleanData(data).size() > Computer.getInstance().getMemoryManager().getMainMemory().getMemoryLength()){
+            result[0] = "1";
+            result[1] = "Error: tamaño mayor";
+        }else {
             String linesWithError = this.validateLineFormat(data);
             if (linesWithError.equals("")) {
                 result[0] = "0";

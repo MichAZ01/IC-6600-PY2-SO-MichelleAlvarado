@@ -12,19 +12,31 @@ import java.util.ArrayList;
  * @author Michelle Alvarado
  */
 public class CoresManager {
+    private ArrayList<Core> CPUCores;
     
     public CoresManager(){
-    
+        this.CPUCores = this.createCores(5);
     }
     
     public ArrayList<Core> createCores(int coresAmount){
         ArrayList<Core> cores = new ArrayList<Core>();
         
         for(int i = 0; i < coresAmount; i++){
-            cores.add(new Core());
+            cores.add(new Core(i));
         }
         
         return cores;
     }
+
+    public ArrayList<Core> getCPUCores() {
+        return CPUCores;
+    }
     
+    public ArrayList<Core> getAvailableCores(){
+        ArrayList<Core> cores = null;
+        for(Core core: this.CPUCores){
+            if(core.getIsAvailable()) cores.add(core);
+        }
+        return cores;
+    }
 }

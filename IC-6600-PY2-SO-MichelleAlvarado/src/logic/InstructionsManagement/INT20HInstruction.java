@@ -20,7 +20,7 @@ public class INT20HInstruction implements IInstruction{
     @Override
     public int execute(Process process) {
         int result = 0;
-        
+        process.getPCB().getProcessStatus().setRegisterValue("Finalizado");
         return result;
     }
 }

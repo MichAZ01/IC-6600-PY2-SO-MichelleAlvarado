@@ -2,7 +2,7 @@
 <systemConfig>
     <MemoriesSize>
         <MainMemory>16</MainMemory>  
-        <SecondaryMemory>128</SecondaryMemory>
+        <SecondaryMemory>8</SecondaryMemory>
     </MemoriesSize>
     <MemoryManagementMethods>
         <Method active="1">

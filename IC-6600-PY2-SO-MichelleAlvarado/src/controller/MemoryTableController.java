@@ -76,4 +76,8 @@ public class MemoryTableController extends TableController{
         }
         return renderer;
     }
+    
+    public void cleanMemoryTableController(){
+        myMemoryTableController = new MemoryTableController();
+    }
 }

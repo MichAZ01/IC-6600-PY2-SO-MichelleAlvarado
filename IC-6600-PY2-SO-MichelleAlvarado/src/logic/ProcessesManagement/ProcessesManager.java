@@ -18,6 +18,7 @@ import logic.custom.FileManager;
  */
 public class ProcessesManager {
     private ArrayList<Process> loadedProcesses;
+    private ArrayList<Process> newProcesses;
     private ArrayList<Process> currentWaitingProcesses;
     private ArrayList<Process> currentReadyProcesses;
     private ArrayList<Process> currentExecutingProcesses;
@@ -27,6 +28,7 @@ public class ProcessesManager {
     
     public ProcessesManager(){
         this.processesToExecute = 0;
+        this.newProcesses = new ArrayList<>();
         this.currentWaitingProcesses = new ArrayList<>();
         this.currentReadyProcesses = new ArrayList<>();
         this.loadedProcesses = new ArrayList<>();
@@ -37,7 +39,7 @@ public class ProcessesManager {
     public void loadProcesses(File[] processFiles) throws IOException{
         this.setCurrentProcessesInitHour();
         this.loadedProcesses = new ArrayList<>();
-        this.currentWaitingProcesses = new ArrayList<>();
+        this.newProcesses = new ArrayList<>();
         File currentProcessFile;
         FileManager fileReader = new FileManager();
         ProgramValidator programValidator = new ProgramValidator();
@@ -51,7 +53,7 @@ public class ProcessesManager {
             if(processStatus[0].equals("0")){
                 newProcess.setProcessIsCorrect();
                 this.processesToExecute += 1;
-                this.currentWaitingProcesses.add(newProcess);
+                this.newProcesses.add(newProcess);
             }
             PCB newProcessPCB = new PCB(processStatus[1], newProcess.getProcessInstructions().size());
             newProcessPCB.getProcessID().setRegisterValue(newProcess.getProcessID());
@@ -89,6 +91,10 @@ public class ProcessesManager {
     public void addProcessTocurrentReadyProcesses(Process process){
         this.currentReadyProcesses.add(process);
     }
+    
+    public void addProcessTocurrentWaitingProcesses(Process process){
+        this.currentWaitingProcesses.add(process);
+    }
 
     public ArrayList<Process> getCurrentReadyProcesses() {
         return currentReadyProcesses;
@@ -101,6 +107,11 @@ public class ProcessesManager {
     public ArrayList<Process> getLoadedProcesses() {
         return loadedProcesses;
     }
+
+    public ArrayList<Process> getNewProcesses() {
+        return newProcesses;
+    }
+    
     
     public void setReadyProcessesArrivalTime(ArrayList<Object> processesArrivalTime){
         ArrayList<Process> configurableProcesses = this.getConfigurableProcesses();
@@ -119,9 +130,10 @@ public class ProcessesManager {
         }
     }
     
-    public void cleanCurrenWaitingProcesses(ArrayList<Process> readyProcesses){
-        for(Process process: readyProcesses){
-            if(process.getPCB().getProcessStatus().getRegisterValue().equals("Preparado")) this.currentWaitingProcesses.remove(process);
+    public void cleanNewProcesses(ArrayList<Process> processes){
+        for(Process process: processes){
+            if(process.getPCB().getProcessStatus().getRegisterValue().equals("Preparado") || 
+                    process.getPCB().getProcessStatus().getRegisterValue().equals("En espera")) this.newProcesses.remove(process);
         }
     }
 }

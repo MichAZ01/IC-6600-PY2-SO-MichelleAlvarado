@@ -732,29 +732,30 @@ public class MiniPC extends javax.swing.JFrame {
 
         statisticsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "H. inicio", "H. fin", "T. inicio", "T. fin", "Tr", "Tr/Ts"
+                "ID", "H. llegada", "H. inicio", "H. fin", "T. inicio", "T. fin", "Tr", "Tr/Ts"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
+        statisticsTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
         statisticsTable.setFocusable(false);
         statisticsTable.setRowHeight(17);
         statisticsTable.setRowSelectionAllowed(false);

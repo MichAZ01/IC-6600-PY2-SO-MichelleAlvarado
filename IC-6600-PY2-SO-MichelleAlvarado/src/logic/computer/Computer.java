@@ -44,4 +44,7 @@ public class Computer {
         return memoryManager;
     }
    
+    public void cleanComputer(){
+        myComputer = new Computer();
+    }
 }

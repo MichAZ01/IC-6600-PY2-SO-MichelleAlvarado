@@ -83,8 +83,8 @@ public class ProcessesTableController extends TableController{
         processesTable.getColumnModel().getColumn(1).setPreferredWidth(4);
         processesTable.getColumnModel().getColumn(2).setPreferredWidth(30);
         processesTable.getColumnModel().getColumn(3).setPreferredWidth(120);
-        processesTable.getColumnModel().getColumn(4).setPreferredWidth(120);
-        processesTable.getColumnModel().getColumn(5).setPreferredWidth(20);
+        processesTable.getColumnModel().getColumn(4).setPreferredWidth(110);
+        processesTable.getColumnModel().getColumn(5).setPreferredWidth(40);
         processesTable.getColumnModel().getColumn(6).setPreferredWidth(20);
         processesTable.getColumnModel().getColumn(7).setPreferredWidth(20);
         processesTable.getColumnModel().getColumn(8).setPreferredWidth(20);
@@ -95,5 +95,9 @@ public class ProcessesTableController extends TableController{
         processesTable.getColumnModel().getColumn(13).setPreferredWidth(20);
         processesTable.getColumnModel().getColumn(14).setPreferredWidth(20);
         processesTable.getColumnModel().getColumn(15).setPreferredWidth(20);
+    }
+    
+    public void cleanProcessesTableController(){
+        myProcessesTableController = new ProcessesTableController();
     }
 }

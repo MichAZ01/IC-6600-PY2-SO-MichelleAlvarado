@@ -20,6 +20,8 @@ import logic.OSManagement.CPU;
 import logic.computer.Computer;
 import rojerusan.RSPanelsSlider;
 import logic.ProcessesManagement.Process;
+import logic.custom.OSSettings.OSConfig;
+import logic.custom.OSSettings.OSConfigReader;
 
 /**
  *
@@ -73,6 +75,18 @@ public class MainController implements ActionListener {
             }
         });
     }
+    
+    public void cleanSystem(){
+        OSConfigReader.getInstance().cleanOSConfigReader();
+        OSConfig.getInstance().cleanOSConfig();
+        Computer.getInstance().cleanComputer();
+        MemoryTableController.getInstance().cleanMemoryTableController();
+        ConfigurableProcessesController.getInstance().cleanConfigurableProcessesController();
+        ProcessesTableController.getInstance().cleanProcessesTableController();
+        MemoryTableController.getInstance().initView(view);
+        ConfigurableProcessesController.getInstance().initView(view);
+        ProcessesTableController.getInstance().initView(view);
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -108,6 +122,7 @@ public class MainController implements ActionListener {
         int result = fileChooser.showOpenDialog(view);
         switch (result) {
             case JFileChooser.APPROVE_OPTION:
+                this.cleanSystem();
                 this.prepareProcesses(fileChooser.getSelectedFiles());
             case JFileChooser.CANCEL_OPTION:
                 break;
@@ -118,8 +133,8 @@ public class MainController implements ActionListener {
 
     public void prepareProcesses(File[] files) throws IOException {
         Computer.getInstance().getOS().getKernel().getProcessesManager().loadProcesses(files);
-        ArrayList<Process> waitingProcesses = Computer.getInstance().getOS().getKernel().getProcessesManager().getCurrentWaitingProcesses();
-        Computer.getInstance().getOS().getKernel().getProgramsLoader().allocateProcessesInMemory(waitingProcesses);
+        ArrayList<Process> newProcesses = Computer.getInstance().getOS().getKernel().getProcessesManager().getNewProcesses();
+        Computer.getInstance().getOS().getKernel().getProgramsLoader().allocateProcessesInMemory(newProcesses);
         this.setButtonsDisabled();
         if (Computer.getInstance().getOS().getKernel().getProcessesManager().getConfigurableProcessesCount() > 1) {
             ConfigurableProcessesController.getInstance();
