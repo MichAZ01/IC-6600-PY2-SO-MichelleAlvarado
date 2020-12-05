@@ -25,7 +25,10 @@ public abstract class MemoryManagementAlgorithm {
     
     public void setAllocatedProcess(Process process, String memoryType, ArrayList<Register> memoryRegisters){
         DynamicPartitionedProcess allocatedProcess = (DynamicPartitionedProcess) process;
-            if(memoryType.equals("mainMemory")) allocatedProcess.getPCB().getPC().setRegisterValue(memoryRegisters.get(0).getRegisterAddress().getMemoryAddress());
+            if(memoryType.equals("mainMemory")){
+                allocatedProcess.getPCB().getPC().setRegisterValue(memoryRegisters.get(0).getRegisterAddress().getMemoryAddress());
+                allocatedProcess.setIsInMainMemory(true);
+            }
             if(allocatedProcess.getPCB().getProcessStatus().getRegisterValue().equals("En espera") && memoryType.equals("mainMemory")){
                 allocatedProcess.setAllocatedMemory(memoryRegisters);
                 allocatedProcess.getPCB().getProcessStatus().setRegisterValue("Preparado");

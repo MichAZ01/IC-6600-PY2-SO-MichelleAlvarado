@@ -35,8 +35,8 @@ public class Core {
         this.IRRegister = IRRegister;
     }
     
-    public void setIsAvailable(){
-        this.isAvailable = !this.isAvailable;
+    public void setIsAvailable(boolean available){
+        this.isAvailable = available;
     }
     
     public boolean getIsAvailable(){

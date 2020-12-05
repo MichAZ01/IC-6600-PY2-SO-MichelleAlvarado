@@ -32,4 +32,8 @@ public class DynamicPartitionedProcess extends Process {
     public ArrayList<Register> getMemorySpaces() {
         return this.allocatedMemory;
     }
+    
+    public void setAllocatedProcess(){
+        ArrayList<Register> allocatedMemory = new ArrayList<>();
+    }
 }

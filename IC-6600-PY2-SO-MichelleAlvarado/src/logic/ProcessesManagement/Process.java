@@ -31,6 +31,8 @@ public abstract class Process {
     private String initHour;
     private String finalHour;
     private int internalPC;
+    private boolean isInMainMemory;
+    private boolean isFinalized;
 
     public Process(ArrayList<String> instructions, String name, int processIDIndex) {
         this.processInstructions = instructions;
@@ -48,6 +50,8 @@ public abstract class Process {
         this.currentProcessRemainingBurstTime = instructions.size();
         this.arrivalTime = "-1";
         this.internalPC = 0;
+        this.isInMainMemory = false;
+        this.isFinalized = false;
     }
 
     public void setPCB(PCB PCB) {
@@ -184,5 +188,21 @@ public abstract class Process {
     
     public void setInternalPC(int pc) {
         this.internalPC = pc;
+    }
+
+    public boolean isInMainMemory() {
+        return isInMainMemory;
+    }
+
+    public void setIsInMainMemory(boolean isInMainMemory) {
+        this.isInMainMemory = isInMainMemory;
+    }
+
+    public boolean isFinalized() {
+        return isFinalized;
+    }
+
+    public void setIsFinalized(boolean isFinalized) {
+        this.isFinalized = isFinalized;
     }
 }

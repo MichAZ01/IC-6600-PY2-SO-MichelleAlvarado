@@ -33,17 +33,17 @@ public class CoresManager {
     }
     
     public ArrayList<Core> getAvailableCores(){
-        ArrayList<Core> cores = null;
+        ArrayList<Core> cores = new ArrayList<>();
         for(Core core: this.CPUCores){
-            if(core.getIsAvailable()) cores.add(core);
+            if(core.getIsAvailable() == true) cores.add(core);
         }
         return cores;
     }
     
     public ArrayList<Core> getBusyCores(){
-        ArrayList<Core> cores = null;
+        ArrayList<Core> cores = new ArrayList<>();
         for(Core core: this.CPUCores){
-            if(!core.getIsAvailable()) cores.add(core);
+            if(core.getIsAvailable() == false) cores.add(core);
         }
         return cores;
     }

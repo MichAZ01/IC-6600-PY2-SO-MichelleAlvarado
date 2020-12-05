@@ -157,22 +157,15 @@ public class ProcessesManager {
     }
     
     public void cleanNewProcesses(ArrayList<Process> processes){
-        for(Process process: processes){
-            if(process.getPCB().getProcessStatus().getRegisterValue().equals("Preparado") || 
-                    process.getPCB().getProcessStatus().getRegisterValue().equals("En espera")) this.newProcesses.remove(process);
-        }
+        this.newProcesses.removeAll(processes);
     }
     
     public void cleanWaitingProcesses(ArrayList<Process> processes){
-        for(Process process: processes){
-            if(process.getPCB().getProcessStatus().getRegisterValue().equals("Preparado")) this.currentWaitingProcesses.remove(process);
-        }
+        this.currentWaitingProcesses.removeAll(processes);
     }
     
     public void cleanCurrentReadyProcesses(ArrayList<Process> processes){
-        for(Process process: processes){
-            this.currentReadyProcesses.remove(process);
-        }
+        this.currentReadyProcesses.removeAll(processes);
     }
 
     public ArrayList<Process> getCurrentExecutingProcesses() {
@@ -181,5 +174,23 @@ public class ProcessesManager {
 
     public ArrayList<Process> getFinishedProcesses() {
         return finishedProcesses;
+    }
+    
+    public ArrayList<Process> getCurrentMainMemoryProcesses(){
+        ArrayList<Process> mainMemoryProcesses = new ArrayList<>();
+        for(Process process: this.loadedProcesses){
+            if(!process.isFinalized() && process.isInMainMemory()) mainMemoryProcesses.add(process);
+        }
+        return mainMemoryProcesses;
+    }
+    
+    public ArrayList<Process> getCurrentSecondaryMemoryProcesses(){
+        ArrayList<Process> secondaryMemoryProcesses = new ArrayList<>();
+        for(Process process: this.loadedProcesses){
+            if(!process.isFinalized() && !process.isInMainMemory() && !process.getPCB().getProcessStatus().getRegisterValue().equals("Nuevo")){
+                secondaryMemoryProcesses.add(process);
+            }
+        }
+        return secondaryMemoryProcesses;
     }
 }

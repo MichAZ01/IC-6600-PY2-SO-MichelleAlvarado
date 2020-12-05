@@ -8,6 +8,7 @@ package logic.memoryManagement;
 import java.util.ArrayList;
 import java.util.List;
 import logic.ProcessesManagement.Process;
+import logic.ProcessesManagement.memoryProcesses.DynamicPartitionedProcess;
 import logic.computer.Computer;
 import logic.memory.Memory;
 import logic.memory.Register;
@@ -71,7 +72,12 @@ public class DynamicPartition extends MemoryManagementAlgorithm{
 
     @Override
     public void freeUpProcessMemory(Process process) {
-        
+        DynamicPartitionedProcess allocatedProcess = (DynamicPartitionedProcess) process;
+        ArrayList<Register> memorySpaces = process.getMemorySpaces();
+        for(Register register: memorySpaces){
+            register.setRegisterValue("-");
+        }
+        allocatedProcess.setAllocatedProcess();
     }
     
 }

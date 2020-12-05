@@ -13,15 +13,16 @@ import logic.computer.Computer;
  *
  * @author Michelle Alvarado
  */
-public class FCFS extends Scheduler{
+public class RR extends Scheduler{
+    private int quantum;
     
-    public FCFS(){
-       super(); 
+    public RR(int quantum){
+        this.quantum = quantum;
     }
 
     @Override
     public int getCPUCycleRemainingTime(Process process) {
-        return process.getProcessBurstTime();
+        return quantum;
     }
 
     @Override
@@ -34,4 +35,5 @@ public class FCFS extends Scheduler{
         }
         return process;
     }
+    
 }

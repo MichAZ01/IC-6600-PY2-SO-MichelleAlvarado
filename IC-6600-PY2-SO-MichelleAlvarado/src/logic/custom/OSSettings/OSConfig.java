@@ -9,6 +9,9 @@ import java.util.ArrayList;
 import logic.memoryManagement.DynamicPartition;
 import logic.memoryManagement.MemoryManagementAlgorithm;
 import logic.schedulingAlgorithms.FCFS;
+import logic.schedulingAlgorithms.RR;
+import logic.schedulingAlgorithms.SJF;
+import logic.schedulingAlgorithms.SRT;
 import logic.schedulingAlgorithms.Scheduler;
 
 /**
@@ -99,6 +102,18 @@ public class OSConfig {
         switch(schedulingMethod){
             case "FCFS":
                 myScheduler = new FCFS();
+                break;
+            case "SRT":
+                myScheduler = new SRT();
+                break;
+            case "SJF":
+                myScheduler = new SJF();
+                break;
+            case "RR":
+                myScheduler = new RR(Integer.parseInt(activeMethod.get(2)));
+                break;
+            case "HRRN":
+                //myScheduler = new HRRN();
                 break;
             default:
                 break;

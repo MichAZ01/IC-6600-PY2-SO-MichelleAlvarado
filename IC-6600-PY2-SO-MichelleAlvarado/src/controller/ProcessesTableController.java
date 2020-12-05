@@ -38,6 +38,7 @@ public class ProcessesTableController extends TableController{
         this.setTableModel(data, this.getView().processesTable, header, canEdit);
         this.customizeProcessesTable(this.getView().processesTable);
         ColorRenderer renderer = this.setTableProcessesColors(processes);
+        renderer.setHorizontalAlignment(JLabel.CENTER);
         this.getView().processesTable.setDefaultRenderer(Object.class, renderer);
     }
     

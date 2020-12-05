@@ -46,7 +46,7 @@ public class MemoryTableController extends TableController{
         boolean[] canEdit = new boolean [] {false, false};
         Object[][] data = this.setMemoryData(Computer.getInstance().getMemoryManager().getMainMemory());
         this.setTableModel(data, this.getView().mainMemoryTable, header, canEdit);
-        ArrayList<Process> processes = Computer.getInstance().getOS().getKernel().getProcessesManager().getCurrentReadyProcesses();
+        ArrayList<Process> processes = Computer.getInstance().getOS().getKernel().getProcessesManager().getCurrentMainMemoryProcesses();
         ColorRenderer renderer = this.setMemoryTableProcessesColors(processes, 2);
         this.mainMemoryColorRenderer = renderer;
         this.getView().mainMemoryTable.setDefaultRenderer(Object.class, renderer);
@@ -57,7 +57,7 @@ public class MemoryTableController extends TableController{
         boolean[] canEdit = new boolean [] {false, false};
         Object[][] data = this.setMemoryData(Computer.getInstance().getMemoryManager().getSecondaryMemory());
         this.setTableModel(data, this.getView().secondaryMemoryTable, header, canEdit);
-        ArrayList<Process> processes = Computer.getInstance().getOS().getKernel().getProcessesManager().getCurrentWaitingProcesses();
+        ArrayList<Process> processes = Computer.getInstance().getOS().getKernel().getProcessesManager().getCurrentSecondaryMemoryProcesses();
         ColorRenderer renderer = this.setMemoryTableProcessesColors(processes, 2);
         this.secondaryMemoryColorRenderer = renderer;
         this.getView().secondaryMemoryTable.setDefaultRenderer(Object.class, renderer);

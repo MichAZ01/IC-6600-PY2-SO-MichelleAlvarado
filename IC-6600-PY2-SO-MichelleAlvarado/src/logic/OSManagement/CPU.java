@@ -5,11 +5,7 @@
  */
 package logic.OSManagement;
 
-import java.util.ArrayList;
-import logic.ProcessesManagement.ProcessesManager;
-import logic.coresManagement.Core;
 import logic.coresManagement.CoresManager;
-import logic.memory.MemoryManager;
 
 /**
  *
@@ -17,7 +13,7 @@ import logic.memory.MemoryManager;
  */
 public class CPU {
     private int CPUCurrentTime;
-    private CoresManager myCoresManager;
+    private final CoresManager myCoresManager;
     private boolean hasProcessesToExecute;
     
     public CPU(){

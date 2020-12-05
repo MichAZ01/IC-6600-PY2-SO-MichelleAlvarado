@@ -39,5 +39,9 @@ public class Kernel {
     public Loader getProgramsLoader() {
         return programsLoader;
     }
+
+    public Scheduler getMyScheduler() {
+        return myScheduler;
+    }
     
 }

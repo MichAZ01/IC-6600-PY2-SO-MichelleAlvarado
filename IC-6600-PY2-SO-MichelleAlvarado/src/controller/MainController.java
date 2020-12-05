@@ -28,10 +28,11 @@ import logic.custom.OSSettings.OSConfigReader;
  * @author Michelle Alvarado
  */
 public class MainController implements ActionListener {
-
+    private ExecutionController executionController;
     private MiniPC view;
 
     public MainController() {
+        this.executionController = new ExecutionController();
     }
 
     public void showView() {
@@ -86,6 +87,7 @@ public class MainController implements ActionListener {
         MemoryTableController.getInstance().initView(view);
         ConfigurableProcessesController.getInstance().initView(view);
         ProcessesTableController.getInstance().initView(view);
+        this.executionController.getMyExecutionTableController().initView(view);
     }
 
     @Override
@@ -100,7 +102,13 @@ public class MainController implements ActionListener {
             }
             break;
             case "startExecution":
+        {
+            try {
                 this.startButtonActionPerformed();
+            } catch (InterruptedException ex) {
+                Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                 break;
             case "openConfig":
                 this.configButtonActionPerformed();
@@ -177,9 +185,24 @@ public class MainController implements ActionListener {
         this.view.configButton.setEnabled(false);
     }
 
-    public void startButtonActionPerformed() {
+    public void startButtonActionPerformed() throws InterruptedException {
         this.view.openFilesButton.setEnabled(false);
         this.view.configButton.setEnabled(false);
+        this.execute();
+        
+    }
+    
+    public void execute() throws InterruptedException{
+        new Thread(){
+            public void run(){
+                try {
+                    Computer.getInstance().getOS().getKernel().getMyScheduler().setMyExecutionObserver(executionController);
+                    Computer.getInstance().getOS().getKernel().getMyScheduler().execute();
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }.start();
     }
 
     public void configButtonActionPerformed() {
