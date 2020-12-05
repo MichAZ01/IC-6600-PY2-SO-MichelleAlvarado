@@ -15,11 +15,13 @@ import logic.computer.Computer;
  */
 public class ExecutionController implements IExecutionObserver{
     private ExecutionTableController myExecutionTableController;
-    
+    private StatisticsTableController myStatisticsController;
     public ExecutionController(){
         MiniPC view = MemoryTableController.getInstance().getView();
         this.myExecutionTableController = new ExecutionTableController();
         this.myExecutionTableController.initView(view);
+        this.myStatisticsController = new StatisticsTableController();
+        this.myStatisticsController.initView(view);
     }
     
     @Override
@@ -32,6 +34,11 @@ public class ExecutionController implements IExecutionObserver{
 
     public ExecutionTableController getMyExecutionTableController() {
         return myExecutionTableController;
+    }
+
+    @Override
+    public void setStatistics(Process process) {
+        this.myStatisticsController.addProcessStatistics(process);
     }
     
 }

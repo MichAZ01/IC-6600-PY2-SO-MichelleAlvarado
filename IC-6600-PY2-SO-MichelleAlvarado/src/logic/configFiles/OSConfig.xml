@@ -21,13 +21,13 @@
         </Method>
     </MemoryManagementMethods>
     <Scheduling>
-        <SchedulingMethod active="0">
+        <SchedulingMethod active="1">
             <SchedulingName>FCFS</SchedulingName>
         </SchedulingMethod>
         <SchedulingMethod active="0">
             <SchedulingName>SRT</SchedulingName>
         </SchedulingMethod>
-        <SchedulingMethod active="1">
+        <SchedulingMethod active="0">
             <SchedulingName>SJF</SchedulingName>
         </SchedulingMethod>
         <SchedulingMethod active="0">

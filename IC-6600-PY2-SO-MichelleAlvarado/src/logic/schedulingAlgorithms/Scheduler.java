@@ -98,7 +98,7 @@ public abstract class Scheduler {
         Computer.getInstance().getOS().getKernel().getProcessesManager().getFinishedProcesses().add(process);
         Computer.getInstance().getOS().getKernel().getProcessesManager().getCurrentExecutingProcesses().remove(process);
         Computer.getInstance().getOS().getKernel().getProcessesManager().setProcessFinalTime(process);
-        //modificar estadísticas del proceso
+        //this.myExecutionObserver.setStatistics(process);
         Computer.getInstance().getOS().getKernel().getMemoryManagementAlgorithm().freeUpProcessMemory(process);
 
     }
@@ -187,6 +187,8 @@ public abstract class Scheduler {
     public interface IExecutionObserver {
 
         public void update(Process process);
+        
+        public void setStatistics(Process process);
 
     }
 }

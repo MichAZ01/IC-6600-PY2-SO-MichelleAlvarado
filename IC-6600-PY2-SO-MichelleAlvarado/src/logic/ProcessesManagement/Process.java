@@ -52,6 +52,8 @@ public abstract class Process {
         this.internalPC = 0;
         this.isInMainMemory = false;
         this.isFinalized = false;
+        this.trValue = 0.0;
+        this.trTsValue = 0.0;
     }
 
     public void setPCB(PCB PCB) {
